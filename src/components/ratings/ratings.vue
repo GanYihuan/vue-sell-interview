@@ -1,6 +1,6 @@
 <template>
   <div
-    ref="ratings"
+    ref="seller"
     class="ratings"
   >
     <div class="ratings-content">
@@ -39,83 +39,88 @@
           </div>
         </div>
       </div>
-    </div>
-    <split />
-    <ratingSelect
-      :select-type="selectType"
-      :only-content="onlyContent"
-      :ratings="ratings"
-      @select="selectRating"
-      @toggle="toggleContent"
-    />
-    <div class="rating-wrapper border-1px">
-      <ul>
-        <li
-          v-for="(rating, index) in ratings"
-          v-show="needShow(rating.rateType, rating.text)"
-          :key="index"
-          class="rating-item"
+      <split />
+      <div class="bulletin">
+        <h1 class="title">
+          公告与活动
+        </h1>
+        <div class="content-wrapper border-1px">
+          <p class="content">
+            {{ seller.bulletin }}
+          </p>
+        </div>
+        <ul
+          v-if="seller.supports"
+          class="supports"
         >
-          <div class="avatar">
-            <img
-              :src="rating.avatar"
-              alt="avatar"
-              width="28"
-              height="28"
+          <li
+            v-for="(item, index) in seller.supports"
+            :key="index"
+            class="support-item border-1px"
+          >
+            <span
+              class="icon"
+              :class="classMap[seller.supports[index].type]"
+            />
+            <span class="text">{{ seller.supports[index].description }}</span>
+          </li>
+        </ul>
+      </div>
+      <split />
+      <div class="pics">
+        <h1 class="title">
+          商家实景
+        </h1>
+        <div
+          ref="picWrapper"
+          class="pic-wrapper"
+        >
+          <ul
+            ref="picList"
+            class="pic-list"
+          >
+            <li
+              v-for="(pic, index) in seller.pics"
+              :key="index"
+              class="pic-item"
             >
-          </div>
-          <div class="content">
-            <h1 class="name">
-              {{ rating.username }}
-            </h1>
-            <div class="star-wrapper">
-              <star
-                :size="24"
-                :score="rating.score"
-              />
-              <span
-                v-show="rating.deliveryTime"
-                class="delivery"
-              >{{ rating.deliveryTime }}</span>
-            </div>
-            <p class="text">
-              {{ rating.text }}
-            </p>
-            <div
-              v-show="rating.recommend && rating.recommend.length"
-              class="recommend"
-            >
-              <span class="icon-thumb_up" />
-              <span
-                v-for="(item, index2) in rating.recommend"
-                :key="index2"
-                class="item"
-              >{{ item }}</span>
-            </div>
-            <div class="time">
-              {{ formatDate(rating.rateTime) }}
-            </div>
-          </div>
-        </li>
-      </ul>
+              <img
+                :src="pic"
+                alt="pic"
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <split />
+      <div class="info">
+        <h1 class="title border-1px">
+          商家信息
+        </h1>
+        <ul>
+          <li
+            v-for="(info, index) in seller.infos"
+            :key="index"
+            class="info-item"
+          >
+            {{ info }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import ApiServer from 'api'
-import moment from 'moment'
 import BScroll from 'better-scroll'
-import star from 'components/star/star.vue'
-import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
-import split from 'components/split/split.vue'
-const ALL = 2
+import star from 'components/star/star'
+import split from 'components/split/split'
+// import { saveToLocal, loadFromLocal } from 'common/js/store'
 
 export default {
   components: {
     star,
-    split,
-    ratingSelect
+    split
   },
   props: {
     seller: {
@@ -127,82 +132,73 @@ export default {
   },
   data() {
     return {
-      ratings: [],
-      selectType: ALL,
-      onlyContent: true
+      /* immediately run function */
+      favorite: (() => {
+        // return loadFromLocal(this.seller.id, 'favorite', false)
+      })()
+    }
+  },
+  computed: {
+    favoriteText() {
+      return this.favorite ? '已收藏' : '收藏'
     }
   },
   watch: {
     seller() { /* seller async data, at first is null */
       this.$nextTick(() => {
         this._initScroll()
+        this._initPics()
       })
     }
   },
   created() {
-    this._fetch()
+    this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
   },
   mounted() {
     this.$nextTick(() => {
       this._initScroll()
+      this._initPics()
     })
   },
   methods: {
-    _fetch() {
-      if (!this.fetched) {
-        this.fetched = true
-        const params = {
-          id: this.seller.id
-        }
-        ApiServer
-          .getRatings(params)
-          .then(res => {
-            this.ratings = res
-            this.$nextTick(() => {
-              this._initScroll()
-            })
-          })
-          .catch(err => { console.log(err) })
+    toggleFavorite(event) {
+      if (!event._constructed) {
+        return
       }
+      this.favorite = !this.favorite
+      // saveToLocal(this.seller.id, 'favorite', this.favorite)
     },
     _initScroll() {
       if (!this.scroll) {
-        this.scroll = new BScroll(this.$refs.ratings, {
+        this.scroll = new BScroll(this.$refs.seller, {
           click: true
         })
       } else {
-        this.scroll.refresh
+        this.scroll.refresh() /* prevent route switch scroll no work */
       }
     },
-    selectRating(type) {
-      this.selectType = type
-      this.$nextTick(() => {
-        this.scroll.refresh()
-      })
-    },
-    toggleContent() {
-      this.onlyContent = !this.onlyContent
-      this.$nextTick(() => {
-        this.scroll.refresh()
-      })
-    },
-    needShow(type, text) {
-      if (this.onlyContent && !text) {
-        return false
+    _initPics() {
+      if (this.seller.pics) {
+        const picWidth = 120
+        const margin = 6
+        const width = (picWidth + margin) * this.seller.pics.length - margin
+        this.$refs.picList.style.width = width + 'px'
+        this.$nextTick(() => {
+          if (!this.picScroll) {
+            this.picScroll = new BScroll(this.$refs.picWrapper, {
+              scrollX: true, /* horizontal scroll */
+              eventPassthrough: 'vertical' /* ignore vertical scroll */
+            })
+          } else {
+            this.picScroll.refresh()
+          }
+        })
       }
-      if (this.selectType === ALL) {
-        return true
-      } else {
-        return type === this.selectType
-      }
-    },
-    formatDate(time) {
-      return moment(time).format('YYYY-MM-DD hh:mm:ss')
     }
   }
 }
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-@import 'ratings.scss';
+@import './ratings.scss';
 </style>
