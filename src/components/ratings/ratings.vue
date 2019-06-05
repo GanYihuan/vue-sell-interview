@@ -132,8 +132,21 @@ export default {
       onlyContent: true
     }
   },
+  watch: {
+    seller() { /* seller async data, at first is null */
+      this.$nextTick(() => {
+        this._initScroll()
+        this._initPics()
+      })
+    }
+  },
   created() {
     this._fetch()
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this._initScroll()
+    })
   },
   methods: {
     _fetch() {
@@ -146,17 +159,21 @@ export default {
           .getRatings(params)
           .then(res => {
             this.ratings = res
-            this.$nextTick(() => {
-              this._initScroll()
-            })
+            // this.$nextTick(() => {
+            //   this._initScroll()
+            // })
           })
           .catch(err => { console.log(err) })
       }
     },
     _initScroll() {
-      this.scroll = new BScroll(this.$refs.ratings, {
-        click: true
-      })
+      if (!this.scroll) {
+        this.scroll = new BScroll(this.$refs.ratings, {
+          click: true
+        })
+      } else {
+        this.scroll.refresh
+      }
     },
     selectRating(type) {
       this.selectType = type
