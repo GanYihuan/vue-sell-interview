@@ -19,18 +19,18 @@
         <div class="overview-right">
           <div class="score-wrapper">
             <span class="title">服务态度</span>
-            <!-- <star
+            <star
               :size="36"
               :score="seller.serviceScore"
-            /> -->
+            />
             <span class="score">{{ seller.serviceScore }}</span>
           </div>
           <div class="score-wrapper">
             <span class="title">商品评分</span>
-            <!-- <star
+            <star
               :size="36"
               :score="seller.foodScore"
-            /> -->
+            />
             <span class="score">{{ seller.foodScore }}</span>
           </div>
           <div class="delivery-wrapper">
@@ -41,13 +41,13 @@
       </div>
     </div>
     <split />
-    <!-- <ratingSelect
+    <ratingSelect
       :select-type="selectType"
       :only-content="onlyContent"
       :ratings="ratings"
       @select="selectRating"
       @toggle="toggleContent"
-    /> -->
+    />
     <div class="rating-wrapper border-1px">
       <ul>
         <li
@@ -92,7 +92,6 @@
                 class="item"
               >{{ item }}</span>
             </div>
-            <!-- <div class="time">{{rating.rateTime | formatDate}}</div> -->
             <div class="time">
               {{ formatDate(rating.rateTime) }}
             </div>
@@ -104,19 +103,20 @@
 </template>
 
 <script type="text/ecmascript-6">
+import ApiServer from 'api'
 import moment from 'moment'
 import BScroll from 'better-scroll'
-// import star from 'components/star/star.vue'
-// import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
+import star from 'components/star/star.vue'
+import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
 import split from 'components/split/split.vue'
 const ALL = 2
-const ERR_OK = 0
+// const ERR_OK = 0
 
 export default {
   components: {
-    // star,
-    split
-    // ratingSelect
+    star,
+    split,
+    ratingSelect
   },
   props: {
     seller: {
@@ -134,19 +134,30 @@ export default {
     }
   },
   created() {
-    this.$http.get('/api/ratings').then(res => {
-      res = res.body /* get json object */
-      if (res.errno === ERR_OK) {
-        this.ratings = res.data
-        this.$nextTick(() => {
-          this.scroll = new BScroll(this.$refs.ratings, {
-            click: true
-          })
-        })
-      }
-    })
+    this._fetch()
   },
   methods: {
+    _fetch() {
+      if (!this.fetched) {
+        this.fetched = true
+        const params = {
+          id: this.seller.id
+        }
+        ApiServer.getRatings(params)
+          .then(res => {
+            this.ratings = res
+            this.$nextTick(() => {
+              this._initScroll()
+            })
+          })
+          .catch(err => { console.log(err) })
+      }
+    },
+    _initScroll() {
+      this.scroll = new BScroll(this.$refs.ratings, {
+        click: true
+      })
+    },
     selectRating(type) {
       this.selectType = type
       this.$nextTick(() => {
