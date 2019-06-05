@@ -40,6 +40,13 @@
         </div>
       </div>
       <split />
+      <ratingSelect
+        :select-type="selectType"
+        :only-content="onlyContent"
+        :ratings="ratings"
+        @select="selectRating"
+        @toggle="toggleContent"
+      />
       <div class="bulletin">
         <h1 class="title">
           公告与活动
@@ -74,12 +81,14 @@
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
-// import { saveToLocal, loadFromLocal } from 'common/js/store'
+import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
+const ALL = 2
 
 export default {
   components: {
     star,
-    split
+    split,
+    ratingSelect
   },
   props: {
     seller: {
@@ -91,10 +100,9 @@ export default {
   },
   data() {
     return {
-      /* immediately run function */
-      favorite: (() => {
-        // return loadFromLocal(this.seller.id, 'favorite', false)
-      })()
+      ratings: [],
+      selectType: ALL,
+      onlyContent: true
     }
   },
   computed: {
@@ -119,12 +127,17 @@ export default {
     })
   },
   methods: {
-    toggleFavorite(event) {
-      if (!event._constructed) {
-        return
-      }
-      this.favorite = !this.favorite
-      // saveToLocal(this.seller.id, 'favorite', this.favorite)
+    selectRating(type) {
+      this.selectType = type
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
+    },
+    toggleContent() {
+      this.onlyContent = !this.onlyContent
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
     },
     _initScroll() {
       if (!this.scroll) {
