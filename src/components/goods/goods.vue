@@ -75,12 +75,12 @@
           </li>
         </ul>
       </div>
-      <!-- <shopCart
+      <shopCart
         ref="shopCart"
         :select-foods="selectFoods"
         :delivery-price="seller.deliveryPrice"
         :min-price="seller.minPrice"
-      /> -->
+      />
     </div>
     <!-- <food
       ref="food"
@@ -93,14 +93,14 @@
 <script type="text/ecmascript-6">
 import ApiServer from 'api'
 import BScroll from 'better-scroll'
-// import shopCart from 'components/shopCart/shopCart.vue'
+import shopCart from 'components/shopCart/shopCart.vue'
 // import cartControl from 'components/cartControl/cartControl.vue'
 // import food from 'components/food/food.vue'
 // const ERR_OK = 0
 
 export default {
   components: {
-    // shopCart,
+    shopCart
     // food,
     // cartControl
   },
