@@ -66,47 +66,6 @@
           </li>
         </ul>
       </div>
-      <split />
-      <div class="pics">
-        <h1 class="title">
-          商家实景
-        </h1>
-        <div
-          ref="picWrapper"
-          class="pic-wrapper"
-        >
-          <ul
-            ref="picList"
-            class="pic-list"
-          >
-            <li
-              v-for="(pic, index) in seller.pics"
-              :key="index"
-              class="pic-item"
-            >
-              <img
-                :src="pic"
-                alt="pic"
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-      <split />
-      <div class="info">
-        <h1 class="title border-1px">
-          商家信息
-        </h1>
-        <ul>
-          <li
-            v-for="(info, index) in seller.infos"
-            :key="index"
-            class="info-item"
-          >
-            {{ info }}
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
@@ -157,7 +116,6 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this._initScroll()
-      this._initPics()
     })
   },
   methods: {
@@ -175,24 +133,6 @@ export default {
         })
       } else {
         this.scroll.refresh() /* prevent route switch scroll no work */
-      }
-    },
-    _initPics() {
-      if (this.seller.pics) {
-        const picWidth = 120
-        const margin = 6
-        const width = (picWidth + margin) * this.seller.pics.length - margin
-        this.$refs.picList.style.width = width + 'px'
-        this.$nextTick(() => {
-          if (!this.picScroll) {
-            this.picScroll = new BScroll(this.$refs.picWrapper, {
-              scrollX: true, /* horizontal scroll */
-              eventPassthrough: 'vertical' /* ignore vertical scroll */
-            })
-          } else {
-            this.picScroll.refresh()
-          }
-        })
       }
     }
   }
