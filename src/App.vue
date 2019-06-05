@@ -34,7 +34,7 @@
 <script>
 import VHeader from 'components/v-header/v-header'
 import ApiServer from 'api'
-import qs from 'qs'
+import qs from 'query-string'
 
 export default {
   components: {
@@ -55,7 +55,8 @@ export default {
       const params = {
         id: this.seller.id
       }
-      ApiServer.getSeller(params)
+      ApiServer
+        .getSeller(params)
         .then(res => { // pass id => seller?id=2
           this.seller = Object.assign({}, this.seller, res)
         })

@@ -43,9 +43,10 @@ module.exports = {
     proxy: null, // 设置代理
     before: app => {
       app.get('/api/seller', (req, res) => {
+        const id = req.query.id
         res.json({
           status: 1,
-          data: seller
+          data: Object.assign({}, seller, { id })
         })
       })
       app.get('/api/goods', (req, res) => {
