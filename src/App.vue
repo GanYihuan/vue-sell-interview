@@ -11,6 +11,29 @@
     <router-view />
   </div>
 </template>
+
+<script>
+import { getSeller } from 'api'
+
+export default {
+  data() {
+    return {
+      seller: {}
+    }
+  },
+  created() {
+    this._getSeller()
+  },
+  methods: {
+    _getSeller() {
+      getSeller().then((seller) => {
+        this.seller = seller
+      })
+    }
+  }
+}
+</script>
+
 <style lang="stylus">
 #app
   font-family 'Avenir', Helvetica, Arial, sans-serif
