@@ -94,10 +94,10 @@
                   <span>￥{{ food.price * food.count }}</span>
                 </div>
                 <div class="cartControl-wrapper">
-                  <!-- <cartControl
+                  <cartControl
                     :food="food"
                     @add="addFood"
-                  /> -->
+                  />
                 </div>
               </li>
             </ul>
@@ -117,11 +117,11 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
-// import cartControl from 'components/cartControl/cartControl.vue'
+import cartControl from '../cartControl/cartcontrol'
 
 export default {
   components: {
-    // cartControl
+    cartControl
   },
   props: {
     selectFoods: {
