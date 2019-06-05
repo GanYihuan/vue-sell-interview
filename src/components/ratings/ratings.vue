@@ -110,7 +110,6 @@ import star from 'components/star/star.vue'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
 import split from 'components/split/split.vue'
 const ALL = 2
-// const ERR_OK = 0
 
 export default {
   components: {
@@ -143,7 +142,8 @@ export default {
         const params = {
           id: this.seller.id
         }
-        ApiServer.getRatings(params)
+        ApiServer
+          .getRatings(params)
           .then(res => {
             this.ratings = res
             this.$nextTick(() => {

@@ -159,7 +159,8 @@ export default {
         const params = {
           id: this.seller.id
         }
-        ApiServer.getGoods(params)
+        ApiServer
+          .getGoods(params)
           .then(res => {
             this.goods = res
             /* better-scroll Changed data, dom To be mapped, you have to call it manually. $nextTick() */
