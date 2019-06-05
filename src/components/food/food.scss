@@ -1,0 +1,217 @@
+@import '../../assets/scss/mixin.scss';
+
+.food {
+  z-index: 30;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 48px;
+  width: 100%;
+  background: #fff;
+  &.fade-enter-active,
+  &.fade-leave-active {
+    transition: all 0.2s linear;
+    transform: translate3d(0, 0, 0);
+  }
+  &.fade-enter,
+  &.fade-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  &.move-enter-active,
+  &.move-leave-active {
+    transition: all 0.2s linear;
+    transform: translate3d(0, 0, 0);
+  }
+  &.move-enter,
+  &.move-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  .image-header {
+    // children element img: position: absolute, father element: position: relative
+    /* Fixed width to height ratio 9:10 */
+    position: relative;
+    padding-top: 90%;
+    width: 100%;
+    height: 0;
+    /* Fixed width to height ratio 8: 10 */
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .back {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      .icon-arrow_lift {
+        display: block;
+        padding: 10px;
+        font-size: 20px;
+        color: #fff;
+      }
+    }
+  }
+  .content {
+    position: relative;
+    padding: 18px;
+    &.fade-enter-active,
+    &.fade-leave-active {
+      transition: all 0.2s;
+    }
+    &.fade-enter,
+    &.fade-leave-active {
+      opacity: 0;
+      z-index: -1;
+    }
+    .title {
+      line-height: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgb(7, 17, 27);
+    }
+    .detail {
+      position: relative;
+      margin: 0 0 10px;
+      height: 30px;
+      line-height: 10px;
+      font-size: 0;
+      color: rgb(7, 17, 27);
+      background: #fff;
+      .sell-count,
+      .rating {
+        display: inline-block;
+        font-size: 10px;
+        color: rgb(147, 153, 159);
+      }
+      .sell-count {
+        margin-right: 12px;
+      }
+    }
+    .price {
+      line-height: 24px;
+      font-weight: 700;
+      .now {
+        margin-right: 8px;
+        font-size: 14px;
+        color: rgb(240, 20, 20);
+      }
+      .old {
+        font-size: 10px;
+        text-decoration: line-through;
+        color: rgb(147, 153, 159);
+      }
+    }
+    .cartControl-wrapper {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+    }
+    .buy {
+      box-sizing: border-box;
+      z-index: 10;
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      padding: 0 12px;
+      border-radius: 12px;
+      // vertical direction center
+      height: 24px;
+      line-height: 24px;
+      // vertical direction center
+      font-size: 10px;
+      color: #fff;
+      background-color: rgb(0, 160, 220);
+      opacity: 1;
+      &.fade-enter-active,
+      &.fade-leave-active {
+        transition: all 0.2s;
+      }
+      &.fade-enter,
+      &.fade-leave-active {
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+  }
+  .info {
+    padding: 18px;
+    .title {
+      margin-bottom: 6px;
+      line-height: 14px;
+      font-size: 14px;
+      color: rgb(7, 17, 27);
+    }
+    .text {
+      padding: 0 8px;
+      line-height: 24px;
+      font-size: 12px;
+      color: rgb(77, 85, 93);
+    }
+  }
+  .rating {
+    padding: 18px 0 0 0;
+    .title {
+      margin-left: 18px;
+      line-height: 14px;
+      font-size: 14px;
+      color: rgb(7, 17, 27);
+    }
+    .rating-wrapper {
+      padding: 0 18px;
+      .rating-item {
+        position: relative;
+        padding: 16px 0;
+        @include border-1px(rgba(1, 17, 27, 0.1));
+        .user {
+          position: absolute;
+          right: 0;
+          top: 16px;
+          line-height: 12px;
+          font-size: 0;
+          .name {
+            display: inline-block;
+            margin-right: 6px;
+            vertical-align: top;
+            font-size: 10px;
+            color: rgb(147, 153, 159);
+          }
+          .avatar {
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+          }
+        }
+        .time {
+          margin-bottom: 6px;
+          line-height: 12px;
+          font-size: 10px;
+          color: rgb(147, 153, 159);
+        }
+        .text {
+          line-height: 16px;
+          font-size: 12px;
+          color: rgb(7, 17, 27);
+          .iconfont {
+            margin-right: 4px;
+            line-height: 16px;
+            font-size: 12px;
+          }
+          .icon-up {
+            color: rgb(0, 160, 220);
+          }
+          .icon-down {
+            color: rgb(147, 153, 159);
+          }
+        }
+      }
+      .no-rating {
+        padding: 16px 0;
+        font-size: 12px;
+        color: rgb(147, 153, 159);
+      }
+    }
+  }
+}

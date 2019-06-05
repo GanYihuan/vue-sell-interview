@@ -82,11 +82,11 @@
         :min-price="seller.minPrice"
       />
     </div>
-    <!-- <food
+    <food
       ref="food"
       :food="selectedFood"
       @add="addFood"
-    /> -->
+    />
   </div>
 </template>
 
@@ -95,13 +95,13 @@ import ApiServer from 'api'
 import BScroll from 'better-scroll'
 import shopCart from 'components/shopCart/shopCart.vue'
 import cartControl from '../cartControl/cartcontrol'
-// import food from 'components/food/food.vue'
+import food from 'components/food/food.vue'
 // const ERR_OK = 0
 
 export default {
   components: {
     shopCart,
-    // food,
+    food,
     cartControl
   },
   props: {
