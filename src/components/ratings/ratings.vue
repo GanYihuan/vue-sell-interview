@@ -1,5 +1,5 @@
 ﻿<template>
   <div>
-    goods
+    rattings
   </div>
 </template>
