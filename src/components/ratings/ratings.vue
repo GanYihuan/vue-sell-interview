@@ -78,6 +78,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+import moment from 'moment'
+import ApiServer from 'api'
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
@@ -120,6 +122,7 @@ export default {
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+    this._fetch()
   },
   mounted() {
     this.$nextTick(() => {
@@ -139,6 +142,19 @@ export default {
         this.scroll.refresh()
       })
     },
+    needShow(type, text) {
+      if (this.onlyContent && !text) {
+        return false
+      }
+      if (this.selectType === ALL) {
+        return true
+      } else {
+        return type === this.selectType
+      }
+    },
+    formatDate(time) {
+      return moment(time).format('YYYY-MM-DD hh:mm:ss')
+    },
     _initScroll() {
       if (!this.scroll) {
         this.scroll = new BScroll(this.$refs.seller, {
@@ -146,6 +162,19 @@ export default {
         })
       } else {
         this.scroll.refresh() /* prevent route switch scroll no work */
+      }
+    },
+    _fetch() {
+      console.log('fetch')
+      if (!this.fetched) {
+        this.fetched = true
+        const params = {
+          id: this.seller.id
+        }
+        ApiServer.getRatings(params)
+          .then(res => {
+            this.ratings = res
+          })
       }
     }
   }
