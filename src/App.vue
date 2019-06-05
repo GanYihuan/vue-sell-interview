@@ -33,8 +33,8 @@
 
 <script>
 import VHeader from 'components/v-header/v-header'
-// import { getSeller } from 'api'
 import ApiServer from 'api'
+import qs from 'qs'
 
 export default {
   components: {
@@ -42,7 +42,9 @@ export default {
   },
   data() {
     return {
-      seller: {}
+      seller: {
+        id: qs.parse(location.search.slice(1)).id
+      }
     }
   },
   created() {
@@ -59,11 +61,6 @@ export default {
         })
         .catch(err => { console.log(err) })
     }
-    // _getSeller() {
-    //   getSeller().then((seller) => {
-    //     this.seller = seller
-    //   })
-    // }
   }
 }
 </script>
