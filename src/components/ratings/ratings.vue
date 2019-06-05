@@ -136,7 +136,6 @@ export default {
     seller() { /* seller async data, at first is null */
       this.$nextTick(() => {
         this._initScroll()
-        this._initPics()
       })
     }
   },
@@ -159,9 +158,9 @@ export default {
           .getRatings(params)
           .then(res => {
             this.ratings = res
-            // this.$nextTick(() => {
-            //   this._initScroll()
-            // })
+            this.$nextTick(() => {
+              this._initScroll()
+            })
           })
           .catch(err => { console.log(err) })
       }
