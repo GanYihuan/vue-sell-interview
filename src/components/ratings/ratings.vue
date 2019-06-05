@@ -47,29 +47,55 @@
         @select="selectRating"
         @toggle="toggleContent"
       />
-      <div class="bulletin">
-        <h1 class="title">
-          公告与活动
-        </h1>
-        <div class="content-wrapper border-1px">
-          <p class="content">
-            {{ seller.bulletin }}
-          </p>
-        </div>
-        <ul
-          v-if="seller.supports"
-          class="supports"
-        >
+      <div class="rating-wrapper border-1px">
+        <ul>
           <li
-            v-for="(item, index) in seller.supports"
+            v-for="(rating, index) in ratings"
+            v-show="needShow(rating.rateType, rating.text)"
             :key="index"
-            class="support-item border-1px"
+            class="rating-item"
           >
-            <span
-              class="icon"
-              :class="classMap[seller.supports[index].type]"
-            />
-            <span class="text">{{ seller.supports[index].description }}</span>
+            <div class="avatar">
+              <img
+                :src="rating.avatar"
+                alt="avatar"
+                width="28"
+                height="28"
+              >
+            </div>
+            <div class="content">
+              <h1 class="name">
+                {{ rating.username }}
+              </h1>
+              <div class="star-wrapper">
+                <star
+                  :size="24"
+                  :score="rating.score"
+                />
+                <span
+                  v-show="rating.deliveryTime"
+                  class="delivery"
+                >{{ rating.deliveryTime }}</span>
+              </div>
+              <p class="text">
+                {{ rating.text }}
+              </p>
+              <div
+                v-show="rating.recommend && rating.recommend.length"
+                class="recommend"
+              >
+                <span class="icon-thumb_up" />
+                <span
+                  v-for="(item, index2) in rating.recommend"
+                  :key="index2"
+                  class="item"
+                >{{ item }}</span>
+              </div>
+              <!-- <div class="time">{{rating.rateTime | formatDate}}</div> -->
+              <div class="time">
+                {{ formatDate(rating.rateTime) }}
+              </div>
+            </div>
           </li>
         </ul>
       </div>
