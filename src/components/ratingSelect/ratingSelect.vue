@@ -41,6 +41,8 @@
 const POSITIVE = 0
 const NEGATIVE = 1
 const ALL = 2
+const EVENT_TOGGLE = 'toggle'
+const EVENT_SELECT = 'select'
 
 export default {
   name: 'RatingSelect',
@@ -84,17 +86,10 @@ export default {
   },
   methods: {
     select(type, event) {
-      /* better-scroll, at PC will trigger twice event, stop this */
-      if (!event._constructed) {
-        return
-      }
-      this.$emit('select', type)
+      this.$emit(EVENT_SELECT, type)
     },
     toggleContent(event) {
-      if (!event._constructed) {
-        return
-      }
-      this.$emit('toggle')
+      this.$emit(EVENT_TOGGLE)
     }
   }
 }

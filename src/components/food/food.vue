@@ -71,8 +71,8 @@
             :only-content="onlyContent"
             :desc="desc"
             :ratings="food.ratings"
-            @select="selectRating"
-            @toggle="toggleContent"
+            @select="onSelect"
+            @toggle="onToggle"
           />
           <div class="rating-wrapper">
             <ul v-show="food.ratings && food.ratings.length">
@@ -115,13 +115,13 @@
 
 <script type="text/ecmascript-6">
 import Vue from 'vue'
-import moment from 'moment'
 import BScroll from 'better-scroll'
 import cartControl from '../cartControl/cartcontrol'
 import split from 'components/split/split.vue'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
-import popupMixin from 'utils/mixins/popup'
+import ratingMixin from 'utils/mixins/rating'
 const ALL = 2
+const EVENT_ADD = 'add'
 
 export default {
   name: 'Food',
@@ -130,7 +130,7 @@ export default {
     ratingSelect,
     split
   },
-  mixins: [popupMixin],
+  mixins: [ratingMixin],
   props: {
     food: {
       type: Object,
@@ -149,20 +149,6 @@ export default {
         positive: '推荐',
         negative: '吐槽'
       }
-    }
-  },
-  watch: {
-    selectRating(type) {
-      this.selectType = type
-      this.$nextTick(() => {
-        this.scroll.refresh()
-      })
-    },
-    toggleContent(onlyContent) {
-      this.onlyContent = onlyContent
-      this.$nextTick(() => {
-        this.scroll.refresh()
-      })
     }
   },
   methods: {
@@ -188,9 +174,8 @@ export default {
       if (!event._constructed) {
         return
       }
-      /* create attribute 'count' */
       Vue.set(this.food, 'count', 1)
-      this.$emit('add', event.target)
+      this.$emit(EVENT_ADD, event.target)
     },
     needShow(type, text) {
       if (this.onlyContent && !text) {
@@ -203,22 +188,7 @@ export default {
       }
     },
     addFood(target) {
-      this.$emit('add', target)
-    },
-    selectRating(type) {
-      this.selectType = type
-      this.$nextTick(() => {
-        this.scroll.refresh()
-      })
-    },
-    toggleContent() {
-      this.onlyContent = !this.onlyContent
-      this.$nextTick(() => {
-        this.scroll.refresh()
-      })
-    },
-    formatDate(time) {
-      return moment(time).format('YYYY-MM-DD hh:mm:ss')
+      this.$emit(EVENT_ADD, target)
     }
   }
 }

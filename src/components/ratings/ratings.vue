@@ -91,7 +91,6 @@
                   class="item"
                 >{{ item }}</span>
               </div>
-              <!-- <div class="time">{{rating.rateTime | formatDate}}</div> -->
               <div class="time">
                 {{ formatDate(rating.rateTime) }}
               </div>
@@ -104,7 +103,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import moment from 'moment'
+import ratingMixin from 'utils/mixins/rating'
 import ApiServer from 'api'
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
@@ -119,6 +118,7 @@ export default {
     split,
     ratingSelect
   },
+  mixins: [ratingMixin],
   props: {
     seller: {
       type: Object,
@@ -178,9 +178,6 @@ export default {
       } else {
         return type === this.selectType
       }
-    },
-    formatDate(time) {
-      return moment(time).format('YYYY-MM-DD hh:mm:ss')
     },
     _initScroll() {
       if (!this.scroll) {
