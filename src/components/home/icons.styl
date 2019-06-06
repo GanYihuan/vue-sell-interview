@@ -13,7 +13,6 @@ ellipsis()
   overflow: hidden
 .icons
   margin-top: .1rem
-  background: #ff0
   .icon
     float: left
     // <固定宽高比
@@ -24,28 +23,22 @@ ellipsis()
     overflow: hidden
     // >
     .icon-img
-      box-sizing: border-box
       // <相当于 width: 100%
       position: absolute
       left: 0
       right: 0
       // >
       top: 0
-      bottom: .44rem // for icon-desc
-      padding: .1rem
+      height: 70px;
       .icon-img-content
         display: block
         margin: 0 auto // block 居中
         height: 100%
     .icon-desc
-      // <相当于 width: 100%
       position: absolute
       left: 0
       right: 0
-      // >
-      bottom: 0
-      height: .44rem
-      line-height: .44rem
+      bottom: 14px
       text-align: center
       color: $darkTextColor
       ellipsis()

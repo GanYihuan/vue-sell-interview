@@ -12,12 +12,12 @@
         >
           <div class="icon-img">
             <img
-              :src="item.imgUrl"
+              :src="item.url"
               class="icon-img-content"
             >
           </div>
           <p class="icon-desc">
-            {{ item.desc }}
+            {{ item.name }}
           </p>
         </div>
       </swiper-slide>
@@ -53,6 +53,7 @@ export default {
         }
         pages[page].push(item)
       })
+      console.log(pages, 'pages---')
       return pages
     }
   }
