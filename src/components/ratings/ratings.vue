@@ -103,8 +103,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+import axios from 'axios'
 import ratingMixin from 'utils/mixins/rating'
-import ApiServer from 'api'
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
@@ -149,7 +149,19 @@ export default {
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    this._fetch()
+    axios
+      .get('/api/ratings')
+      .then((res) => {
+        const { status, data } = res.data
+        if (status === 1) {
+          this.ratings = data
+        }
+        console.log(this.ratings, 'data ratings--')
+        this.$nextTick(() => {
+          this._initScroll()
+        })
+      }).catch(() => {
+      })
   },
   mounted() {
     this.$nextTick(() => {
@@ -186,16 +198,6 @@ export default {
         })
       } else {
         this.scroll.refresh() /* prevent route switch scroll no work */
-      }
-    },
-    _fetch() {
-      if (!this.fetched) {
-        this.fetched = true
-        ApiServer
-          .getRatings()
-          .then(res => {
-            this.ratings = res
-          })
       }
     }
   }

@@ -91,11 +91,11 @@
 </template>
 
 <script type="text/ecmascript-6">
-import ApiServer from 'api'
 import BScroll from 'better-scroll'
 import shopCart from 'components/shopCart/shopCart.vue'
 import cartControl from '../cartControl/cartcontrol'
 import food from 'components/food/food.vue'
+import axios from 'axios'
 
 export default {
   name: 'Goods',
@@ -150,34 +150,22 @@ export default {
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    this._fetch()
+    axios
+      .get('/api/goods')
+      .then((res) => {
+        const { status, data } = res.data
+        if (status === 1) {
+          this.goods = data
+        }
+        console.log(this.goods, 'data goods--')
+        this.$nextTick(() => {
+          this._initScroll()
+          this._calculateHeight()
+        })
+      }).catch(() => {
+      })
   },
   methods: {
-    _fetch() {
-      if (!this.fetched) {
-        this.fetched = true
-        const params = {
-          id: this.seller.id
-        }
-        ApiServer
-          .getGoods(params)
-          .then(res => {
-            this.goods = res
-            /* better-scroll Changed data, dom To be mapped, you have to call it manually. $nextTick() */
-            /*
-            dom 更新
-            async 更新数据
-            $nextTick: 在下次 DOM 更新循环结束之后执行延迟回调。
-            在修改数据之后立即使用这个方法，获取更新后的 DOM。
-            */
-            this.$nextTick(() => {
-              this._initScroll()
-              this._calculateHeight()
-            })
-          })
-          .catch(err => { console.log(err) })
-      }
-    },
     _initScroll() {
       this.meunScroll = new BScroll(this.$refs.menuWrapper, {
         click: true

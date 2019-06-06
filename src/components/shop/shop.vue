@@ -35,8 +35,8 @@
 
 <script>
 import VHeader from 'components/v-header/v-header'
-import ApiServer from 'api'
-import qs from 'query-string'
+// import qs from 'query-string'
+import axios from 'axios' // Ajax
 
 export default {
   name: 'Shop',
@@ -45,27 +45,23 @@ export default {
   },
   data() {
     return {
-      seller: {
-        id: qs.parse(location.search.slice(1)).id
-      }
+      // seller: {
+      //   id: qs.parse(location.search.slice(1)).id
+      // }
+      seller: {}
     }
   },
   created() {
-    this._getSeller()
     this.$router.push('/goods')
-  },
-  methods: {
-    _getSeller() {
-      const params = {
-        id: this.seller.id
-      }
-      ApiServer
-        .getSeller(params)
-        .then(res => { // pass id => seller?id=2
-          this.seller = Object.assign({}, this.seller, res)
-        })
-        .catch(err => { console.log(err) })
-    }
+    axios
+      .get('/api/seller')
+      .then((res) => {
+        const { status, data } = res.data
+        if (status === 1) {
+          this.seller = data
+        }
+      }).catch(() => {
+      })
   }
 }
 </script>
