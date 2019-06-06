@@ -2,22 +2,22 @@
   <div>
     <Header />
     <home-icon :list="iconList" />
-    <Navbar />
+    <split />
   </div>
 </template>
 
 <script>
-import Navbar from '../navbar/navbar'
 import HomeIcon from './icons'
 import Header from './header'
 import axios from 'axios' // Ajax
+import Split from '../split/split'
 
 export default {
   name: 'Home',
   components: {
-    Navbar,
     Header,
-    HomeIcon
+    HomeIcon,
+    Split
   },
   data() {
     return {

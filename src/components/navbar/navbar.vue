@@ -1,5 +1,6 @@
 ﻿<template>
   <div class="bottom">
+    <router-view />
     <ul class="bottom-bar">
       <router-link
         :class="[my, btnItem]"
@@ -26,7 +27,6 @@
         <div>首页</div>
       </router-link>
     </ul>
-    <router-view />
   </div>
 </template>
 
@@ -40,6 +40,9 @@ export default {
       btnItem: 'btn-item'
     }
   }
+  // created() {
+  //   this.$router.push('/home')
+  // }
 }
 </script>
 
