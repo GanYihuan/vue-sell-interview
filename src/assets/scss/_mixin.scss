@@ -31,3 +31,35 @@
     background-image: url($url+'@3x.png');
   }
 }
+
+@mixin panel(
+  $bgcolor: #fff,
+  $padding: 0,
+  $margin: 20px 0,
+  $height: 112px,
+  $txtPadding: 0 32px,
+  $color: #333,
+  $fontSize: 32px
+) {
+  margin: $margin;
+  padding: $padding;
+  // background: $bgcolor;
+  > h4 {
+    padding: $txtPadding;
+    height: $height;
+    line-height: $height;
+    text-align: center;
+    font-size: $fontSize;
+    color: $color;
+    /* 超出显示... */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@mixin flex($direction: column, $inline: block) {
+  display: if($inline==block, flex, inline-flex);
+  flex-direction: $direction;
+  flex-wrap: wrap;
+}

@@ -88,63 +88,6 @@
       }
     }
   }
-  .bulletin {
-    padding: 18px 18px 0 18px;
-    .title {
-      margin-bottom: 8px;
-      line-height: 14px;
-      font-size: 14px;
-      color: rgb(7, 17, 27);
-    }
-    .content-wrapper {
-      padding: 0 12px 16px 12px;
-      @include border-1px(rgba(7, 17, 27, 0.1));
-      .content {
-        line-height: 24px;
-        font-size: 12px;
-        color: rgb(240, 20, 20);
-      }
-    }
-    .supports {
-      .support-item {
-        padding: 16px 12px;
-        @include border-1px(rgba(7, 17, 27, 0.1));
-        font-size: 0;
-        &:last-child {
-          @include border-none();
-        }
-      }
-      .icon {
-        display: inline-block;
-        margin-right: 6px;
-        width: 16px;
-        height: 16px;
-        vertical-align: top;
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
-        &.decrease {
-          @include bg-image('decrease_4');
-        }
-        &.discount {
-          @include bg-image('discount_4');
-        }
-        &.guarantee {
-          @include bg-image('guarantee_4');
-        }
-        &.invoice {
-          @include bg-image('invoice_4');
-        }
-        &.special {
-          @include bg-image('special_4');
-        }
-      }
-      .text {
-        line-height: 16px;
-        font-size: 12px;
-        color: rgb(7, 17, 27);
-      }
-    }
-  }
   .rating-wrapper {
     padding: 0 18px;
     .rating-item {

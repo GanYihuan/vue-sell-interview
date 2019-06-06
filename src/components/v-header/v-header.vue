@@ -1,6 +1,12 @@
 <template>
   <div class="header">
     <div class="content-wrapper">
+      <div
+        class="back"
+        @click="backHome"
+      >
+        <i class="icon-arrow_lift" />
+      </div>
       <div class="avatar">
         <img :src="seller.avatar">
       </div>
@@ -142,6 +148,9 @@ export default {
     },
     hideDetail() {
       this.detailShow = false
+    },
+    backHome() {
+      this.$router.push('/home')
     }
   }
 }
