@@ -113,6 +113,7 @@ import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
 const ALL = 2
 
 export default {
+  name: 'Ratings',
   components: {
     star,
     split,

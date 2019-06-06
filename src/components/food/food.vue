@@ -114,20 +114,23 @@
 </template>
 
 <script type="text/ecmascript-6">
+import Vue from 'vue'
 import moment from 'moment'
 import BScroll from 'better-scroll'
 import cartControl from '../cartControl/cartcontrol'
 import split from 'components/split/split.vue'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
-import Vue from 'vue'
+import popupMixin from 'utils/mixins/popup'
 const ALL = 2
 
 export default {
+  name: 'Food',
   components: {
     cartControl,
     ratingSelect,
     split
   },
+  mixins: [popupMixin],
   props: {
     food: {
       type: Object,

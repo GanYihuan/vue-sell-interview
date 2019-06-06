@@ -98,6 +98,7 @@ import cartControl from '../cartControl/cartcontrol'
 import food from 'components/food/food.vue'
 
 export default {
+  name: 'Goods',
   components: {
     shopCart,
     food,

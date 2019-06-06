@@ -57,10 +57,10 @@
               {{ seller.name }}
             </h1>
             <div class="star-wrapper">
-              <!-- <star
+              <star
                 :size="48"
                 :score="seller.score"
-              /> -->
+              />
             </div>
             <div class="title">
               <!-- don't use span, adapt to android -->
@@ -113,11 +113,12 @@
 </template>
 
 <script type="text/ecmascript-6">
-// import star from 'components/star/star'
+import star from 'components/star/star'
 
 export default {
+  name: 'VHeader',
   components: {
-    // star
+    star
   },
   props: {
     seller: { /* [res.data](http://localhost:8088/api/seller) */

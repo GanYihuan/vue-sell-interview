@@ -43,6 +43,7 @@ const NEGATIVE = 1
 const ALL = 2
 
 export default {
+  name: 'RatingSelect',
   props: {
     ratings: {
       type: Array,

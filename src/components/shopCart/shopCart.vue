@@ -120,6 +120,7 @@ import BScroll from 'better-scroll'
 import cartControl from '../cartControl/cartcontrol'
 
 export default {
+  name: 'ShopCart',
   components: {
     cartControl
   },

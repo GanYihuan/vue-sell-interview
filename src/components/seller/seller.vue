@@ -126,6 +126,7 @@ import split from 'components/split/split'
 import { saveToLocal, loadFromLocal } from '../../utils/storage'
 
 export default {
+  name: 'Seller',
   components: {
     star,
     split
