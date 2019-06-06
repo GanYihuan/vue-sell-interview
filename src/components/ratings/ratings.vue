@@ -156,7 +156,6 @@ export default {
         if (status === 1) {
           this.ratings = data
         }
-        console.log(this.ratings, 'data ratings--')
         this.$nextTick(() => {
           this._initScroll()
         })

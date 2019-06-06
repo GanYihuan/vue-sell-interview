@@ -26,16 +26,6 @@ export default {
     }
   },
   created() {
-    // axios
-    //   .get('/api/home')
-    //   .then((res) => {
-    //     const { status, data } = res.data
-    //     if (status === 1) {
-    //       this.iconList = data
-    //     }
-    //     console.log(this.ratings, 'data home--')
-    //   }).catch(() => {
-    //   })
     axios
       .get('/api/home')
       .then((res) => {
@@ -43,7 +33,6 @@ export default {
         if (status === 1) {
           this.iconList = data
         }
-        console.log(this.iconList, 'data iconList--')
       }).catch(() => {
       })
   }

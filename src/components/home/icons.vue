@@ -53,7 +53,6 @@ export default {
         }
         pages[page].push(item)
       })
-      console.log(pages, 'pages---')
       return pages
     }
   }
