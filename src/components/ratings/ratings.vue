@@ -189,13 +189,10 @@ export default {
       }
     },
     _fetch() {
-      console.log('fetch')
       if (!this.fetched) {
         this.fetched = true
-        const params = {
-          id: this.seller.id
-        }
-        ApiServer.getRatings(params)
+        ApiServer
+          .getRatings()
           .then(res => {
             this.ratings = res
           })

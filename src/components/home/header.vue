@@ -9,7 +9,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import './header.scss'
+<style rel="stylesheet/scss" lang="styl">
+@import './header.styl'
 </style>
-

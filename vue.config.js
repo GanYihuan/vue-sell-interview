@@ -4,6 +4,7 @@ const appData = require('./public/data')
 const seller = appData.seller
 const goods = appData.goods
 const ratings = appData.ratings
+const home = appData.home
 
 module.exports = {
   // 基本路径
@@ -59,6 +60,12 @@ module.exports = {
         res.json({
           status: 1,
           data: ratings
+        })
+      })
+      app.get('/api/home', (req, res) => {
+        res.json({
+          status: 1,
+          data: home
         })
       })
     }

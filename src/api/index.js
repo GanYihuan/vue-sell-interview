@@ -25,12 +25,20 @@ export default class ApiServer {
       params: params
     })
   }
+  static getHome(params) {
+    const url = `home.json`
+    return request({
+      url: url,
+      method: 'get',
+      params: params
+    })
+  }
 }
 
 // import { get } from './helpers'
 
-// const getSeller = get('api/seller')
-// const getGoods = get('api/goods')
+// const getSeller = get('/api/seller')
+// const getGoods = get('/api/goods')
 
 // export {
 //   getSeller,
