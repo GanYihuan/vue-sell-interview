@@ -63,3 +63,25 @@
   flex-direction: $direction;
   flex-wrap: wrap;
 }
+
+@mixin btn(
+  $size: 14px,
+  $color: #fff,
+  $bgcolor: #f04752,
+  $padding: 5px,
+  $radius: 5px
+) {
+  display: inline-block;
+  padding: $padding;
+  border: 1px solid $bgcolor;
+  border-radius: $radius;
+  line-height: 1;
+  text-align: center;
+  font-size: $size;
+  color: $color;
+  background-color: $bgcolor;
+}
+
+@mixin list($direction: column) {
+  @include flex($direction);
+}
