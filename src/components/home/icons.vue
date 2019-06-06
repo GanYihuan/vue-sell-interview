@@ -16,9 +16,9 @@
               class="icon-img-content"
             >
           </div>
-          <p class="icon-desc">
+          <div class="icon-desc">
             {{ item.name }}
-          </p>
+          </div>
         </div>
       </swiper-slide>
     </swiper>
