@@ -5,6 +5,7 @@ const seller = appData.seller
 const goods = appData.goods
 const ratings = appData.ratings
 const home = appData.home
+const merchant = appData.merchant
 
 module.exports = {
   // 基本路径
@@ -66,6 +67,12 @@ module.exports = {
         res.json({
           status: 1,
           data: home
+        })
+      })
+      app.get('/api/merchant', (req, res) => {
+        res.json({
+          status: 1,
+          data: merchant
         })
       })
     }

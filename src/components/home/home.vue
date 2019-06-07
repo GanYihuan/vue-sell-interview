@@ -1,29 +1,41 @@
-﻿<template lang="html">
-  <div>
+﻿<template>
+  <div
+    ref="home"
+    class="home"
+  >
     <Header />
     <home-icon :list="iconList" />
     <split />
+    <Merchant :merchant="merchant" />
   </div>
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 import HomeIcon from './icons'
 import Header from './header'
 import axios from 'axios' // Ajax
 import Split from '../split/split'
+import Merchant from './merchant'
 
 export default {
   name: 'Home',
   components: {
     Header,
     HomeIcon,
-    Split
+    Split,
+    Merchant
   },
   data() {
     return {
-      swiperList: [],
-      iconList: []
+      iconList: [],
+      merchant: []
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this._initScroll()
+    })
   },
   created() {
     axios
@@ -35,6 +47,27 @@ export default {
         }
       }).catch(() => {
       })
+    axios
+      .get('/api/merchant')
+      .then((res) => {
+        const { status, data } = res.data
+        if (status === 1) {
+          this.merchant = data
+          console.log(this.merchant, 'merchant--')
+        }
+      }).catch(() => {
+      })
+  },
+  methods: {
+    _initScroll() {
+      if (!this.scroll) {
+        this.scroll = new BScroll(this.$refs.home, {
+          click: true
+        })
+      } else {
+        this.scroll.refresh() /* prevent route switch scroll no work */
+      }
+    }
   }
 }
 </script>
