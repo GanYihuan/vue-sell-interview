@@ -10,7 +10,7 @@
       <router-link
         v-for="item of merchant"
         :key="item.id"
-        :to="'/home'"
+        :to="'/goods'"
         class="item border-bottom"
         tag="li"
       >
