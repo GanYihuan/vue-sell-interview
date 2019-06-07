@@ -45,6 +45,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import './my.scss'
+<style lang="stylus" scoped>
+@import './my.styl'
 </style>

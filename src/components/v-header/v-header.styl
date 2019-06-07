@@ -1,0 +1,231 @@
+@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
+.header
+  position: relative
+  // .background: position:absolute
+  color: $color-white
+  background: $color-black-s
+  overflow: hidden
+.content-wrapper
+  position: relative
+  padding: 24px 12px 18px 24px
+  // Eliminate gaps, parent element settings font-size: 0
+  font-size: 0
+  .avatar
+    display: inline-block
+    vertical-align: top
+    img
+      width: 64px
+      height: 64px
+      border-radius: 4px
+  .content
+    display: inline-block
+    margin-left: 16px
+    .title
+      margin: 2px 0 8px 0
+      .brand
+        display: inline-block
+        // span become block element, can set width & height
+        width: 30px
+        height: 18px
+        vertical-align: top
+        bg-image("brand")
+        // 2x3x image
+        background-size: 30px 18px
+        background-repeat: no-repeat
+      .name
+        margin-left: 6px
+        line-height: 18px
+        font-size: 16px
+        font-weight: bold
+    .description
+      margin-bottom: 10px
+      line-height: 12px
+      font-size: 12px
+    .support
+      .icon
+        display: inline-block
+        margin-right: 4px
+        width: 12px
+        height: 12px
+        vertical-align: top
+        background-size: 12px 12px
+        background-repeat: no-repeat
+        &.decrease
+          bg-image("decrease_1")
+        &.discount
+          bg-image("discount_1")
+        &.guarantee
+          bg-image("guarantee_1")
+        &.invoice
+          bg-image("invoice_1")
+        &.special
+          bg-image("special_1")
+      .text
+        line-height: 12px
+        font-size: 10px
+  .support-count
+    position: absolute
+    right: 12px
+    bottom: 14px
+    padding: 0 8px
+    border-radius: 14px
+    height: 24px
+    line-height: 24px
+    text-align: center
+    background: $color-black-s
+    .count
+      vertical-align: top
+      font-size: 10px
+    .icon-keyboard_arrow_right
+      margin-left: 2px
+      line-height: 24px
+      font-size: 10px
+  .back
+    position: absolute
+    top: 10px
+    right: 0
+    .icon-arrow_lift
+      display: block
+      padding: 10px
+      font-size: 20px
+      color: $color-white
+.bulletin-wrapper
+  position: relative
+  padding: 0 22px 0 12px
+  height: 28px
+  line-height: 28px
+  background: $color-black-ss
+  // ...
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+  // ...
+  .bulletin-title
+    display: inline-block
+    margin: 8px 0 0 0
+    width: 22px
+    height: 12px
+    vertical-align: top
+    bg-image("bulletin")
+    background-size: 22px 12px
+    background-repeat: no-repeat
+  .bulletin-text
+    margin: 0 4px
+    vertical-align: top
+    font-size: 10px
+  .icon-keyboard_arrow_right
+    position: absolute
+    top: 8px
+    right: 12px
+    font-size: 10px
+.background
+  z-index: -1
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  // blurry background img
+  filter: blur(10px)
+  img
+    width: 100%
+    height: 100%
+.detail
+  z-index: 100
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: $color-black-s
+  overflow: auto
+  transition: all 0.5s
+  // ios blurry
+  backdrop-filter: blur(10px)
+  &.fade-transition
+    background: $color-black-s
+    opacity: 1
+  &.fade-enter,
+  &.fade-leave-to
+    background: $color-black-s
+    opacity: 0
+  .detail-wrapper
+    width: 100%
+    min-height: 100%
+    /* 3: A The length of the package content will change */
+    .detail-main
+      margin-top: 64px
+      padding-bottom: 64px
+      /* 4: A give B Reserved space */
+      .name
+        line-height: 16px
+        text-align: center
+        font-size: 16px
+        font-weight: 700
+      .star-wrapper
+        margin-top: 18px
+        padding: 2px 0
+        text-align: center
+      .title
+        display: flex
+        margin: 28px auto
+        // block elment, Horizontally centered
+        width: 80%
+        .line
+          flex: 1
+          position: relative
+          top: -6px
+          border-bottom: 1px solid $color-light-blue
+        .text
+          padding: 0 12px
+          font-size: 14px
+          font-weight: 700
+      .supports
+        margin: 0 auto
+        width: 80%
+        .support-item
+          margin-bottom: 12px
+          padding: 0 12px
+          font-size: 0
+          &:last-child
+            margin-bottom: 0
+          .icon
+            display: inline-block
+            margin-right: 6px
+            width: 16px
+            height: 16px
+            vertical-align: top
+            background-size: 16px 16px
+            background-repeat: no-repeat
+            &.decrease
+              bg-image("decrease_2")
+            &.discount
+              bg-image("discount_2")
+            &.guarantee
+              bg-image("guarantee_2")
+            &.invoice
+              bg-image("invoice_2")
+            &.special
+              bg-image("special_2")
+          .text
+            line-height: 16px
+            font-size: 12px
+      .bulletin
+        margin: 0 auto
+        // Horizontally centered
+        width: 80%
+        .content
+          padding: 0 12px
+          line-height: 24px
+          font-size: 12px
+  .detail-close
+    position: relative
+    margin: -64px auto 0
+    /* 5: B Embed A give B reserved space */
+    width: 32px
+    height: 32px
+    font-size: 32px
+    // Fork size
+    clear: both
+    /* 6: B clear: both */

@@ -208,6 +208,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import 'seller.scss';
+<style lang="stylus" scoped>
+@import './seller.styl'
 </style>

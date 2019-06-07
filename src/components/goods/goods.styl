@@ -1,4 +1,5 @@
-﻿@import '../../assets/stylus/mixin'
+﻿@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
 .goods
   display: flex
   position: absolute
@@ -11,11 +12,13 @@
     width: 80px
     background: #f3f5f7
     .menu-item
+      // Multi-line text Vertical centering
       display: table
       padding: 0 12px
       width: 56px
       height: 54px
       line-height: 14px
+      /* Let it be highlighted */
       &.current
         z-index: 10
         position: relative
@@ -44,9 +47,11 @@
           bg-image("special_3")
       .text
         display: table-cell
-        border-1px(rgba(7, 17, 27, 0.1))
+        // father element: display: table
+        border-1px($color-black-ss)
         width: 56px
         vertical-align: middle
+        // Multi-line text Vertical centering
         font-size: 12px
   .foods-wrapper
     flex: 1
@@ -63,7 +68,7 @@
         display: flex
         margin: 18px
         padding-bottom: 18px
-        border-1px(rgba(7, 17, 27, 0.1))
+        border-1px($color-black-ss)
         &:last-child
           margin-bottom: 0
           border-none()
@@ -76,18 +81,17 @@
         .content
           flex: 1
           .name
-            margin: 2px 0 8px
+            margin: 2px 0
             height: 14px
             line-height: 14px
             font-size: 14px
             color: rgb(7, 17, 27)
           .desc,
           .extra
-            line-height: 10px
+            margin: 8px 0
+            line-height: 14px
             font-size: 10px
             color: rgb(147, 153, 159)
-          .desc
-            margin-bottom: 8px
           .extra
             .count
               margin-right: 12px

@@ -95,6 +95,6 @@ export default {
 }
 </script>
 
-<style lang="scss" rel="stylesheet/scss">
-@import 'ratingSelect.scss';
+<style lang="stylus" scoped>
+@import './ratingSelect.styl'
 </style>

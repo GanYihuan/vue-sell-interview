@@ -156,6 +156,6 @@ export default {
 }
 </script>
 
-<style lang="scss" rel="stylesheet/scss">
-@import './v-header.scss';
+<style lang="stylus" scoped>
+@import './v-header.styl'
 </style>

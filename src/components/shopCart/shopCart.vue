@@ -293,6 +293,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import 'shopCart.scss';
+<style lang="stylus" scoped>
+@import './shopCart.styl'
 </style>

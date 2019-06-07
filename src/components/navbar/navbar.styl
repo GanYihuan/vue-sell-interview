@@ -1,0 +1,48 @@
+﻿.bottom-bar
+  z-index: 999
+  display: flex
+  align-items: center
+  position: fixed
+  bottom: 0
+  width: 100%
+  height: 4rem
+  border-top: .1rem solid #b6b6b6
+  background-color: rgba(246, 246, 246, 1)
+  overflow: hidden
+  .btn-item
+    flex: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    .icon
+      width: 2rem
+      height: 2rem
+      background-size: cover
+    .des
+      width: 3rem
+      text-align: center
+      font-size: 1rem
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+    &.active
+      color: #000
+    &.my
+      .icon
+        background-image: url("./img/myIcon.png")
+      &.active
+        .icon
+          background-image: url("./img/myIconActive.png")
+    &.order
+      .icon
+        background-image: url("./img/orderIcon.png")
+      &.active
+        .icon
+          background-image: url("./img/orderIconActive.png")
+    &.home
+      .icon
+        background-image: url("./img/homeIcon.png")
+      &.active
+        .icon
+          background-image: url("./img/homeIconActive.png")

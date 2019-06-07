@@ -49,6 +49,6 @@ export default {
 }
 </script>
 
-<style lang="scss" rel="stylesheet/scss">
-@import './navbar.scss'
+<style lang="stylus" scoped>
+@import './navbar.styl'
 </style>

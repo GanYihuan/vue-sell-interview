@@ -233,6 +233,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import 'goods.scss';
+<style lang="stylus" scoped>
+@import './goods.styl';
 </style>

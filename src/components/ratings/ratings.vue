@@ -197,6 +197,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import './ratings.scss';
+<style lang="stylus" scoped>
+@import './ratings.styl'
 </style>

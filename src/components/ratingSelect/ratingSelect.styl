@@ -1,0 +1,45 @@
+﻿@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
+.ratingselect
+  .rating-type
+    margin: 0 18px
+    padding: 18px 0
+    border-1px($color-gray)
+    font-size: 0
+    .block
+      display: inline-block
+      margin-right: 8px
+      padding: 8px 12px
+      border-radius: 1px
+      font-size: 12px
+      color: $color-gray
+      &.positive
+        background: $color-light-blue
+        &.active
+          color: $color-white
+          background: $color-blue
+      &.negative
+        background: $color-light-blue
+        &.active
+          color: #fff
+          background: $color-blue
+      .count
+        margin-left: 2px
+        line-height: 16px
+        font-size: 8px
+  .switch
+    padding: 12px 18px
+    border: 1px solid $color-light-blue
+    line-height: 24px
+    font-size: 0
+    color: $color-gray
+    &.on
+      .icon-check_circle
+        color: $color-green
+    .icon-check_circle
+      display: inline-block
+      margin-right: 4px
+      vertical-align: top
+      font-size: 24px
+    .text
+      font-size: 12px

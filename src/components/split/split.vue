@@ -6,6 +6,6 @@
 export default {}
 </script>
 
-<style lang="scss" ref="stylesheet/scss">
-@import 'split.scss';
+<style lang="stylus" scoped>
+@import './split.styl'
 </style>

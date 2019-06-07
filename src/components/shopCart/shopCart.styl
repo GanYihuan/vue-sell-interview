@@ -1,0 +1,180 @@
+@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
+.shopCart
+  z-index: 50
+  position: fixed
+  left: 0
+  bottom: 0
+  width: 100%
+  height: 48px
+  .content
+    display: flex
+    font-size: 0
+    color: $color-gray
+    background: $color-black
+    .content-left
+      flex: 1
+      .logo-wrapper
+        box-sizing: border-box
+        display: inline-block
+        position: relative
+        top: -10px
+        margin: 0 12px
+        padding: 6px
+        border-radius: 50%
+        width: 56px
+        height: 56px
+        vertical-align: top
+        background: $color-black
+        .num
+          position: absolute
+          top: 0
+          right: 0
+          border-radius: 16px
+          width: 24px
+          height: 24px
+          line-height: 24px
+          text-align: center
+          font-size: 9px
+          font-weight: 700
+          color: $color-white
+          background: $color-red
+          box-shadow: 0 4px 8px 0 $color-black
+        .logo
+          border-radius: 50%
+          width: 100%
+          height: 100%
+          text-align: center
+          background: #2b343c
+          &.highlight
+            background: $color-blue
+          .icon-shopping_cart
+            line-height: 44px
+            font-size: 24px
+            color: $color-gray
+            &.highlight
+              color: $color-white
+      .price
+        box-sizing: border-box
+        display: inline-block
+        margin-top: 12px
+        padding-right: 12px
+        border-right: 1px solid $color-light-blue
+        line-height: 24px
+        vertical-align: top
+        font-size: 16px
+        font-weight: 700
+        color: $color-gray
+        &.highlight
+          color: $color-white
+      .desc
+        display: inline-block
+        margin-left: 12px
+        margin-top: 12px
+        line-height: 24px
+        vertical-align: top
+        font-size: 10px
+        color: $color-gray
+    .content-right
+      flex: 0 0 105px
+      width: 105px
+      .pay
+        height: 48px
+        line-height: 48px
+        text-align: center
+        font-size: 12px
+        font-weight: 700
+        color: $color-gray
+        background: $color-light-blue
+        &.not-enough
+          background: $color-light-blue
+        &.enough
+          color: $color-white
+          background: $color-green
+  .ball-container
+    .ball
+      z-index: 200
+      position: fixed
+      left: 32px
+      bottom: 22px
+      transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41)
+      .inner
+        border-radius: 50%
+        width: 16px
+        height: 16px
+        background: $color-blue
+        transition: all 0.5s linear
+  .shopCart-list
+    z-index: -1
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    transform: translate3d(0, -100%, 0)
+    &.fold-enter-active,
+    &.fold-leave-active
+      transition: all 0.5s
+    &.fold-enter,
+    &.fold-leave-active
+      transform: translate3d(0, 0, 0)
+    .list-header
+      padding: 0 18px
+      border-bottom: 1px solid $color-gray
+      height: 40px
+      line-height: 40px
+      background: $color-white
+      .title
+        float: left
+        font-size: 14px
+        color: $color-gray
+      .empty
+        float: right
+        font-size: 12px
+        color: $color-blue
+    .list-content
+      padding: 0 18px
+      max-height: 217px
+      background: $color-white
+      overflow: hidden
+      .shopCart-food
+        box-sizing: border-box
+        position: relative
+        padding: 12px 0
+        border-1px($color-gray)
+        .name
+          line-height: 24px
+          font-size: 14px
+          color: $color-gray
+        .price
+          position: absolute
+          right: 90px
+          bottom: 12px
+          line-height: 24px
+          font-size: 14px
+          font-weight: 700
+          color: $color-red
+        .cartControl-wrapper
+          position: absolute
+          right: 0
+          bottom: 6px
+.list-mask
+  z-index: 40
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  backdrop-filter: blur(10px)
+  // ios blurry
+  -webkit-backdrop-filter: blur(10px)
+  background: $color-black-s
+  opacity: 1
+  &.fade-enter-active,
+  &.fade-leave-active
+    background: $color-black-s
+    transition: all 0.5s linear
+    opacity: 1
+  &.fade-enter,
+  &.fade-leave-active
+    background: $color-black-s
+    opacity: 0

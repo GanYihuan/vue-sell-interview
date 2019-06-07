@@ -1,33 +1,22 @@
-@charset "UTF-8";
-
 /* One pixel line */
-@mixin border-1px($color) {
-  position: relative;
-  &:after {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid $color;
-    content: ' ';
-  }
-}
-
+border-1px($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
 /* none One pixel line */
-@mixin border-none() {
-  &:after {
-    display: none;
-  }
-}
-
+border-none()
+  &:after
+    display: none
 /* 2x3x image */
-@mixin bg-image($url) {
-  background-image: url($url+'@2x.png');
-  @media (-webkit-min-device-pixel-ratio: 3) {
-    background-image: url($url+'@3x.png');
-  }
-  @media (min-device-pixel-ratio: 3) {
-    background-image: url($url+'@3x.png');
-  }
-}
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+  @media (min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
