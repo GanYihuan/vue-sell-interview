@@ -1,5 +1,5 @@
 ﻿<template>
-  <div class="bottom">
+  <div>
     <router-view />
     <ul class="bottom-bar">
       <router-link
@@ -49,6 +49,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
+<style lang="scss" rel="stylesheet/scss">
 @import './navbar.scss'
 </style>

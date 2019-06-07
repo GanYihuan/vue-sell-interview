@@ -9,6 +9,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="styl">
+<style lang="stylus" scoped>
 @import './header.styl'
 </style>

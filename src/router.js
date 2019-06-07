@@ -12,25 +12,16 @@ export default new Router({
     {
       path: '/navbar',
       name: 'navbar',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './components/navbar/navbar.vue'),
       children: [
         {
           path: '/home',
           name: 'home',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
           component: () => import(/* webpackChunkName: "about" */ './components/home/home.vue')
         },
         {
           path: '/my',
           name: 'my',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
           component: () => import(/* webpackChunkName: "about" */ './components/my/my.vue')
         }
       ]
@@ -38,9 +29,6 @@ export default new Router({
     {
       path: '/shop',
       name: 'shop',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './components/shop/shop.vue'),
       children: [ // <router-view></router-view> put into todo component inside, show sub-route
         {
@@ -51,9 +39,6 @@ export default new Router({
         {
           path: '/ratings',
           name: 'ratings',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
           component: () => import(/* webpackChunkName: "about" */ './components/ratings/ratings.vue')
         },
         {

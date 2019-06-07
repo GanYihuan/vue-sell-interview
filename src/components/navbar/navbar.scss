@@ -5,21 +5,19 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 3rem;
-  border-top: 1px solid #b6b6b6;
+  height: 4rem;
+  border-top: .1rem solid #b6b6b6;
   background-color: rgba(246, 246, 246, 1);
+  overflow: hidden;
   .btn-item {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    font-size: 11px;
-    text-decoration: none;
-    color: #999;
     .icon {
-      width: 25px;
-      height: 25px;
+      width: 2rem;
+      height: 2rem;
       background-size: cover;
     }
     .des {

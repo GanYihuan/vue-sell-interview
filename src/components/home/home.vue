@@ -82,6 +82,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import './home.scss';
+<style lang="stylus" scoped>
+@import './home.styl';
 </style>
