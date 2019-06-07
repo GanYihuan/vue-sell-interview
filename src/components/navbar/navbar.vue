@@ -39,10 +39,10 @@ export default {
       order: 'order',
       btnItem: 'btn-item'
     }
+  },
+  created() {
+    this.$router.push('/home')
   }
-  // created() {
-  //   this.$router.push('/home')
-  // }
 }
 </script>
 
