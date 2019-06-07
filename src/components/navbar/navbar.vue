@@ -3,28 +3,34 @@
     <router-view />
     <ul class="bottom-bar">
       <router-link
-        :class="[my, btnItem]"
+        :class="[home, btnItem]"
         to="/home"
         tab="li"
       >
         <div class="icon" />
-        <div>首页</div>
+        <div class="des">
+          首页
+        </div>
       </router-link>
       <router-link
         :class="[order, btnItem]"
+        to="/home"
+        tab="li"
+      >
+        <div class="icon" />
+        <div class="des">
+          订单
+        </div>
+      </router-link>
+      <router-link
+        :class="[my, btnItem]"
         to="/my"
         tab="li"
       >
         <div class="icon" />
-        <div>我的</div>
-      </router-link>
-      <router-link
-        :class="[home, btnItem]"
-        to="/shop"
-        tab="li"
-      >
-        <div class="icon" />
-        <div>首页</div>
+        <div class="des">
+          我的
+        </div>
       </router-link>
     </ul>
   </div>
@@ -39,9 +45,6 @@ export default {
       order: 'order',
       btnItem: 'btn-item'
     }
-  },
-  created() {
-    this.$router.push('/home')
   }
 }
 </script>
