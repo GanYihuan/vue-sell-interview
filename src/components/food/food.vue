@@ -194,6 +194,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import 'food.scss';
+<style lang="stylus" scoped>
+@import './food.styl';
 </style>

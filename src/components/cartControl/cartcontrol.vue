@@ -57,6 +57,6 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-@import 'cartControl.scss';
+<style lang="stylus" scoped>
+@import './cartControl.styl';
 </style>
