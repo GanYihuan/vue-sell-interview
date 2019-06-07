@@ -1,9 +1,9 @@
 ﻿<template>
   <div
-    ref="ratings"
-    class="ratings"
+    ref="home"
+    class="home"
   >
-    <div class="ratings-content">
+    <div class="home-content">
       <Header />
       <HomeIcon :list="iconList" />
       <Split />
@@ -21,7 +21,7 @@ import HomeIcon from './icons'
 import Merchant from './merchant'
 
 export default {
-  name: 'Ratings',
+  name: 'Home',
   components: {
     Split,
     Header,
@@ -68,15 +68,10 @@ export default {
       }).catch(() => {
       })
   },
-  // mounted() {
-  //   this.$nextTick(() => {
-  //     this._initScroll()
-  //   })
-  // },
   methods: {
     _initScroll() {
       if (!this.scroll) {
-        this.scroll = new BScroll(this.$refs.ratings, {
+        this.scroll = new BScroll(this.$refs.home, {
           click: true
         })
       } else {
