@@ -9,7 +9,6 @@
       <span class="title-line" />
     </h4>
     <ul>
-      <!-- router-link default change <a></a> -->
       <router-link
         v-for="item of merchant"
         :key="item.id"
@@ -33,7 +32,6 @@
               />
             </div>
             <div class="item-count">
-              <!-- 月售{{ item.month_sale_num > 999 ? 999 : item.month_sale_num }} -->
               月售{{ item.month_sale_num }}
             </div>
             <div class="item-distance">
@@ -74,11 +72,6 @@ export default {
       default() {
         return []
       }
-    }
-  },
-  computed: {
-    renderMonthNum() {
-      return 999
     }
   }
 }
