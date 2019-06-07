@@ -134,11 +134,6 @@ export default {
       onlyContent: true
     }
   },
-  computed: {
-    favoriteText() {
-      return this.favorite ? '已收藏' : '收藏'
-    }
-  },
   watch: {
     seller() { /* seller async data, at first is null */
       this.$nextTick(() => {
