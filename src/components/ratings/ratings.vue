@@ -1,6 +1,6 @@
 <template>
   <div
-    ref="seller"
+    ref="ratings"
     class="ratings"
   >
     <div class="ratings-content">
@@ -136,10 +136,9 @@ export default {
   },
   watch: {
     seller() { /* seller async data, at first is null */
-      this.$nextTick(() => {
-        this._initScroll()
-        this._initPics()
-      })
+      // this.$nextTick(() => {
+      //   this._initScroll()
+      // })
     }
   },
   created() {
@@ -157,11 +156,11 @@ export default {
       }).catch(() => {
       })
   },
-  mounted() {
-    this.$nextTick(() => {
-      this._initScroll()
-    })
-  },
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     this._initScroll()
+  //   })
+  // },
   methods: {
     selectRating(type) {
       this.selectType = type
@@ -187,7 +186,7 @@ export default {
     },
     _initScroll() {
       if (!this.scroll) {
-        this.scroll = new BScroll(this.$refs.seller, {
+        this.scroll = new BScroll(this.$refs.ratings, {
           click: true
         })
       } else {

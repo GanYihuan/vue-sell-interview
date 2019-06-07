@@ -1,5 +1,8 @@
 ﻿<template>
-  <div class="list-content">
+  <div
+    ref="merchant"
+    class="list-content"
+  >
     <h4 class="list-title">
       <span class="title-line" />
       <span>附近商家</span>

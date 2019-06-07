@@ -3,10 +3,12 @@
     ref="home"
     class="home"
   >
-    <Header />
-    <home-icon :list="iconList" />
-    <split />
-    <Merchant :merchant="merchant" />
+    <div>
+      <Header />
+      <HomeIcon :list="iconList" />
+      <Split />
+      <Merchant :merchant="merchant" />
+    </div>
   </div>
 </template>
 
@@ -44,6 +46,9 @@ export default {
         const { status, data } = res.data
         if (status === 1) {
           this.iconList = data
+          // this.$nextTick(() => {
+          //   this._initScroll()
+          // })
         }
       }).catch(() => {
       })
@@ -53,7 +58,9 @@ export default {
         const { status, data } = res.data
         if (status === 1) {
           this.merchant = data
-          console.log(this.merchant, 'merchant--')
+          // this.$nextTick(() => {
+          //   this._initScroll()
+          // })
         }
       }).catch(() => {
       })
@@ -71,3 +78,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+@import './home.styl'
+</style>
+
