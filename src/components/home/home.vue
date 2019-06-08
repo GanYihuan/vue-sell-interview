@@ -99,7 +99,7 @@ export default {
         this.scroll.on('touchend', (pos) => {
           if (pos.y > 1) {
             console.log('下拉动作')
-            this.loadData()
+            // this.loadData()
           }
         })
       } else {
