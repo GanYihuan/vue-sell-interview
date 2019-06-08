@@ -32,7 +32,7 @@
               />
             </div>
             <div class="item-count">
-              月售{{ item.month_sale_num }}
+              月售{{ item.month_sale_num > 999 ? '999+' : item.month_sale_num }}
             </div>
             <div class="item-distance">
               {{ item.distance }}
