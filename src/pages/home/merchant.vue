@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import Star from '../star/star'
+import Star from 'components/star/star'
 
 export default {
   name: 'Merchant',

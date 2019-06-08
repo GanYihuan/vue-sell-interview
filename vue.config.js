@@ -29,6 +29,7 @@ module.exports = {
       .set('api', path.join(__dirname, 'src/api'))
       .set('assets', path.join(__dirname, 'src/assets'))
       .set('components', path.join(__dirname, 'src/components'))
+      .set('pages', path.join(__dirname, 'src/pages'))
       .set('utils', path.join(__dirname, 'src/utils'))
     // 处理moment加载多个语言文件问题
     config

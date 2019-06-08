@@ -12,34 +12,34 @@ export default new Router({
     {
       path: '/navbar',
       name: 'navbar',
-      component: () => import(/* webpackChunkName: "about" */ './components/navbar/navbar.vue'),
+      component: () => import(/* webpackChunkName: "about" */ 'pages/navbar/navbar.vue'),
       children: [
         {
           path: '/home',
           name: 'home',
-          component: () => import(/* webpackChunkName: "about" */ './components/home/home.vue')
+          component: () => import(/* webpackChunkName: "about" */ 'pages/home/home.vue')
         },
         {
           path: '/my',
           name: 'my',
-          component: () => import(/* webpackChunkName: "about" */ './components/my/my.vue')
+          component: () => import(/* webpackChunkName: "about" */ 'pages/my/my.vue')
         }
       ]
     },
     {
       path: '/shop',
       name: 'shop',
-      component: () => import(/* webpackChunkName: "about" */ './components/shop/shop.vue'),
+      component: () => import(/* webpackChunkName: "about" */ 'pages/shop/shop.vue'),
       children: [ // <router-view></router-view> put into todo component inside, show sub-route
         {
           path: '/goods',
           name: 'goods',
-          component: () => import(/* webpackChunkName: "about" */ './components/goods/goods.vue')
+          component: () => import(/* webpackChunkName: "about" */ 'pages/goods/goods.vue')
         },
         {
           path: '/ratings',
           name: 'ratings',
-          component: () => import(/* webpackChunkName: "about" */ './components/ratings/ratings.vue')
+          component: () => import(/* webpackChunkName: "about" */ 'pages/ratings/ratings.vue')
         },
         {
           path: '/seller',
@@ -47,7 +47,7 @@ export default new Router({
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "about" */ './components/seller/seller.vue')
+          component: () => import(/* webpackChunkName: "about" */ 'pages/seller/seller.vue')
         }
       ]
     }

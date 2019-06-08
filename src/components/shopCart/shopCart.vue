@@ -117,7 +117,7 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
-import cartControl from '../cartControl/cartcontrol'
+import cartControl from 'components/cartControl/cartcontrol'
 
 export default {
   name: 'ShopCart',

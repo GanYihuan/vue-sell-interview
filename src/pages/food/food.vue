@@ -116,9 +116,9 @@
 <script type="text/ecmascript-6">
 import Vue from 'vue'
 import BScroll from 'better-scroll'
-import cartControl from '../cartControl/cartcontrol'
-import split from 'components/split/split.vue'
-import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
+import cartControl from 'components/cartControl/cartcontrol'
+import split from 'components/split/split'
+import ratingSelect from 'components/ratingSelect/ratingSelect'
 import ratingMixin from 'utils/mixins/rating'
 const ALL = 2
 const EVENT_ADD = 'add'

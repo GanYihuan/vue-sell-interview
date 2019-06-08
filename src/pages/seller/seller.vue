@@ -123,7 +123,7 @@
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
-import { saveToLocal, loadFromLocal } from '../../utils/storage'
+import { saveToLocal, loadFromLocal } from 'utils/storage'
 
 export default {
   name: 'Seller',

@@ -92,9 +92,9 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
-import shopCart from 'components/shopCart/shopCart.vue'
-import cartControl from '../cartControl/cartcontrol'
-import food from 'components/food/food.vue'
+import shopCart from 'components/shopCart/shopCart'
+import cartControl from 'components/cartControl/cartcontrol'
+import food from 'pages/food/food'
 import axios from 'axios'
 
 export default {

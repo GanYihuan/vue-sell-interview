@@ -30,18 +30,12 @@
         服务时间:&nbsp;9:00-23:00
       </p>
     </div>
-    <Navbar />
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import Navbar from '../navbar/navbar'
-
 export default {
-  name: 'Home',
-  components: {
-    Navbar
-  }
+  name: 'My'
 }
 </script>
 
