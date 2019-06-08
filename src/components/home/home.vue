@@ -80,8 +80,6 @@ export default {
     axios
       .all([axios.get('/api/home'), axios.get('/api/merchant')])
       .then(axios.spread((acc, pers) => {
-        const { data } = acc.data
-        this.home = data
         const getacc = () => {
           const { data } = acc.data
           this.iconList = data
