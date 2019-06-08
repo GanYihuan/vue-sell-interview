@@ -7,7 +7,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/navbar'
+      redirect: '/login'
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "about" */ 'pages/login/login.vue')
     },
     {
       path: '/navbar',
