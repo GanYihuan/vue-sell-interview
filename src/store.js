@@ -8,7 +8,7 @@ const debug = process.env.NODE_ENV !== 'production' // development mode is on, s
 
 export default new Vuex.Store({
   state: {
-
+    dateType: 'YYYY-MM-DD hh:mm:ss'
   },
   mutations: {
 
