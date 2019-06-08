@@ -95,14 +95,13 @@ export default {
       if (!this.scroll) {
         this.scroll = new BScroll(this.$refs.home)
         this.scroll.on('touchend', (pos) => {
-          // 下拉动作
           if (pos.y > 1) {
             console.log('下拉动作')
             this.loadData()
           }
         })
       } else {
-        this.scroll.refresh() /* prevent route switch scroll no work */
+        this.scroll.refresh()
       }
     }
   }
