@@ -69,37 +69,37 @@ export default {
     //     })
     //   }).catch(() => {
     //   })
-    // axios.get('/user/12345')
-    //   .then(function(response) {
-    //     console.log(response.data)
-    //     console.log(response.status)
-    //     console.log(response.statusText)
-    //     console.log(response.headers)
-    //     console.log(response.config)
-    //   })
-    axios
-      .all([axios.get('/api/home'), axios.get('/api/merchant')])
-      .then(axios.spread((acc, pers) => {
-        const getacc = () => {
-          const { data } = acc.data
-          this.iconList = data
-        }
-        const getmerchant = () => {
-          const { data } = pers.data
-          this.merchant = data
-        }
-        getacc()
-        getmerchant()
-        this.$nextTick(() => {
-          this._initScroll()
-        })
-      }))
+    this.loadData()
   },
   methods: {
+    loadData() {
+      axios
+        .all([axios.get('/api/home'), axios.get('/api/merchant')])
+        .then(axios.spread((acc, pers) => {
+          const getacc = () => {
+            const { data } = acc.data
+            this.iconList = data
+          }
+          const getmerchant = () => {
+            const { data } = pers.data
+            this.merchant = data
+          }
+          getacc()
+          getmerchant()
+          this.$nextTick(() => {
+            this._initScroll()
+          })
+        }))
+    },
     _initScroll() {
       if (!this.scroll) {
-        this.scroll = new BScroll(this.$refs.home, {
-          click: true
+        this.scroll = new BScroll(this.$refs.home)
+        this.scroll.on('touchend', (pos) => {
+          // 下拉动作
+          if (pos.y > 1) {
+            console.log('下拉动作')
+            this.loadData()
+          }
         })
       } else {
         this.scroll.refresh() /* prevent route switch scroll no work */
