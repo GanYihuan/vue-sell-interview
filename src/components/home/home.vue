@@ -43,30 +43,59 @@ export default {
     }
   },
   created() {
+    // axios
+    //   .get('/api/home')
+    //   .then((res) => {
+    //     const { status, data } = res.data
+    //     console.log(res.data, 'home--')
+    //     if (status === 1) {
+    //       this.iconList = data
+    //     }
+    //     this.$nextTick(() => {
+    //       this._initScroll()
+    //     })
+    //   }).catch(() => {
+    //   })
+    // axios
+    //   .get('/api/merchant')
+    //   .then((res) => {
+    //     const { status, data } = res.data
+    //     console.log(res.data, 'merchant--')
+    //     if (status === 1) {
+    //       this.merchant = data
+    //     }
+    //     this.$nextTick(() => {
+    //       this._initScroll()
+    //     })
+    //   }).catch(() => {
+    //   })
+    // axios.get('/user/12345')
+    //   .then(function(response) {
+    //     console.log(response.data)
+    //     console.log(response.status)
+    //     console.log(response.statusText)
+    //     console.log(response.headers)
+    //     console.log(response.config)
+    //   })
     axios
-      .get('/api/home')
-      .then((res) => {
-        const { status, data } = res.data
-        if (status === 1) {
+      .all([axios.get('/api/home'), axios.get('/api/merchant')])
+      .then(axios.spread((acc, pers) => {
+        const { data } = acc.data
+        this.home = data
+        const getacc = () => {
+          const { data } = acc.data
           this.iconList = data
         }
-        this.$nextTick(() => {
-          this._initScroll()
-        })
-      }).catch(() => {
-      })
-    axios
-      .get('/api/merchant')
-      .then((res) => {
-        const { status, data } = res.data
-        if (status === 1) {
+        const getmerchant = () => {
+          const { data } = pers.data
           this.merchant = data
         }
+        getacc()
+        getmerchant()
         this.$nextTick(() => {
           this._initScroll()
         })
-      }).catch(() => {
-      })
+      }))
   },
   methods: {
     _initScroll() {
