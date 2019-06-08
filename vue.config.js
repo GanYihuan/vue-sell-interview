@@ -31,6 +31,7 @@ module.exports = {
       .set('components', path.join(__dirname, 'src/components'))
       .set('pages', path.join(__dirname, 'src/pages'))
       .set('utils', path.join(__dirname, 'src/utils'))
+      .set('store', path.join(__dirname, 'src/store'))
     // 处理moment加载多个语言文件问题
     config
       .plugin('context')

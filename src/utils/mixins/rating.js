@@ -1,4 +1,5 @@
 import moment from 'moment'
+import { mapState } from 'vuex'
 const ALL = 2
 
 export default {
@@ -8,6 +9,9 @@ export default {
       onlyContent: true
     }
   },
+  computed: {
+    ...mapState(['dateType'])
+  },
   methods: {
     onSelect(type) {
       this.selectType = type
@@ -16,7 +20,7 @@ export default {
       this.onlyContent = !this.onlyContent
     },
     formatDate(time) {
-      return moment(time).format('YYYY-MM-DD hh:mm:ss')
+      return moment(time).format(this.dateType)
     }
   }
 }
