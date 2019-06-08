@@ -183,7 +183,7 @@ export default {
           click: true
         })
       } else {
-        this.scroll.refresh() /* prevent route switch scroll no work */
+        this.scroll.refresh()
       }
     },
     _initPics() {

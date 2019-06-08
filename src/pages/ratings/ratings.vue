@@ -134,13 +134,6 @@ export default {
       onlyContent: true
     }
   },
-  watch: {
-    seller() { /* seller async data, at first is null */
-      // this.$nextTick(() => {
-      //   this._initScroll()
-      // })
-    }
-  },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     axios
@@ -156,11 +149,6 @@ export default {
       }).catch(() => {
       })
   },
-  // mounted() {
-  //   this.$nextTick(() => {
-  //     this._initScroll()
-  //   })
-  // },
   methods: {
     selectRating(type) {
       this.selectType = type
@@ -190,7 +178,7 @@ export default {
           click: true
         })
       } else {
-        this.scroll.refresh() /* prevent route switch scroll no work */
+        this.scroll.refresh()
       }
     }
   }
