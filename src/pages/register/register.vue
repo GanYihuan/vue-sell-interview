@@ -67,7 +67,9 @@
               >
                 发送验证码
               </el-button>
-              <span class="status">{{ statusMsg }}</span>
+              <div class="status">
+                {{ statusMsg }}
+              </div>
             </el-form-item>
             <el-form-item
               label="验证码"
@@ -220,7 +222,7 @@ export default {
           })
           .then(({ status, data }) => {
             if (status === 200 && data && data.code === 0) { // After successful delivery, Verification code valid countdown
-              let count = 60
+              let count = 5
               that.statusMsg = `验证码已发送，剩余${count--}秒`
               that.timerid = setInterval(() => {
                 that.statusMsg = `验证码已发送，剩余${count--}秒`
