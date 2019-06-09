@@ -122,6 +122,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Header from '../home/header'
 // import CryptoJS from 'crypto-js' // encryption
 
@@ -195,7 +196,44 @@ export default {
       console.log('login')
     },
     sendMsg() {
-      console.log('sendMsg')
+      const that = this
+      let namePass
+      let emailPass
+      if (this.timerid) {
+        return false
+      }
+      this.$refs['ruleForm'].validateField('name', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
+        namePass = valid
+      })
+      if (namePass) {
+        return false
+      }
+      this.$refs['ruleForm'].validateField('email', valid => {
+        emailPass = valid
+      })
+      this.statusMsg = ''
+      if (!namePass && !emailPass) { // passed the check
+        axios
+          .post('/users/verify', {
+            username: encodeURIComponent(that.ruleForm.name), // encodeURIComponent: Encoding Chinese
+            email: that.ruleForm.email
+          })
+          .then(({ status, data }) => {
+            if (status === 200 && data && data.code === 0) { // After successful delivery, Verification code valid countdown
+              let count = 60
+              that.statusMsg = `验证码已发送，剩余${count--}秒`
+              that.timerid = setInterval(() => {
+                that.statusMsg = `验证码已发送，剩余${count--}秒`
+                if (count === 0) {
+                  clearInterval(that.timerid)
+                  that.statusMsg = ''
+                }
+              }, 1000)
+            } else {
+              that.statusMsg = data.msg
+            }
+          })
+      }
     },
     register() {
       console.log('register')
