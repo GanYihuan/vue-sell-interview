@@ -23,8 +23,8 @@
     </el-row>
     <el-row>
       <el-col
-        :span="4"
-        offset="4"
+        :span="5"
+        :offset="4"
       >
         <div
           v-if="error"
