@@ -28,15 +28,18 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use( // post handle
+// post handle
+app.use(
   bodyParser({
     extendTypes: ['json', 'form', 'text']
   })
 )
 
-app.use(json()) // data pretty
+// data pretty
+app.use(json())
 
-mongoose.connect( // Connect to the database
+// Connect to the database
+mongoose.connect(
   dbConfig.dbs,
   {
     useNewUrlParser: true
