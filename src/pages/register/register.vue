@@ -103,18 +103,11 @@
                 type="primary"
                 @click="register"
               >
-                同意以下协议并注册
+                注册
               </el-button>
               <div class="error">
                 {{ error }}
               </div>
-            </el-form-item>
-            <el-form-item>
-              <a
-                class="f1"
-                href="http://www.meituan.com/about/terms"
-                target="_blank"
-              >《美团网用户协议》</a>
             </el-form-item>
           </el-form>
         </el-col>
