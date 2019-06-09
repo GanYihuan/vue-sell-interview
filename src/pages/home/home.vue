@@ -4,7 +4,13 @@
     class="home"
   >
     <div class="home-content">
-      <Header />
+      <router-link
+        class="logo"
+        to="/login"
+        tab="li"
+      >
+        <Header />
+      </router-link>
       <HomeIcon :list="iconList" />
       <Split />
       <Merchant :merchant="merchant" />

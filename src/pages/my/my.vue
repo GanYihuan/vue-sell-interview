@@ -1,10 +1,16 @@
 ﻿<template>
   <div class="my">
     <div class="header">
-      <div class="icon" />
-      <div class="nickname">
-        美团小骑手
-      </div>
+      <router-link
+        class="logo"
+        to="/login"
+        tab="li"
+      >
+        <div class="icon" />
+        <div class="nickname">
+          美团小骑手
+        </div>
+      </router-link>
     </div>
     <div class="content">
       <ul class="items">
