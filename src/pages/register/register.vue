@@ -1,1 +1,209 @@
-﻿
+﻿<template>
+  <div class="login-page">
+    <el-row>
+      <el-col>
+        <router-link
+          class="logo"
+          to="/navbar"
+          tab="a"
+        >
+          <Header />
+        </router-link>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col
+        :span="21"
+        :offset="3"
+      >
+        <div class="form">
+          <h4
+            v-if="error"
+            class="tips"
+          >
+            <i />
+            {{ error }}
+          </h4>
+          <span class="register-text">注册账号</span>
+          <router-link
+            to="/login"
+            class="login-text"
+          >
+            <el-link type="primary">
+              直接登录
+            </el-link>
+          </router-link>
+        </div>
+      </el-col>
+    </el-row>
+    <section>
+      <el-row>
+        <el-col
+          :span="19"
+          :offset="0"
+        >
+          <el-form
+            ref="ruleForm"
+            :model="ruleForm"
+            :rules="rules"
+            class="demo-ruleForm"
+            label-width="100px"
+          >
+            <el-form-item
+              label="昵称"
+              prop="name"
+            >
+              <el-input v-model="ruleForm.name" />
+            </el-form-item>
+            <el-form-item
+              label="邮箱"
+              prop="email"
+            >
+              <el-input v-model="ruleForm.email" />
+              <el-button
+                size="mini"
+                round
+                @click="sendMsg"
+              >
+                发送验证码
+              </el-button>
+              <span class="status">{{ statusMsg }}</span>
+            </el-form-item>
+            <el-form-item
+              label="验证码"
+              prop="code"
+            >
+              <el-input
+                v-model="ruleForm.code"
+                maxlength="4"
+              />
+            </el-form-item>
+            <el-form-item
+              label="密码"
+              prop="pwd"
+            >
+              <el-input
+                v-model="ruleForm.pwd"
+                type="password"
+              />
+            </el-form-item>
+            <el-form-item
+              label="确认密码"
+              prop="cpwd"
+            >
+              <el-input
+                v-model="ruleForm.cpwd"
+                type="password"
+              />
+            </el-form-item>
+            <el-form-item>
+              <el-button
+                type="primary"
+                @click="register"
+              >
+                同意以下协议并注册
+              </el-button>
+              <div class="error">
+                {{ error }}
+              </div>
+            </el-form-item>
+            <el-form-item>
+              <a
+                class="f1"
+                href="http://www.meituan.com/about/terms"
+                target="_blank"
+              >《美团网用户协议》</a>
+            </el-form-item>
+          </el-form>
+        </el-col>
+      </el-row>
+    </section>
+  </div>
+</template>
+
+<script>
+import Header from '../home/header'
+// import CryptoJS from 'crypto-js' // encryption
+
+export default {
+  name: 'Login',
+  components: {
+    Header
+  },
+  data() {
+    return {
+      checked: '',
+      username: '',
+      password: '',
+      error: '',
+      statusMsg: '',
+      ruleForm: {
+        name: '',
+        code: '',
+        pwd: '',
+        cpwd: '',
+        email: ''
+      },
+      rules: {
+        name: [
+          {
+            required: true,
+            type: 'string',
+            message: '请输入昵称',
+            trigger: 'blur'
+          }
+        ],
+        email: [
+          {
+            required: true,
+            type: 'email',
+            message: '请输入邮箱',
+            trigger: 'blur'
+          }
+        ],
+        pwd: [
+          {
+            required: true,
+            message: '创建密码',
+            trigger: 'blur'
+          }
+        ],
+        cpwd: [
+          {
+            required: true,
+            message: '确认密码',
+            trigger: 'blur'
+          },
+          {
+            validator: (rule, value, callback) => { // Custom rule
+              if (value === '') {
+                callback(new Error('请再次输入密码'))
+              } else if (value !== this.ruleForm.pwd) {
+                callback(new Error('两次输入密码不一致'))
+              } else {
+                callback()
+              }
+            },
+            trigger: 'blur'
+          }
+        ]
+      }
+    }
+  },
+  methods: {
+    login() {
+      console.log('login')
+    },
+    sendMsg() {
+      console.log('sendMsg')
+    },
+    register() {
+      console.log('register')
+    }
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+@import './register.styl';
+</style>

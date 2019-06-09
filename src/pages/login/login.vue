@@ -4,8 +4,8 @@
       <el-col>
         <router-link
           class="logo"
-          to="/home"
-          tab="li"
+          to="/navbar"
+          tab="a"
         >
           <Header />
         </router-link>
@@ -67,7 +67,18 @@
           <el-checkbox v-model="checked">
             7天内自动登录
           </el-checkbox>
-          <strong>注册账号</strong>
+          <router-link
+            class="logo"
+            to="/register"
+            tab="a"
+          >
+            <el-link
+              type="primary"
+              :underline="false"
+            >
+              注册账号
+            </el-link>
+          </router-link>
         </div>
       </el-col>
     </el-row>

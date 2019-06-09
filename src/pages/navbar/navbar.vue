@@ -45,6 +45,9 @@ export default {
       // order: 'order',
       btnItem: 'btn-item'
     }
+  },
+  mounted() {
+    this.$router.push('/home')
   }
 }
 </script>
