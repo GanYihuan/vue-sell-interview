@@ -222,7 +222,7 @@ export default {
           })
           .then(({ status, data }) => {
             if (status === 200 && data && data.code === 0) { // After successful delivery, Verification code valid countdown
-              let count = 5
+              let count = 60
               that.statusMsg = `验证码已发送，剩余${count--}秒`
               that.timerid = setInterval(() => {
                 that.statusMsg = `验证码已发送，剩余${count--}秒`
