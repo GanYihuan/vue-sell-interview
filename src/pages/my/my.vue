@@ -15,25 +15,97 @@
     <div class="content">
       <ul class="items">
         <li class="address">
-          收货地址管理
+          <el-row>
+            <el-col :span="5">
+              您用户名
+            </el-col>
+            <el-col
+              :span="5"
+              :offset="1"
+            >
+              <el-link
+                type="warning"
+                :underline="false"
+              >
+                {{ user }}
+              </el-link>
+            </el-col>
+          </el-row>
         </li>
         <li class="money">
-          商家代金券
+          <el-row>
+            <el-col :span="5">
+              Email 地址
+            </el-col>
+            <el-col
+              :span="5"
+              :offset="1"
+            >
+              <el-link
+                type="warning"
+                :underline="false"
+              >
+                {{ email }}
+              </el-link>
+            </el-col>
+          </el-row>
         </li>
       </ul>
       <ul class="items">
         <li class="email">
-          意见反馈
+          <el-row>
+            <el-col :span="5">
+              <el-link
+                type="primary"
+                :underline="false"
+              >
+                意见反馈
+              </el-link>
+            </el-col>
+          </el-row>
         </li>
         <li class="question">
-          常见问题
+          <el-row>
+            <el-col :span="5">
+              <el-link
+                type="primary"
+                :underline="false"
+              >
+                常见问题
+              </el-link>
+            </el-col>
+          </el-row>
         </li>
       </ul>
       <p class="tel">
-        客服电话:&nbsp;101-097-77
+        <el-row>
+          <el-col
+            :span="10"
+            :offset="7"
+          >
+            <el-link
+              type="danger"
+              :underline="false"
+            >
+              客服电话:&nbsp;101-097-77
+            </el-link>
+          </el-col>
+        </el-row>
       </p>
-      <p class="time">
-        服务时间:&nbsp;9:00-23:00
+      <p class="tel">
+        <el-row>
+          <el-col
+            :span="10"
+            :offset="7"
+          >
+            <el-link
+              type="danger"
+              :underline="false"
+            >
+              服务时间:&nbsp;9:00-23:00
+            </el-link>
+          </el-col>
+        </el-row>
       </p>
     </div>
   </div>
@@ -46,13 +118,15 @@ export default {
   name: 'My',
   data() {
     return {
-      user: '默认用户名'
+      user: '默认用户名',
+      email: ''
     }
   },
   async mounted() {
-    const { status, data: { user }} = await axios.get('/users/getUser')
+    const { status, data: { user, email }} = await axios.get('/users/getUser')
     if (status === 200) {
       this.user = user
+      this.email = email
     }
   }
 }
