@@ -8,7 +8,7 @@
       >
         <div class="icon" />
         <div class="nickname">
-          美团小骑手
+          {{ user }}
         </div>
       </router-link>
     </div>
@@ -40,8 +40,21 @@
 </template>
 
 <script type="text/ecmascript-6">
+import axios from 'axios'
+
 export default {
-  name: 'My'
+  name: 'My',
+  data() {
+    return {
+      user: '默认用户名'
+    }
+  },
+  async mounted() {
+    const { status, data: { user }} = await axios.get('/users/getUser')
+    if (status === 200) {
+      this.user = user
+    }
+  }
 }
 </script>
 
