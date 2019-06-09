@@ -13,20 +13,24 @@
     </el-row>
     <el-row>
       <el-col
-        :span="4"
+        :span="16"
         :offset="4"
       >
         <div class="form">
-          <h4
-            v-if="error"
-            class="tips"
-          >
-            <i />
-            {{ error }}
-          </h4>
-          <p>
-            <span>账号登录</span>
-          </p>
+          账号登录
+        </div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col
+        :span="4"
+        offset="4"
+      >
+        <div
+          v-if="error"
+          class="tips"
+        >
+          {{ error }}
         </div>
       </el-col>
     </el-row>
@@ -102,7 +106,9 @@
 
 <script>
 import Header from '../home/header'
-// import CryptoJS from 'crypto-js' // encryption
+import CryptoJS from 'crypto-js' // encryption
+import axios from 'axios'
+
 export default {
   name: 'Login',
   components: {
@@ -116,10 +122,25 @@ export default {
       error: ''
     }
   },
-  layout: 'blank',
   methods: {
     login() {
-      console.log('login')
+      axios
+        .post('/users/signin', {
+          username: window.encodeURIComponent(this.username), // encodeURIComponent: Encoding Chinese
+          password: CryptoJS.MD5(this.password).toString() // CryptoJS.MD5 encryption
+        })
+        .then(({ status, data }) => {
+          if (status === 200) {
+            if (data && data.code === 0) {
+              // location.href = '/navbar'
+              this.$router.push('/navbar')
+            } else {
+              this.error = data.msg
+            }
+          } else {
+            this.error = `服务器出错`
+          }
+        })
     }
   }
 }
