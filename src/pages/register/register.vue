@@ -126,7 +126,7 @@
 <script>
 import axios from 'axios'
 import Header from '../home/header'
-// import CryptoJS from 'crypto-js' // encryption
+import CryptoJS from 'crypto-js' // encryption
 
 export default {
   name: 'Login',
@@ -238,7 +238,31 @@ export default {
       }
     },
     register() {
-      console.log('register')
+      this.$refs['ruleForm'].validate(valid => { // Verification form
+        if (valid) { // Verify all passed
+          axios
+            .post('/users/signup', {
+              username: window.encodeURIComponent(this.ruleForm.name),
+              password: CryptoJS.MD5(this.ruleForm.pwd).toString(), // CryptoJS.MD5 encryption
+              email: this.ruleForm.email,
+              code: this.ruleForm.code
+            })
+            .then(({ status, data }) => {
+              if (status === 200) {
+                if (data && data.code === 0) {
+                  location.href = '/login'
+                } else {
+                  this.error = data.msg
+                }
+              } else {
+                this.error = `服务器出错，错误码:${status}`
+              }
+              setTimeout(() => {
+                this.error = ''
+              }, 1500)
+            })
+        }
+      })
     }
   }
 }
