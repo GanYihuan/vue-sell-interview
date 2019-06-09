@@ -44,7 +44,12 @@ module.exports = {
     port: 8081,
     https: false,
     hotOnly: false,
-    proxy: null, // 设置代理
+    proxy: {
+      '/users': { // 2
+        target: 'http://localhost:3000' // 配置代理
+        // pathRewrite: { '/api': '' } // 重写路径
+      }
+    }, // 设置代理
     before: app => {
       app.get('/api/seller', (req, res) => {
         const id = req.query.id
