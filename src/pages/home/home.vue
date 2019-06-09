@@ -14,6 +14,7 @@
       <HomeIcon :list="iconList" />
       <Split />
       <Merchant :merchant="merchant" />
+      <!-- <BackTop /> -->
     </div>
   </div>
 </template>
@@ -25,10 +26,12 @@ import Split from 'components/split/split'
 import Header from './header'
 import HomeIcon from './icons'
 import Merchant from './merchant'
+// import BackTop from 'components/backTop/backTop'
 
 export default {
   name: 'Home',
   components: {
+    // BackTop,
     Split,
     Header,
     HomeIcon,
