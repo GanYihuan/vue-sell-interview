@@ -45,9 +45,8 @@ module.exports = {
     https: false,
     hotOnly: false,
     proxy: {
-      '/users': { // 2
+      '/users': {
         target: 'http://localhost:3000' // 配置代理
-        // pathRewrite: { '/api': '' } // 重写路径
       }
     }, // 设置代理
     before: app => {
