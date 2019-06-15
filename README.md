@@ -1,29 +1,29 @@
 # vue-sell-interview
 
-## Project setup
-```
-npm install
-```
+**main.js**
+**router.js**
+vue-awesome-swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+fastclick
+fastclick.attach(document.body) // fastclick: mobile-end click 300MS delay
 
-### Compiles and minifies for production
-```
-npm run build
-```
+vue-lazyload
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+  loading: require('../public/favicon.png')
+})
+component: () => import(/* webpackChunkName: "about" */ 'pages/login/login.vue')
 
-### Run your tests
-```
-npm run test
-```
+element-ui
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
 
-### Lints and fixes files
-```
-npm run lint
-```
+vuex
+import store from 'store/vuex'
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+vue-router
+import Router from 'vue-router'
