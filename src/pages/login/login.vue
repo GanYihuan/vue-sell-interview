@@ -132,7 +132,6 @@ export default {
         .then(({ status, data }) => {
           if (status === 200) {
             if (data && data.code === 0) {
-              // location.href = '/navbar'
               this.$router.push('/navbar')
             } else {
               this.error = data.msg

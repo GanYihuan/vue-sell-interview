@@ -12,16 +12,6 @@
           首页
         </div>
       </router-link>
-      <!-- <router-link
-        :class="[order, btnItem]"
-        to="/home"
-        tab="li"
-      >
-        <div class="icon" />
-        <div class="des">
-          订单
-        </div>
-      </router-link> -->
       <router-link
         :class="[my, btnItem]"
         to="/my"
@@ -42,7 +32,6 @@ export default {
     return {
       home: 'home',
       my: 'my',
-      // order: 'order',
       btnItem: 'btn-item'
     }
   },

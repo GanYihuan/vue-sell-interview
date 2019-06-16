@@ -187,9 +187,6 @@ export default {
     }
   },
   methods: {
-    login() {
-      console.log('login')
-    },
     sendMsg() {
       const that = this
       let namePass

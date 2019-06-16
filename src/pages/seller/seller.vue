@@ -141,8 +141,7 @@ export default {
   },
   data() {
     return {
-      /* immediately run function */
-      favorite: (() => {
+      favorite: (() => { /* immediately run function */
         return loadFromLocal(this.seller.id, 'favorite', false)
       })()
     }

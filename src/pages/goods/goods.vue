@@ -157,7 +157,6 @@ export default {
         if (status === 1) {
           this.goods = data
         }
-        console.log(this.goods, 'data goods--')
         this.$nextTick(() => {
           this._initScroll()
           this._calculateHeight()
@@ -177,7 +176,6 @@ export default {
         probeType: 2，会在屏幕滑动的过程中实时的派发 scroll 事件
         probeType: 3，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件(实时滚动位置)
         */
-        /* 3: 能获得实时滚动位置 */
         probeType: 3
       })
       /* 2. Real-time scroll position */

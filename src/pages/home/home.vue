@@ -14,7 +14,6 @@
       <HomeIcon :list="iconList" />
       <Split />
       <Merchant :merchant="merchant" />
-      <!-- <BackTop /> -->
     </div>
   </div>
 </template>
@@ -26,12 +25,10 @@ import Split from 'components/split/split'
 import Header from './header'
 import HomeIcon from './icons'
 import Merchant from './merchant'
-// import BackTop from 'components/backTop/backTop'
 
 export default {
   name: 'Home',
   components: {
-    // BackTop,
     Split,
     Header,
     HomeIcon,
@@ -52,32 +49,6 @@ export default {
     }
   },
   created() {
-    // axios
-    //   .get('/api/home')
-    //   .then((res) => {
-    //     const { status, data } = res.data
-    //     console.log(res.data, 'home--')
-    //     if (status === 1) {
-    //       this.iconList = data
-    //     }
-    //     this.$nextTick(() => {
-    //       this._initScroll()
-    //     })
-    //   }).catch(() => {
-    //   })
-    // axios
-    //   .get('/api/merchant')
-    //   .then((res) => {
-    //     const { status, data } = res.data
-    //     console.log(res.data, 'merchant--')
-    //     if (status === 1) {
-    //       this.merchant = data
-    //     }
-    //     this.$nextTick(() => {
-    //       this._initScroll()
-    //     })
-    //   }).catch(() => {
-    //   })
     this.loadData()
   },
   methods: {
@@ -108,7 +79,6 @@ export default {
         this.scroll.on('touchend', (pos) => {
           if (pos.y > 1) {
             console.log('下拉动作')
-            // this.loadData()
           }
         })
       } else {

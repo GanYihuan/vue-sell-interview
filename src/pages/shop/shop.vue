@@ -35,8 +35,7 @@
 
 <script>
 import VHeader from 'components/v-header/v-header'
-// import qs from 'query-string'
-import axios from 'axios' // Ajax
+import axios from 'axios'
 
 export default {
   name: 'Shop',
@@ -45,9 +44,6 @@ export default {
   },
   data() {
     return {
-      // seller: {
-      //   id: qs.parse(location.search.slice(1)).id
-      // }
       seller: {}
     }
   },
