@@ -165,7 +165,6 @@ export default {
       } else if (type === POSITIVE) {
         this.setbadcomment(false)
       }
-      console.log(this.badComment, 'this.comment....1')
       this.selectType = type
       this.$nextTick(() => {
         this.scroll.refresh()
