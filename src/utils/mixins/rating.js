@@ -10,7 +10,9 @@ export default {
     }
   },
   computed: {
-    ...mapState(['dateType'])
+    ...mapState({
+      dateType: state => state.dateType
+    })
   },
   methods: {
     onSelect(type) {

@@ -28,16 +28,17 @@
     </div>
     <div
       class="switch"
-      :class="{'on':onlyContent}"
+      :class="{'on':onlyContents}"
       @click="toggleContent"
     >
       <span class="icon-check_circle" />
-      <span class="text">只看有内容的评价</span>
+      <span class="text">只看差评</span>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex'
 const POSITIVE = 0
 const NEGATIVE = 1
 const ALL = 2
@@ -57,22 +58,21 @@ export default {
       type: Number,
       default: ALL
     },
-    onlyContent: {
-      type: Boolean,
-      default: false
-    },
     desc: {
       type: Object,
       default() {
         return {
           all: '全部',
-          positive: '满意',
-          negative: '吐槽'
+          positive: '好评',
+          negative: '差评'
         }
       }
     }
   },
   computed: {
+    ...mapState({
+      badComment: state => state.badComment
+    }),
     positives() {
       return this.ratings.filter(rating => {
         return rating.rateType === POSITIVE
@@ -82,6 +82,9 @@ export default {
       return this.ratings.filter(rating => {
         return rating.rateType === NEGATIVE
       })
+    },
+    onlyContents() {
+      return this.badComment === true
     }
   },
   methods: {

@@ -1,0 +1,1 @@
+﻿export const SET_BADCOMMENT = 'SET_BADCOMMENT'
