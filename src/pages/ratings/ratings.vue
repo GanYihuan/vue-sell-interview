@@ -103,7 +103,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import { mapState, mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 import axios from 'axios'
 import ratingMixin from 'utils/mixins/rating'
 import BScroll from 'better-scroll'
@@ -137,11 +137,6 @@ export default {
       onlyContent: true
     }
   },
-  computed: {
-    ...mapState({
-      badComment: state => state.badComment
-    })
-  },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     axios
@@ -173,6 +168,7 @@ export default {
     toggleContent() {
       this.onlyContent = !this.onlyContent
       this.onlyContent === true ? this.setbadcomment(true) : this.setbadcomment(false)
+      this.onlyContent === true ? this.selectType = POSITIVE : this.selectType = NEGATIVE
       this.$nextTick(() => {
         this.scroll.refresh()
       })
