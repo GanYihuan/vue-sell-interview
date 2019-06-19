@@ -1,4 +1,4 @@
-import storage from 'good-storage'
+import storage from 'good-storage' // 存储库，实现sessionStorage和localStorage功能
 
 const SELLER_KEY = '__seller__'
 

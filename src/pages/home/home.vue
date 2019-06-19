@@ -76,11 +76,6 @@ export default {
         this.scroll = new BScroll(this.$refs.home, {
           click: true
         })
-        // this.scroll.on('touchend', (pos) => {
-        //   if (pos.y > 1) {
-        //     console.log('下拉动作')
-        //   }
-        // })
       } else {
         this.scroll.refresh()
       }

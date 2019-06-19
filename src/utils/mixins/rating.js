@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment' // 时间格式处理
 import { mapState } from 'vuex'
 const ALL = 2
 
