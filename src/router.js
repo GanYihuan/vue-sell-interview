@@ -5,7 +5,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
+    { // default route jump
       path: '/',
       redirect: '/login'
     },
@@ -40,7 +40,7 @@ export default new Router({
       path: '/shop',
       name: 'shop',
       component: () => import(/* webpackChunkName: "about" */ 'pages/shop/shop.vue'),
-      children: [ // <router-view></router-view> put into todo component inside, show sub-route
+      children: [
         {
           path: '/goods',
           name: 'goods',
@@ -54,14 +54,21 @@ export default new Router({
         {
           path: '/seller',
           name: 'seller',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
           component: () => import(/* webpackChunkName: "about" */ 'pages/seller/seller.vue')
         }
       ]
     }
   ],
-  // when active, add className=active
-  linkActiveClass: 'active'
+  linkActiveClass: 'active', // when active, add className=active
+  mode: 'history', // Remove the hash of the address bar #
+  scrollBehavior(to, from, savedPosition) { // Page scrolls to the specified location when the route jumps
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { // Specified location
+        x: 0,
+        y: 0
+      }
+    }
+  }
 })

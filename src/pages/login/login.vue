@@ -4,7 +4,7 @@
       <el-col>
         <router-link
           class="logo"
-          to="/navbar"
+          to="/my"
           tab="a"
         >
           <Header />
@@ -67,30 +67,6 @@
         :span="16"
         :offset="4"
       >
-        <div class="foot">
-          <el-checkbox v-model="checked">
-            7天内自动登录
-          </el-checkbox>
-          <router-link
-            class="logo"
-            to="/register"
-            tab="a"
-          >
-            <el-link
-              type="primary"
-              :underline="false"
-            >
-              注册账号
-            </el-link>
-          </router-link>
-        </div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col
-        :span="16"
-        :offset="4"
-      >
         <el-button
           class="btn-login"
           round
@@ -99,13 +75,27 @@
         >
           登录
         </el-button>
+        <el-button
+          class="btn-register"
+          round
+          size="mini"
+          @click="login"
+        >
+          <router-link
+            class="register-link"
+            to="/register"
+            tab="a"
+          >
+            注册
+          </router-link>
+        </el-button>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import Header from '../home/header'
+import Header from 'pages/home/header'
 import CryptoJS from 'crypto-js' // encryption
 import axios from 'axios'
 
@@ -134,7 +124,11 @@ export default {
             if (data && data.code === 0) {
               this.$router.push('/navbar')
             } else {
-              this.error = data.msg
+              if (data.msg === '密码错误') {
+                this.error = data.msg
+              } else {
+                this.error = '信息不全'
+              }
             }
           } else {
             this.error = `服务器出错`

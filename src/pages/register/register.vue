@@ -25,14 +25,6 @@
             {{ error }}
           </h4>
           <span class="register-text">注册账号</span>
-          <router-link
-            to="/login"
-            class="login-text"
-          >
-            <el-link type="primary">
-              直接登录
-            </el-link>
-          </router-link>
         </div>
       </el-col>
     </el-row>
@@ -104,6 +96,12 @@
                 @click="register"
               >
                 注册
+              </el-button>
+              <el-button
+                type="primary"
+                @click="login"
+              >
+                登录
               </el-button>
               <div class="error">
                 {{ error }}
@@ -253,6 +251,9 @@ export default {
             })
         }
       })
+    },
+    login() {
+      this.$router.push('/login')
     }
   }
 }
