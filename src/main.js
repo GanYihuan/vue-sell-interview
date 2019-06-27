@@ -8,15 +8,13 @@ import VueLazyload from 'vue-lazyload' // 图片延迟加载插件，实现标�
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'swiper/dist/css/swiper.css'
-import './assets/scss/index.scss'
-import '../static/css/reset.css'
-
-Vue.use(VueAwesomeSwiper)
-Vue.use(ElementUI)
+import 'assets/stylus/index.styl'
+import 'assets/reset.css'
 
 fastclick.attach(document.body)
-// Vue.config.productionTip = false
-
+Vue.use(VueAwesomeSwiper)
+Vue.use(ElementUI)
+Vue.config.productionTip = false // close Vue production tip
 Vue.use(VueLazyload, {
   loading: require('../public/favicon.png')
 })
