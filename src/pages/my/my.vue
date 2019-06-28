@@ -57,26 +57,6 @@
           </el-row>
         </li>
       </ul>
-      <!-- <p class="tel">
-        <el-row>
-          <el-col
-            :span="10"
-            :offset="7"
-          >
-            客服电话:&nbsp;101-097-77
-          </el-col>
-        </el-row>
-      </p>
-      <p class="tel">
-        <el-row>
-          <el-col
-            :span="10"
-            :offset="7"
-          >
-            服务时间:&nbsp;9:00-23:00
-          </el-col>
-        </el-row>
-      </p> -->
     </div>
   </div>
 </template>
