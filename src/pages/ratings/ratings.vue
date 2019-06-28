@@ -137,20 +137,29 @@ export default {
       onlyContent: true
     }
   },
+  async mounted() {
+    const { status, data: { ratings }} = await axios.get('/ratings/getRating')
+    if (status === 200) {
+      this.ratings = ratings
+      this.$nextTick(() => {
+        this._initScroll()
+      })
+    }
+  },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    axios
-      .get('/api/ratings')
-      .then((res) => {
-        const { status, data } = res.data
-        if (status === 1) {
-          this.ratings = data
-        }
-        this.$nextTick(() => {
-          this._initScroll()
-        })
-      }).catch(() => {
-      })
+    // axios
+    //   .get('/api/ratings')
+    //   .then((res) => {
+    //     const { status, data } = res.data
+    //     if (status === 1) {
+    //       this.ratings = data
+    //     }
+    //     this.$nextTick(() => {
+    //       this._initScroll()
+    //     })
+    //   }).catch(() => {
+    //   })
   },
   methods: {
     ...mapMutations({ setbadcomment: 'SET_BADCOMMENT' }),
