@@ -112,7 +112,8 @@ export default {
       checked: '',
       username: '',
       password: '',
-      error: ''
+      error: '',
+      focus: false
     }
   },
   methods: {
@@ -125,7 +126,7 @@ export default {
         .then(({ status, data }) => {
           if (status === 200) {
             if (data && data.code === 0) {
-              this.$router.push('/navbar')
+              this.$router.push('/my')
             } else {
               if (data.msg === '密码错误') {
                 this.error = data.msg
