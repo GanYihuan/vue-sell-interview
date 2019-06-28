@@ -7,10 +7,10 @@ import fastclick from 'fastclick' // fastclick: 移动端点击延迟300MS
 import VueLazyload from 'vue-lazyload' // 图片延迟加载插件，实现标志图片的加载
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'notyf/notyf.min.css'
 import 'swiper/dist/css/swiper.css'
 import 'assets/stylus/index.styl'
 import 'assets/reset.css'
-import 'notyf/notyf.min.css' // for React and Vue
 
 fastclick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
