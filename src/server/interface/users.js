@@ -20,7 +20,7 @@ router.post('/signup', async ctx => {
     password
   } = ctx.request.body // get user upload data (register.vue pass parameter)
   if (code) {
-    const saveCode = await Store.hget(`nodemail:${username}`, 'code') // redis hget() verifycode, '/signin' Store.hset()
+    const saveCode = await Store.hget(`nodemail:${username}`, 'code') // redis hget() verifycode, '/verify' Store.hset()
     const saveExpire = await Store.hget(`nodemail:${username}`, 'expire')
     if (code === saveCode) {
       if (new Date().getTime() - saveExpire > 0) {
@@ -104,14 +104,6 @@ router.post('/signin', async(ctx, next) => {
     }
   })(ctx, next)
 })
-
-// router.get('/fix', async ctx => {
-//   // Store.hset(`test`, "name", "111");
-//   ctx.session.name = 'nidie'
-//   ctx.body = {
-//     code: 0
-//   }
-// })
 
 router.post('/verify', async(ctx, next) => {
   const { username } = ctx.request.body // register.vue pass parameter

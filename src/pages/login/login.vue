@@ -23,43 +23,38 @@
     </el-row>
     <el-row>
       <el-col
-        :span="5"
+        :span="16"
         :offset="4"
       >
-        <div
-          v-if="error"
-          class="tips"
+        <el-form
+          ref="ruleForm"
+          :model="ruleForm"
+          :rules="rules"
+          class="demo-ruleForm"
         >
-          {{ error }}
-        </div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col
-        :span="16"
-        :offset="4"
-      >
-        <el-input
-          v-model="username"
-          class="username"
-          placeholder="请输入用户名"
-          prefix-icon="el-icon-user"
-        />
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col
-        :span="16"
-        :offset="4"
-      >
-        <el-input
-          v-model="password"
-          class="password"
-          prefix-icon="el-icon-unlock"
-          placeholder="请输入密码"
-          show-password
-          type="password"
-        />
+          <el-form-item
+            prop="name"
+          >
+            <el-input
+              v-model="ruleForm.name"
+              class="username"
+              placeholder="请输入用户名"
+              prefix-icon="el-icon-user"
+            />
+          </el-form-item>
+          <el-form-item
+            prop="pwd"
+          >
+            <el-input
+              v-model="ruleForm.pwd"
+              class="password"
+              prefix-icon="el-icon-unlock"
+              placeholder="请输入密码"
+              show-password
+              type="password"
+            />
+          </el-form-item>
+        </el-form>
       </el-col>
     </el-row>
     <el-row>
@@ -94,6 +89,19 @@
         </el-button>
       </el-col>
     </el-row>
+    <el-row>
+      <el-col
+        :span="5"
+        :offset="4"
+      >
+        <div
+          v-if="error"
+          class="tips"
+        >
+          {{ error }}
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -110,28 +118,58 @@ export default {
   data: () => {
     return {
       checked: '',
-      username: '',
-      password: '',
       error: '',
-      focus: false
+      focus: false,
+      ruleForm: {
+        name: '',
+        pwd: ''
+      },
+      rules: {
+        name: [
+          {
+            required: true,
+            type: 'string',
+            message: '请输入昵称',
+            trigger: 'blur'
+          }
+        ],
+        pwd: [
+          {
+            required: true,
+            message: '请输入密码',
+            trigger: 'blur'
+          }
+        ]
+      }
     }
   },
   methods: {
     login() {
+      let namePass
+      let pwdPass
+      this.$refs['ruleForm'].validateField('name', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
+        namePass = valid
+      })
+      this.$refs['ruleForm'].validateField('pwd', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
+        pwdPass = valid
+      })
+      if (namePass || namePass) {
+        return false
+      }
       axios
         .post('/users/signin', {
-          username: window.encodeURIComponent(this.username), // encodeURIComponent: Encoding Chinese
-          password: CryptoJS.MD5(this.password).toString() // CryptoJS.MD5 encryption
+          username: window.encodeURIComponent(this.ruleForm.name), // encodeURIComponent: Encoding Chinese
+          password: CryptoJS.MD5(this.ruleForm.pwd).toString() // CryptoJS.MD5 encryption
         })
         .then(({ status, data }) => {
           if (status === 200) {
             if (data && data.code === 0) {
               this.$router.push('/my')
             } else {
-              if (data.msg === '密码错误') {
-                this.error = data.msg
+              if (namePass || pwdPass) {
+                this.error = ''
               } else {
-                this.error = '信息不全'
+                this.error = data.msg
               }
             }
           } else {

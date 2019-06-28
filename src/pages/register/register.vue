@@ -25,6 +25,9 @@
             {{ error }}
           </h4>
           <span class="register-text">注册账号</span>
+          <div class="error">
+            {{ error }}
+          </div>
         </div>
       </el-col>
     </el-row>
@@ -91,20 +94,25 @@
           </el-form-item>
           <el-form-item>
             <el-button
-              type="primary"
+              class="btn"
+              type="warning"
+              plain
+              size="medium"
               @click="register"
             >
               注册
             </el-button>
+          </el-form-item>
+          <el-form-item>
             <el-button
-              type="primary"
+              class="btn"
+              type="warning"
+              plain
+              size="medium"
               @click="login"
             >
               登录
             </el-button>
-            <div class="error">
-              {{ error }}
-            </div>
           </el-form-item>
         </el-form>
       </el-col>
