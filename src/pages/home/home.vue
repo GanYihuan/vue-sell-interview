@@ -1,26 +1,52 @@
 ﻿<template>
-  <div
-    ref="home"
-    class="home"
-  >
-    <div class="home-content">
-      <router-link
-        class="logo"
-        to="/login"
-        tab="li"
+  <div class="homePage">
+    <Scroll
+      ref="home"
+      class="home"
+      :listen-scroll="listenScroll"
+      :probe-type="probeType"
+      @scroll="scroll"
+    >
+      <div class="home-content">
+        <router-link
+          class="logo"
+          to="/login"
+          tab="li"
+        >
+          <Header />
+        </router-link>
+        <HomeIcon :list="iconList" />
+        <Split />
+        <Merchant :merchant="merchant" />
+      </div>
+      <div
+        v-show="scrollY < 0"
+        class="back-to-ceiling"
+        @click="backTop"
       >
-        <Header />
-      </router-link>
-      <HomeIcon :list="iconList" />
-      <Split />
-      <Merchant :merchant="merchant" />
-    </div>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 17 17"
+          xmlns="http://www.w3.org/2000/svg"
+          class="Icon Icon--backToTopArrow"
+          aria-hidden="true"
+        >
+          <g>
+            <path
+              d="M12.036 15.59c0 .55-.453.995-.997.995H5.032c-.55 0-.997-.445-.997-.996V8.584H1.03c-1.1 0-1.36-.633-.578-1.416L7.33.29c.39-.39 1.026-.385 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.004z"
+              fill-rule="evenodd"
+            />
+          </g>
+        </svg>
+      </div>
+    </Scroll>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+import Scroll from 'components/scroll/scroll'
 import axios from 'axios'
-import BScroll from 'better-scroll'
 import Split from 'components/split/split'
 import Header from './header'
 import HomeIcon from './icons'
@@ -32,6 +58,7 @@ export default {
     Split,
     Header,
     HomeIcon,
+    Scroll,
     Merchant
   },
   props: {
@@ -45,10 +72,19 @@ export default {
   data() {
     return {
       iconList: [],
-      merchant: []
+      merchant: [],
+      scrollY: 0 // real time roll position
+    }
+  },
+  computed: {
+    showBackTop() {
+      return this.scrollY < -50
     }
   },
   created() {
+    this.probeType = 3
+    this.listenScroll = true
+    this.click = true
     this.loadData()
   },
   methods: {
@@ -66,24 +102,13 @@ export default {
           }
           getacc()
           getmerchant()
-          this.$nextTick(() => {
-            // 在 Vue 模板中列表渲染还没完成时，是没有生成列表 DOM 元素的，所以需要在确保列表渲染完成以后，才能创建 BScroll 实例，因此在 Vue 中，初始化 BScroll 的最佳时机是 mouted 的 nextTick。
-            this._initScroll()
-          })
         }))
     },
-    _initScroll() {
-      if (!this.scroll) {
-        const options = {
-          click: true
-        }
-        options.pullUpLoad = {
-          threshold: -20 // 在上拉到超过底部 20px 时，触发 pullingUp 事件
-        }
-        this.scroll = new BScroll(this.$refs.home, options)
-      } else {
-        this.scroll.refresh()
-      }
+    scroll(pos) {
+      this.scrollY = pos.y
+    },
+    backTop() {
+      this.$refs.home.scrollTo(0, 0, 1000)
     }
   }
 }
