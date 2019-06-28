@@ -50,6 +50,9 @@ module.exports = {
       },
       '/goods': {
         target: 'http://localhost:3000' // 配置代理
+      },
+      '/seller': {
+        target: 'http://localhost:3000' // 配置代理
       }
     }, // 设置代理
     before: app => {

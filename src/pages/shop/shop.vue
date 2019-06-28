@@ -45,18 +45,24 @@ export default {
       seller: {}
     }
   },
-  created() {
-    this.$router.push('/goods')
-    axios
-      .get('/api/seller')
-      .then((res) => {
-        const { status, data } = res.data
-        if (status === 1) {
-          this.seller = data
-        }
-      }).catch(() => {
-      })
+  async mounted() {
+    const { status, data: { name, description, score, serviceScore, foodScore, rankRate, ratingCount, minPrice, deliveryPrice, deliveryTime, bulletin, supports, infos, pics, avatar, sellCount }} = await axios.get('/sellers/getSeller')
+    if (status === 200) {
+      this.seller = Object.assign({}, { name, description, score, serviceScore, foodScore, rankRate, ratingCount, minPrice, deliveryPrice, deliveryTime, bulletin, supports, infos, pics, avatar, sellCount })
+    }
   }
+  // created() {
+  //   this.$router.push('/goods')
+  //   axios
+  //     .get('/api/seller')
+  //     .then((res) => {
+  //       const { status, data } = res.data
+  //       if (status === 1) {
+  //         this.seller = data
+  //       }
+  //     }).catch(() => {
+  //     })
+  // }
 }
 </script>
 
