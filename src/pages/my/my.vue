@@ -17,7 +17,7 @@
         <li class="address">
           <el-row>
             <el-col :span="5">
-              您用户名
+              用户名
             </el-col>
             <el-col
               :span="5"
@@ -30,7 +30,7 @@
         <li class="money">
           <el-row>
             <el-col :span="5">
-              Email 地址
+              Email
             </el-col>
             <el-col
               :span="5"
@@ -57,7 +57,7 @@
           </el-row>
         </li>
       </ul>
-      <p class="tel">
+      <!-- <p class="tel">
         <el-row>
           <el-col
             :span="10"
@@ -76,7 +76,7 @@
             服务时间:&nbsp;9:00-23:00
           </el-col>
         </el-row>
-      </p>
+      </p> -->
     </div>
   </div>
 </template>
