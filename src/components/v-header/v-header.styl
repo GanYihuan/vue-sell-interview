@@ -8,48 +8,48 @@
   overflow: hidden
 .content-wrapper
   position: relative
-  padding: 24px 12px 18px 24px
+  padding: 1.5rem .75rem 1.125rem 1.5rem
   // Eliminate gaps, parent element settings font-size: 0
   font-size: 0
   .avatar
     display: inline-block
     vertical-align: top
     img
-      width: 64px
-      height: 64px
-      border-radius: 4px
+      width: 4rem
+      height: 4rem
+      border-radius: .25rem
   .content
     display: inline-block
-    margin-left: 16px
+    margin-left: 1rem
     .title
-      margin: 2px 0 8px 0
+      margin: .125rem 0 .5rem 0
       .brand
         display: inline-block
         // span become block element, can set width & height
-        width: 30px
-        height: 18px
+        width: 1.875rem
+        height: 1.125rem
         vertical-align: top
         bg-image("brand")
         // 2x3x image
-        background-size: 30px 18px
+        background-size: 1.875rem 1.125rem
         background-repeat: no-repeat
       .name
-        margin-left: 6px
-        line-height: 18px
-        font-size: 16px
+        margin-left: .375rem
+        line-height: 1.125rem
+        font-size: 1rem
         font-weight: bold
     .description
-      margin-bottom: 10px
-      line-height: 12px
-      font-size: 12px
+      margin-bottom: .625rem
+      line-height: .75rem
+      font-size: .75rem
     .support
       .icon
         display: inline-block
-        margin-right: 4px
-        width: 12px
-        height: 12px
+        margin-right: .25rem
+        width: .75rem
+        height: .75rem
         vertical-align: top
-        background-size: 12px 12px
+        background-size: .75rem .75rem
         background-repeat: no-repeat
         &.decrease
           bg-image("decrease_1")
@@ -62,39 +62,39 @@
         &.special
           bg-image("special_1")
       .text
-        line-height: 12px
-        font-size: 10px
+        line-height: .75rem
+        font-size: .625rem
   .support-count
     position: absolute
-    right: 12px
-    bottom: 14px
-    padding: 0 8px
-    border-radius: 14px
-    height: 24px
-    line-height: 24px
+    right: .75rem
+    bottom: .875rem
+    padding: 0 .5rem
+    border-radius: .875rem
+    height: 1.5rem
+    line-height: 1.5rem
     text-align: center
     background: $color-black-s
     .count
       vertical-align: top
-      font-size: 10px
+      font-size: .625rem
     .icon-keyboard_arrow_right
-      margin-left: 2px
-      line-height: 24px
-      font-size: 10px
+      margin-left: .125rem
+      line-height: 1.5rem
+      font-size: .625rem
   .back
     position: absolute
-    top: 10px
+    top: .625rem
     right: 0
     .icon-arrow_lift
       display: block
-      padding: 10px
-      font-size: 20px
+      padding: .625rem
+      font-size: 1.25rem
       color: $color-white
 .bulletin-wrapper
   position: relative
-  padding: 0 22px 0 12px
-  height: 28px
-  line-height: 28px
+  padding: 0 1.375rem 0 .75rem
+  height: 1.75rem
+  line-height: 1.75rem
   background: $color-black-ss
   // ...
   text-overflow: ellipsis
@@ -103,22 +103,22 @@
   // ...
   .bulletin-title
     display: inline-block
-    margin: 8px 0 0 0
-    width: 22px
-    height: 12px
+    margin: .5rem 0 0 0
+    width: 1.375rem
+    height: .75rem
     vertical-align: top
     bg-image("bulletin")
-    background-size: 22px 12px
+    background-size: 1.375rem .75rem
     background-repeat: no-repeat
   .bulletin-text
-    margin: 0 4px
+    margin: 0 .25rem
     vertical-align: top
-    font-size: 10px
+    font-size: .625rem
   .icon-keyboard_arrow_right
     position: absolute
-    top: 8px
-    right: 12px
-    font-size: 10px
+    top: .5rem
+    right: .75rem
+    font-size: .625rem
 .background
   z-index: -1
   position: absolute
@@ -127,7 +127,7 @@
   width: 100%
   height: 100%
   // blurry background img
-  filter: blur(10px)
+  filter: blur(.625rem)
   img
     width: 100%
     height: 100%
@@ -142,7 +142,7 @@
   overflow: auto
   transition: all 0.5s
   // ios blurry
-  backdrop-filter: blur(10px)
+  backdrop-filter: blur(.625rem)
   &.fade-transition
     background: $color-black-s
     opacity: 1
@@ -155,48 +155,48 @@
     min-height: 100%
     /* 3: A The length of the package content will change */
     .detail-main
-      margin-top: 64px
-      padding-bottom: 64px
+      margin-top: 1.25rem
+      padding-bottom: 4rem
       /* 4: A give B Reserved space */
       .name
-        line-height: 16px
+        line-height: 1rem
         text-align: center
-        font-size: 16px
+        font-size: 1rem
         font-weight: 700
       .star-wrapper
-        margin-top: 18px
-        padding: 2px 0
+        margin-top: 1.125rem
+        padding: .125rem 0
         text-align: center
       .title
         display: flex
-        margin: 28px auto
+        margin: 1.75rem auto
         // block elment, Horizontally centered
         width: 80%
         .line
           flex: 1
           position: relative
-          top: -6px
-          border-bottom: 1px solid $color-light-blue
+          top: -0.375rem
+          border-bottom: .0625rem solid $color-light-blue
         .text
-          padding: 0 12px
-          font-size: 14px
+          padding: 0 .75rem
+          font-size: .875rem
           font-weight: 700
       .supports
         margin: 0 auto
         width: 80%
         .support-item
-          margin-bottom: 12px
-          padding: 0 12px
+          margin-bottom: .75rem
+          padding: 0 .75rem
           font-size: 0
           &:last-child
             margin-bottom: 0
           .icon
             display: inline-block
-            margin-right: 6px
-            width: 16px
-            height: 16px
+            margin-right: .375rem
+            width: 1rem
+            height: 1rem
             vertical-align: top
-            background-size: 16px 16px
+            background-size: 1rem 1rem
             background-repeat: no-repeat
             &.decrease
               bg-image("decrease_2")
@@ -209,23 +209,23 @@
             &.special
               bg-image("special_2")
           .text
-            line-height: 16px
-            font-size: 12px
+            line-height: 1rem
+            font-size: .75rem
       .bulletin
         margin: 0 auto
         // Horizontally centered
         width: 80%
         .content
-          padding: 0 12px
-          line-height: 24px
-          font-size: 12px
+          padding: 0 .75rem
+          line-height: 1.5rem
+          font-size: .75rem
   .detail-close
     position: relative
-    margin: -64px auto 0
+    margin: -4rem auto 0
     /* 5: B Embed A give B reserved space */
-    width: 32px
-    height: 32px
-    font-size: 32px
+    width: 2rem
+    height: 2rem
+    font-size: 2rem
     // Fork size
     clear: both
     /* 6: B clear: both */

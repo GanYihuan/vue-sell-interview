@@ -6,7 +6,7 @@
   left: 0
   bottom: 0
   width: 100%
-  height: 48px
+  height: 3rem
   .content
     display: flex
     font-size: 0
@@ -18,28 +18,28 @@
         box-sizing: border-box
         display: inline-block
         position: relative
-        top: -10px
-        margin: 0 12px
-        padding: 6px
+        top: -0.625rem
+        margin: 0 .75rem
+        padding: .375rem
         border-radius: 50%
-        width: 56px
-        height: 56px
+        width: 3.5rem
+        height: 3.5rem
         vertical-align: top
         background: $color-black
         .num
           position: absolute
           top: 0
           right: 0
-          border-radius: 16px
-          width: 24px
-          height: 24px
-          line-height: 24px
+          border-radius: 1rem
+          width: 1.5rem
+          height: 1.5rem
+          line-height: 1.5rem
           text-align: center
-          font-size: 9px
+          font-size: .5625rem
           font-weight: 700
           color: $color-white
           background: $color-red
-          box-shadow: 0 4px 8px 0 $color-black
+          box-shadow: 0 .25rem .5rem 0 $color-black
         .logo
           border-radius: 50%
           width: 100%
@@ -49,40 +49,40 @@
           &.highlight
             background: $color-blue
           .icon-shopping_cart
-            line-height: 44px
-            font-size: 24px
+            line-height: 2.75rem
+            font-size: 1.5rem
             color: $color-gray
             &.highlight
               color: $color-white
       .price
         box-sizing: border-box
         display: inline-block
-        margin-top: 12px
-        padding-right: 12px
-        border-right: 1px solid $color-light-blue
-        line-height: 24px
+        margin-top: .75rem
+        padding-right: .75rem
+        border-right: .0625rem solid $color-light-blue
+        line-height: 1.5rem
         vertical-align: top
-        font-size: 16px
+        font-size: 1rem
         font-weight: 700
         color: $color-gray
         &.highlight
           color: $color-white
       .desc
         display: inline-block
-        margin-left: 12px
-        margin-top: 12px
-        line-height: 24px
+        margin-left: .75rem
+        margin-top: .75rem
+        line-height: 1.5rem
         vertical-align: top
-        font-size: 10px
+        font-size: .625rem
         color: $color-gray
     .content-right
-      flex: 0 0 105px
-      width: 105px
+      flex: 0 0 6.5625rem
+      width: 6.5625rem
       .pay
-        height: 48px
-        line-height: 48px
+        height: 3rem
+        line-height: 3rem
         text-align: center
-        font-size: 12px
+        font-size: .75rem
         font-weight: 700
         color: $color-gray
         background: $color-light-blue
@@ -95,13 +95,13 @@
     .ball
       z-index: 200
       position: fixed
-      left: 32px
-      bottom: 22px
+      left: 2rem
+      bottom: 1.375rem
       transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41)
       .inner
         border-radius: 50%
-        width: 16px
-        height: 16px
+        width: 1rem
+        height: 1rem
         background: $color-blue
         transition: all 0.5s linear
   .shopCart-list
@@ -118,45 +118,45 @@
     &.fold-leave-active
       transform: translate3d(0, 0, 0)
     .list-header
-      padding: 0 18px
-      border-bottom: 1px solid $color-gray
-      height: 40px
-      line-height: 40px
+      padding: 0 1.125rem
+      border-bottom: .0625rem solid $color-gray
+      height: 2.5rem
+      line-height: 2.5rem
       background: $color-white
       .title
         float: left
-        font-size: 14px
+        font-size: .875rem
         color: $color-gray
       .empty
         float: right
-        font-size: 12px
+        font-size: .75rem
         color: $color-blue
     .list-content
-      padding: 0 18px
-      max-height: 217px
+      padding: 0 1.125rem
+      max-height: 13.5625rem
       background: $color-white
       overflow: hidden
       .shopCart-food
         box-sizing: border-box
         position: relative
-        padding: 12px 0
+        padding: .75rem 0
         border-1px($color-gray)
         .name
-          line-height: 24px
-          font-size: 14px
+          line-height: 1.5rem
+          font-size: .875rem
           color: $color-gray
         .price
           position: absolute
-          right: 90px
-          bottom: 12px
-          line-height: 24px
-          font-size: 14px
+          right: 5.625rem
+          bottom: .75rem
+          line-height: 1.5rem
+          font-size: .875rem
           font-weight: 700
           color: $color-red
         .cartControl-wrapper
           position: absolute
           right: 0
-          bottom: 6px
+          bottom: .375rem
 .list-mask
   z-index: 40
   position: fixed
@@ -164,9 +164,9 @@
   left: 0
   width: 100%
   height: 100%
-  backdrop-filter: blur(10px)
+  backdrop-filter: blur(.625rem)
   // ios blurry
-  -webkit-backdrop-filter: blur(10px)
+  -webkit-backdrop-filter: blur(.625rem)
   background: $color-black-s
   opacity: 1
   &.fade-enter-active,
