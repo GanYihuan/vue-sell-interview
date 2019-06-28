@@ -28,9 +28,7 @@
           width="16"
           height="16"
           viewBox="0 0 17 17"
-          xmlns="http://www.w3.org/2000/svg"
           class="Icon Icon--backToTopArrow"
-          aria-hidden="true"
         >
           <g>
             <path
