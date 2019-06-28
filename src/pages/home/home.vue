@@ -67,29 +67,45 @@ export default {
       return this.scrollY < -50
     }
   },
+  mounted() {
+    this.getUerAccount()
+    this.getUserPermissions()
+  },
   created() {
     this.probeType = 3
     this.listenScroll = true
     this.click = true
-    this.loadData()
+    // this.loadData()
   },
   methods: {
-    loadData() {
-      axios
-        .all([axios.get('/api/home'), axios.get('/api/merchant')])
-        .then(axios.spread((acc, pers) => {
-          const getacc = () => {
-            const { data } = acc.data
-            this.iconList = data
-          }
-          const getmerchant = () => {
-            const { data } = pers.data
-            this.merchant = data
-          }
-          getacc()
-          getmerchant()
-        }))
+    async getUerAccount() {
+      const { status, data: { homes }} = await axios.get('/homes/getHome')
+      if (status === 200) {
+        this.iconList = homes
+      }
     },
+    async getUserPermissions() {
+      const { status, data: { merchants }} = await axios.get('/merchants/getMerchant')
+      if (status === 200) {
+        this.merchant = merchants
+      }
+    },
+    // loadData() {
+    //   axios
+    //     .all([axios.get('/api/home'), axios.get('/api/merchant')])
+    //     .then(axios.spread((acc, pers) => {
+    //       const getacc = () => {
+    //         const { data } = acc.data
+    //         this.iconList = data
+    //       }
+    //       const getmerchant = () => {
+    //         const { data } = pers.data
+    //         this.merchant = data
+    //       }
+    //       getacc()
+    //       getmerchant()
+    //     }))
+    // },
     scroll(pos) {
       this.scrollY = pos.y
     },
