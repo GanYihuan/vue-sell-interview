@@ -148,21 +148,31 @@ export default {
       return foods
     }
   },
+  async mounted() {
+    const { status, data: { goods }} = await axios.get('/goods/getGood')
+    if (status === 200) {
+      this.goods = goods
+      this.$nextTick(() => {
+        this._initScroll()
+        this._calculateHeight()
+      })
+    }
+  },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    axios
-      .get('/api/goods')
-      .then((res) => {
-        const { status, data } = res.data
-        if (status === 1) {
-          this.goods = data
-        }
-        this.$nextTick(() => {
-          this._initScroll()
-          this._calculateHeight()
-        })
-      }).catch(() => {
-      })
+    // axios
+    //   .get('/api/goods')
+    //   .then((res) => {
+    //     const { status, data } = res.data
+    //     if (status === 1) {
+    //       this.goods = data
+    //     }
+    //     this.$nextTick(() => {
+    //       this._initScroll()
+    //       this._calculateHeight()
+    //     })
+    //   }).catch(() => {
+    //   })
   },
   methods: {
     _initScroll() {
