@@ -89,19 +89,6 @@
         </el-button>
       </el-col>
     </el-row>
-    <el-row>
-      <el-col
-        :span="5"
-        :offset="4"
-      >
-        <div
-          v-if="error"
-          class="tips"
-        >
-          {{ error }}
-        </div>
-      </el-col>
-    </el-row>
   </div>
 </template>
 
@@ -109,6 +96,7 @@
 import Header from 'pages/home/header'
 import CryptoJS from 'crypto-js' // encryption
 import axios from 'axios'
+import { Notyf } from 'notyf' // 纯js消息通知插件
 
 export default {
   name: 'Login',
@@ -166,10 +154,11 @@ export default {
             if (data && data.code === 0) {
               this.$router.push('/my')
             } else {
+              const notyf = new Notyf()
               if (namePass || pwdPass) {
-                this.error = ''
+                notyf.error('请完整输入信息')
               } else {
-                this.error = data.msg
+                notyf.error(`${data.msg}`)
               }
             }
           } else {

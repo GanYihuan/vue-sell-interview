@@ -17,17 +17,7 @@
         :offset="3"
       >
         <div class="form">
-          <h4
-            v-if="error"
-            class="tips"
-          >
-            <i />
-            {{ error }}
-          </h4>
           <span class="register-text">注册账号</span>
-          <div class="error">
-            {{ error }}
-          </div>
         </div>
       </el-col>
     </el-row>
@@ -124,6 +114,7 @@
 import axios from 'axios'
 import Header from '../home/header'
 import CryptoJS from 'crypto-js' // encryption
+import { Notyf } from 'notyf' // 纯js消息通知插件
 
 export default {
   name: 'Login',
@@ -135,7 +126,6 @@ export default {
       checked: '',
       username: '',
       password: '',
-      error: '',
       statusMsg: '',
       ruleForm: {
         name: '',
@@ -242,18 +232,16 @@ export default {
               code: this.ruleForm.code
             })
             .then(({ status, data }) => {
+              const notyf = new Notyf()
               if (status === 200) {
                 if (data && data.code === 0) {
                   location.href = '/login'
                 } else {
-                  this.error = data.msg
+                  notyf.error(`${data.msg}`)
                 }
               } else {
-                this.error = `服务器出错，错误码:${status}`
+                notyf.error(`服务器出错，错误码:${status}`)
               }
-              setTimeout(() => {
-                this.error = ''
-              }, 1500)
             })
         }
       })

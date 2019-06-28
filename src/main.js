@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'swiper/dist/css/swiper.css'
 import 'assets/stylus/index.styl'
 import 'assets/reset.css'
+import 'notyf/notyf.min.css' // for React and Vue
 
 fastclick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
