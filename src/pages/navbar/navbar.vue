@@ -34,9 +34,6 @@ export default {
       my: 'my',
       btnItem: 'btn-item'
     }
-  },
-  mounted() {
-    this.$router.push('/home')
   }
 }
 </script>

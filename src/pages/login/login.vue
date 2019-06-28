@@ -34,7 +34,7 @@
         </div>
       </el-col>
     </el-row>
-    <el-row :gutter="20">
+    <el-row>
       <el-col
         :span="16"
         :offset="4"
@@ -47,7 +47,7 @@
         />
       </el-col>
     </el-row>
-    <el-row :gutter="20">
+    <el-row>
       <el-col
         :span="16"
         :offset="4"
@@ -68,26 +68,29 @@
         :offset="4"
       >
         <el-button
-          class="btn-login"
-          round
-          size="mini"
+          class="btn"
+          type="warning"
+          plain
+          size="medium"
           @click="login"
         >
           登录
         </el-button>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col
+        :span="16"
+        :offset="4"
+      >
         <el-button
-          class="btn-register"
-          round
-          size="mini"
-          @click="login"
+          class="btn"
+          type="warning"
+          plain
+          size="medium"
+          @click="register"
         >
-          <router-link
-            class="register-link"
-            to="/register"
-            tab="a"
-          >
-            注册
-          </router-link>
+          注册
         </el-button>
       </el-col>
     </el-row>
@@ -134,6 +137,9 @@ export default {
             this.error = `服务器出错`
           }
         })
+    },
+    register() {
+      this.$router.push('/register')
     }
   }
 }

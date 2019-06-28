@@ -4,7 +4,7 @@
       <el-col>
         <router-link
           class="logo"
-          to="/navbar"
+          to="/my"
           tab="a"
         >
           <Header />
@@ -28,89 +28,87 @@
         </div>
       </el-col>
     </el-row>
-    <section>
-      <el-row>
-        <el-col
-          :span="19"
-          :offset="0"
+    <el-row>
+      <el-col
+        :span="19"
+        :offset="0"
+      >
+        <el-form
+          ref="ruleForm"
+          :model="ruleForm"
+          :rules="rules"
+          class="demo-ruleForm"
+          label-width="100px"
         >
-          <el-form
-            ref="ruleForm"
-            :model="ruleForm"
-            :rules="rules"
-            class="demo-ruleForm"
-            label-width="100px"
+          <el-form-item
+            label="昵称"
+            prop="name"
           >
-            <el-form-item
-              label="昵称"
-              prop="name"
+            <el-input v-model="ruleForm.name" />
+          </el-form-item>
+          <el-form-item
+            label="邮箱"
+            prop="email"
+          >
+            <el-input v-model="ruleForm.email" />
+            <el-button
+              size="mini"
+              round
+              @click="sendMsg"
             >
-              <el-input v-model="ruleForm.name" />
-            </el-form-item>
-            <el-form-item
-              label="邮箱"
-              prop="email"
+              发送验证码
+            </el-button>
+            <div class="status">
+              {{ statusMsg }}
+            </div>
+          </el-form-item>
+          <el-form-item
+            label="验证码"
+            prop="code"
+          >
+            <el-input
+              v-model="ruleForm.code"
+              maxlength="4"
+            />
+          </el-form-item>
+          <el-form-item
+            label="密码"
+            prop="pwd"
+          >
+            <el-input
+              v-model="ruleForm.pwd"
+              type="password"
+            />
+          </el-form-item>
+          <el-form-item
+            label="确认密码"
+            prop="cpwd"
+          >
+            <el-input
+              v-model="ruleForm.cpwd"
+              type="password"
+            />
+          </el-form-item>
+          <el-form-item>
+            <el-button
+              type="primary"
+              @click="register"
             >
-              <el-input v-model="ruleForm.email" />
-              <el-button
-                size="mini"
-                round
-                @click="sendMsg"
-              >
-                发送验证码
-              </el-button>
-              <div class="status">
-                {{ statusMsg }}
-              </div>
-            </el-form-item>
-            <el-form-item
-              label="验证码"
-              prop="code"
+              注册
+            </el-button>
+            <el-button
+              type="primary"
+              @click="login"
             >
-              <el-input
-                v-model="ruleForm.code"
-                maxlength="4"
-              />
-            </el-form-item>
-            <el-form-item
-              label="密码"
-              prop="pwd"
-            >
-              <el-input
-                v-model="ruleForm.pwd"
-                type="password"
-              />
-            </el-form-item>
-            <el-form-item
-              label="确认密码"
-              prop="cpwd"
-            >
-              <el-input
-                v-model="ruleForm.cpwd"
-                type="password"
-              />
-            </el-form-item>
-            <el-form-item>
-              <el-button
-                type="primary"
-                @click="register"
-              >
-                注册
-              </el-button>
-              <el-button
-                type="primary"
-                @click="login"
-              >
-                登录
-              </el-button>
-              <div class="error">
-                {{ error }}
-              </div>
-            </el-form-item>
-          </el-form>
-        </el-col>
-      </el-row>
-    </section>
+              登录
+            </el-button>
+            <div class="error">
+              {{ error }}
+            </div>
+          </el-form-item>
+        </el-form>
+      </el-col>
+    </el-row>
   </div>
 </template>
 

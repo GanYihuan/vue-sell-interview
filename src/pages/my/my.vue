@@ -23,12 +23,7 @@
               :span="5"
               :offset="1"
             >
-              <el-link
-                type="warning"
-                :underline="false"
-              >
-                {{ user }}
-              </el-link>
+              {{ user }}
             </el-col>
           </el-row>
         </li>
@@ -41,12 +36,7 @@
               :span="5"
               :offset="1"
             >
-              <el-link
-                type="warning"
-                :underline="false"
-              >
-                {{ email }}
-              </el-link>
+              {{ email }}
             </el-col>
           </el-row>
         </li>
@@ -55,24 +45,14 @@
         <li class="email">
           <el-row>
             <el-col :span="5">
-              <el-link
-                type="primary"
-                :underline="false"
-              >
-                意见反馈
-              </el-link>
+              意见反馈
             </el-col>
           </el-row>
         </li>
         <li class="question">
           <el-row>
             <el-col :span="5">
-              <el-link
-                type="primary"
-                :underline="false"
-              >
-                常见问题
-              </el-link>
+              常见问题
             </el-col>
           </el-row>
         </li>
@@ -83,12 +63,7 @@
             :span="10"
             :offset="7"
           >
-            <el-link
-              type="danger"
-              :underline="false"
-            >
-              客服电话:&nbsp;101-097-77
-            </el-link>
+            客服电话:&nbsp;101-097-77
           </el-col>
         </el-row>
       </p>
@@ -98,12 +73,7 @@
             :span="10"
             :offset="7"
           >
-            <el-link
-              type="danger"
-              :underline="false"
-            >
-              服务时间:&nbsp;9:00-23:00
-            </el-link>
+            服务时间:&nbsp;9:00-23:00
           </el-col>
         </el-row>
       </p>
