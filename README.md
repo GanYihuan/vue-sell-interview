@@ -1,14 +1,5 @@
 # vue-sell-interview
 
-## page
-
-1. ratings
-2. seller
-3. goods
-4. shopCart
-5. cartControl
-6. shop
-
 ## vue-awesome-swiper
 **main.js**
 import VueAwesomeSwiper from 'vue-awesome-swiper'
