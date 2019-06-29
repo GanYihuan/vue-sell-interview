@@ -133,6 +133,7 @@ export default {
   },
   methods: {
     login() {
+      const notyf = new Notyf()
       let namePass
       let pwdPass
       this.$refs['ruleForm'].validateField('name', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
@@ -154,7 +155,6 @@ export default {
             if (data && data.code === 0) {
               this.$router.push('/my')
             } else {
-              const notyf = new Notyf()
               if (namePass || pwdPass) {
                 notyf.error('请完整输入信息')
               } else {

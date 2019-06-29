@@ -24,8 +24,16 @@
     min-height: 31.6875rem
     background-color: #eee
   .items
-    border-bottom: .625rem solid #eee
     background-color: #fff
+    position relative
+    &:after
+      display: block
+      position: absolute
+      right: 0
+      bottom: 0
+      width: 96%
+      border-top: .0625rem solid #eee
+      content: ''
     li
       position: relative
       padding-left: 1.625rem
