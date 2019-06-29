@@ -1,4 +1,6 @@
-﻿简介：使用 vue, 实现一个餐馆点餐 App。采用 koa2 编写后端数据, 使用 MongoDB 用来储存用户数据, 商家内容采取 axios 方式请求静态数据。stylus 编写样式
+﻿简介：
+使用 vue 框架, 实现餐馆点餐 App
+koa 编写后端, MongoDB 储存界面数据, stylus 编写样式, git 管理该项目
 
 前端部分：
 vue-awesome-swiper 用于首页图标横幅滚动效果
@@ -13,19 +15,15 @@ better-scroll 实现各个界面下拉滚动功能, 通过配置参数, 实现�
 crypto-js 注册界面输入的密码经过 MD5 加密传输到后端数据接口
 moment 用于评论界面的时间格式处理
 good-storage 实现 sessionStorage 和 localStorage 功能, 用于商家界面收藏页的存储功能
-vuex, state 共享时间格式这条数据, ...mapMutations 修改 state 里的数据, 实现不同组件间"差评按钮"与"只看差评选项"的联动功能
+vuex, state 共享时间格式数据, Mutation 修改 state 数据, 实现不同组件间"差评按钮"与"只看差评选项"的联动功能
+配置 devServer proxy 代理, 指向后端启动的端口
 
 后端部分：
-主要接口：登录接口 /signin, 注册接口 /signup, 验证接口 /verify, 退出接口 /exit, 获取用户信息接口 /getUser
-1. koa 使用 koa2 编写后端数据
-2. mongoose 使用 MongoDB 存储数据
-3. consola 优雅的控制台日志
-4. koa-bodyparser 针对请求报文的处理
-5. koa-generic-session Koa通用的session中间件
-6. koa-redis Redis 用于koa会话中间件/缓存的Redis存储
-7. koa-json JSON漂亮打印响应中间件
-8. koa-passport 用于Koa的Passport中间件，登录时通过验证用户名和密码返回对应状态，实现不同情况的登录状态数据
-9. passport-local 当点击登录按钮时，用于验证用户名对应的密码验证，看看是否符合数据库保存的信息
-10. koa-router koa 的路由库
-11. koa-redis koa会话中间件/缓存的Redis存储
-12. nodemailer 从Node.js发送电子邮件，MongoDB 用来储存用户数据。商家数据采取静态数据方式请求。
+koa
+mongoose 用于连接 MongoDB, 创建 mongodb schema & model
+Robo 3T 管理 mongodb 数据库内容, postman 查看请求的数据
+koa-redis koa-generic-session 使用 redis session 数据库储存用户信息
+nodeMailer 实现发送电子邮件验证码
+koa-json koa-onerror koa-logger 实现 json 打印, koa 错误处理, koa 日志记录
+koa-passport passport-local 验证用户名对应的密码验证
+koa-bodyparser 针对请求报文的处理
