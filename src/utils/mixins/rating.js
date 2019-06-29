@@ -1,5 +1,6 @@
 import moment from 'moment' // 时间格式处理
 import { mapState } from 'vuex'
+
 const ALL = 2
 
 export default {
