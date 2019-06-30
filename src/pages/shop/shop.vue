@@ -46,9 +46,9 @@ export default {
     }
   },
   async mounted() {
-    const { status, data: { name, description, score, serviceScore, foodScore, rankRate, ratingCount, minPrice, deliveryPrice, deliveryTime, bulletin, supports, infos, pics, avatar, sellCount }} = await axios.get('/sellers/getSeller')
+    const { status, data: { sellers }} = await axios.get('/sellers/getSeller')
     if (status === 200) {
-      this.seller = Object.assign({}, { name, description, score, serviceScore, foodScore, rankRate, ratingCount, minPrice, deliveryPrice, deliveryTime, bulletin, supports, infos, pics, avatar, sellCount })
+      this.seller = sellers
     }
   }
   // created() {
