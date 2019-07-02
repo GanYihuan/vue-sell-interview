@@ -6,7 +6,7 @@
         :class="{'active':selectType===2}"
         @click="select(2, $event)"
       >
-        {{ desc.all }}
+        全部
         <span class="count">{{ ratings.length }}</span>
       </span>
       <span
@@ -14,7 +14,7 @@
         :class="{'active':selectType===0}"
         @click="select(0, $event)"
       >
-        {{ desc.positive }}
+        好评
         <span class="count">{{ positives.length }}</span>
       </span>
       <span
@@ -22,7 +22,7 @@
         :class="{'active':selectType===1}"
         @click="select(1, $event)"
       >
-        {{ desc.negative }}
+        差评
         <span class="count">{{ negatives.length }}</span>
       </span>
     </div>
@@ -57,16 +57,6 @@ export default {
     selectType: {
       type: Number,
       default: ALL
-    },
-    desc: {
-      type: Object,
-      default() {
-        return {
-          all: '全部',
-          positive: '好评',
-          negative: '差评'
-        }
-      }
     }
   },
   computed: {
