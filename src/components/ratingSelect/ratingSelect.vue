@@ -2,7 +2,7 @@
   <div class="ratingselect">
     <div class="rating-type border-1px">
       <span
-        class="block positive"
+        class="block"
         :class="{'active':selectType===2}"
         @click="select(2, $event)"
       >
@@ -10,7 +10,7 @@
         <span class="count">{{ ratings.length }}</span>
       </span>
       <span
-        class="block positive"
+        class="block"
         :class="{'active':selectType===0}"
         @click="select(0, $event)"
       >
@@ -18,7 +18,7 @@
         <span class="count">{{ positives.length }}</span>
       </span>
       <span
-        class="block negative"
+        class="block"
         :class="{'active':selectType===1}"
         @click="select(1, $event)"
       >

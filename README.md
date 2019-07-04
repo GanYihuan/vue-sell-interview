@@ -1,5 +1,18 @@
 # vue-sell-interview
 
+## 运行界面
+
+![首页](https://i.loli.net/2019/07/04/5d1d4f015690842261.png)
+![我的](https://i.loli.net/2019/07/04/5d1d4f141fb5d77037.png)
+![登录](https://i.loli.net/2019/07/04/5d1d4e71ac17883368.png)
+![注册](https://i.loli.net/2019/07/04/5d1d4f235b41891804.png)
+![点菜](https://i.loli.net/2019/07/04/5d1d4e94a0aee27856.png)
+![弹层](https://i.loli.net/2019/07/04/5d1d4e3cd2f7d33727.png)
+![购物车](https://i.loli.net/2019/07/04/5d1d4eb13c15f42999.png)
+![食物](https://i.loli.net/2019/07/04/5d1d4ef1a9ed494271.png)
+![评价](https://i.loli.net/2019/07/04/5d1d4ec34a76c97586.png)
+![商家](https://i.loli.net/2019/07/04/5d1d4ed3d288f28791.png)
+
 ## vue-awesome-swiper
 **main.js**
 import VueAwesomeSwiper from 'vue-awesome-swiper'
