@@ -3,7 +3,7 @@
 vue 版本 "^2.6.10"
 Robo 3T, Postman 管理 MongoDB 数据库, VSCode 编辑器编辑代码
 利用 MongoDB 数据库管理数据，
-koa2 为前端提供请求接口, 
+koa2 为前端提供请求接口
 stylus 编写其样式，
 webpack 配置别名和代理。
 element-ui 样式框架实现布局
