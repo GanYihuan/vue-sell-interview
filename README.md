@@ -26,7 +26,7 @@
 7. element-ui 样式框架实现布局
 8. git 管理项目
 
-### 前端部分：
+## 前端部分：
 1. vue-awesome-swiper 用于首页图标横幅滚动效果
 2. fastclick 移动端点击 300MS 延迟
 3. vue-lazyload 用于小图标延迟加载
@@ -41,7 +41,7 @@
 12. vuex, state 共享时间格式数据, Mutation 修改 state 数据, 实现不同组件间"差评按钮"与"只看差评选项"的联动功能
 13. 配置 devServer proxy 代理, 指向后端启动的端口
 
-### 后端部分：
+## 后端部分：
 1. koa2 编写后端代码
 2. mongoose 用于连接 MongoDB, 创建 mongodb schema & model
 3. Robo 3T 管理 mongodb 数据库内容, postman 查看请求的数据
