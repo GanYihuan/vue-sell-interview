@@ -11,6 +11,7 @@
 ![购物车](https://i.loli.net/2019/07/04/5d1d4eb13c15f42999.png)
 ![食物](https://i.loli.net/2019/07/04/5d1d4ef1a9ed494271.png)
 ![评价](https://i.loli.net/2019/07/04/5d1d4ec34a76c97586.png)
+![商家2](https://i.loli.net/2019/07/04/5d1d5399df6c598562.png)
 ![商家](https://i.loli.net/2019/07/04/5d1d4ed3d288f28791.png)
 
 ## 介绍
