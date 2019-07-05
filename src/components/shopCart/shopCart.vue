@@ -218,10 +218,6 @@ export default {
       return show
     }
   },
-  mounted() {
-    // console.log(this.$route.params.id, 'prams.id ---')
-    console.log(this.selectFoods, 'selectFoods ---')
-  },
   methods: {
     toggleList() {
       if (!this.totalCount) {
@@ -253,7 +249,7 @@ export default {
           const notyf = new Notyf()
           if (status === 200) {
             if (data && data.code === 0) {
-              notyf.success(`${data.msg}`)
+              notyf.success(`${data.msg} 需要支付${this.totalPrice}元`)
             } else {
               notyf.error(`${data.msg}`)
             }
@@ -261,7 +257,7 @@ export default {
             notyf.error(`服务器出错，错误码:${status}`)
           }
         })
-      window.alert('支付' + this.totalPrice + '元')
+      // window.alert('支付' + this.totalPrice + '元')
       console.log(this.selectFoods, 'selectFoods ---')
     },
     addFood(target) {

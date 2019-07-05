@@ -56,8 +56,8 @@ export default {
   },
   created() {
     this.params = this.$route.params.id
-    // this.$router.push(`/goods/${this.params}`)
-    this.$router.push('/seller')
+    this.$router.push(`/goods/${this.params}`)
+    // this.$router.push('/seller')
   //   this.$router.push('/goods')
   //   axios
   //     .get('/api/seller')
