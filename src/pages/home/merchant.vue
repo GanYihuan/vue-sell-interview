@@ -9,7 +9,7 @@
       <router-link
         v-for="item of merchant"
         :key="item.id"
-        :to="{name: 'shop'}"
+        :to="{name: 'shop', params: {id: item.name}}"
         class="item border-bottom"
         tag="li"
       >

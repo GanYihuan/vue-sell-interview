@@ -43,6 +43,7 @@
         <div class="evaluation clearfix">
           <div
             class="evaluation-btn"
+            @click="shoEvalutate"
           >
             评价
           </div>
@@ -67,7 +68,9 @@ export default {
     if (status === 200) {
       this.orders = orders
     }
-    console.log(this.orders, 'orders--')
+  },
+  methods: {
+    shoEvalutate() {}
   }
 }
 </script>
