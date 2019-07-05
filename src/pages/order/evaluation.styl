@@ -1,25 +1,23 @@
-﻿.nav
-  position: fixed
-  top: 0
-  width: 100%
-  height:4rem
+﻿@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
+.header
   border-bottom: .0625rem solid #b2b2b2
+  width: 100%
+  height: 4rem
+  line-height: 4rem
+  text-align: center
+  font-size: 1.0625rem
+  font-weight: bold
   background-color: #fff
-  z-index: 99
-  .title
-    text-align: center
-    line-height:4.5625rem
-    font-size:1.0625rem
-    color: #2f2f2f
-body
-  min-height: 100%
-  color: #2f2f2f
-  background-color: #efefef
-.content
+  a
+    color: #333
+.icon-arrow_lift
+  position relative
+  left -10rem
+.evalutate
   height: 100%
   .eva-content
-    margin:.625rem
-    margin-top:4.625rem
+    border-top: .8125rem solid #efefef
     overflow: hidden
     background-color: #fff
   .star-area
@@ -31,9 +29,9 @@ body
     width:2rem
     height:2rem
     background-size: cover
-    // background-image: url('./img/gray-star.png');
-    &.light
-      // background-image: url('./img/light-star.png');
+    background-image: url('./img/gray-star.png');
+    &.highlight
+      background-image: url('./img/light-star.png');
   .comment
     position: relative
     margin-top:1.25rem
@@ -64,13 +62,13 @@ body
     padding-left:1.25rem
     text-align: left
     font-size:1rem
-  .submit
-    position: fixed
-    bottom: 0
-    width: 100%
-    height:3.125rem
-    line-height:3.125rem
-    text-align: center
-    font-size:1rem
-    color: #333
-    background-color: #ffd161
+.submit
+  position: fixed
+  bottom: 22rem
+  width: 100%
+  height: 3.125rem
+  line-height: 3.125rem
+  text-align: center
+  font-size: 1rem
+  color: #333
+  background-color: #ffd161
