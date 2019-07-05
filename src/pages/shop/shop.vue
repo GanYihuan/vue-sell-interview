@@ -15,7 +15,9 @@
         </router-link>
       </div>
       <div class="tab-item">
-        <router-link to="/seller">
+        <router-link
+          :to="{name: 'seller', params: {id: params}}"
+        >
           商家
         </router-link>
       </div>

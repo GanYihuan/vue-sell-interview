@@ -142,7 +142,7 @@ export default {
   data() {
     return {
       favorite: (() => { /* immediately run function */
-        return loadFromLocal(this.seller.id, 'favorite', false)
+        return loadFromLocal(this.$route.params.id, 'favorite', false)
       })()
     }
   },
@@ -174,7 +174,7 @@ export default {
         return
       }
       this.favorite = !this.favorite
-      saveToLocal(this.seller.id, 'favorite', this.favorite)
+      saveToLocal(this.$route.params.id, 'favorite', this.favorite)
     },
     _initScroll() {
       if (!this.scroll) {

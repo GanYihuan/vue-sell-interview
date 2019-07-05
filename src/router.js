@@ -55,7 +55,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ 'pages/shop/shop.vue'),
       children: [
         {
-          path: '/seller',
+          path: '/seller/:id',
           props: true,
           name: 'seller',
           component: () => import(/* webpackChunkName: "about" */ 'pages/seller/seller.vue')
