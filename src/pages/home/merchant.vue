@@ -9,15 +9,19 @@
       <router-link
         v-for="item of merchant"
         :key="item.id"
-        :to="{name: 'shop', params: {id: item.name}}"
+        :to="{name: 'shop'}"
         class="item border-bottom"
         tag="li"
       >
         <img
           :src="item.pic_url"
           class="item-img"
+          @click="passParams(item.name, item.pic_url)"
         >
-        <div class="item-info">
+        <div
+          class="item-info"
+          @click="passParams(item.name, item.pic_url)"
+        >
           <div class="item-title">
             {{ item.name }}
           </div>
@@ -57,6 +61,7 @@
 
 <script>
 import Star from 'components/star/star'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'Merchant',
@@ -69,6 +74,13 @@ export default {
       default() {
         return []
       }
+    }
+  },
+  methods: {
+    ...mapMutations({ setSellName: 'SET_SELLNAME', setSellImage: 'SET_SELLIMAGE' }),
+    passParams(name, img) {
+      this.setSellName(name)
+      this.setSellImage(img)
     }
   }
 }

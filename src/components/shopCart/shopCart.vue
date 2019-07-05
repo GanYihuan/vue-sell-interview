@@ -117,6 +117,7 @@
 
 <script type="text/ecmascript-6">
 import axios from 'axios'
+import { mapState } from 'vuex'
 import BScroll from 'better-scroll'
 import { Notyf } from 'notyf' // 纯js消息通知插件
 import cartControl from 'components/cartControl/cartcontrol'
@@ -161,6 +162,10 @@ export default {
     }
   },
   computed: {
+    ...mapState({
+      sellerName: state => state.sellerName,
+      sellerImage: state => state.sellerImage
+    }),
     totalCount() {
       let count = 0
       this.selectFoods.forEach(food => {
@@ -237,10 +242,10 @@ export default {
       if (this.totalPrice < this.minPrice) {
         return
       }
-      // console.log(this.$route.params.id, 'this.$route.params.id')
       axios
         .post('/orders/pay', {
-          seller: this.$route.params.id,
+          sellerName: this.sellerName,
+          sellerImage: this.sellerImage,
           menu: this.selectFoods,
           number: this.totalCount,
           price: this.totalPrice
@@ -257,8 +262,6 @@ export default {
             notyf.error(`服务器出错，错误码:${status}`)
           }
         })
-      // window.alert('支付' + this.totalPrice + '元')
-      console.log(this.selectFoods, 'selectFoods ---')
     },
     addFood(target) {
       this.drop(target)

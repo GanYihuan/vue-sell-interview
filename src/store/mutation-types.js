@@ -1,1 +1,3 @@
 ﻿export const SET_BADCOMMENT = 'SET_BADCOMMENT'
+export const SET_SELLNAME = 'SET_SELLNAME'
+export const SET_SELLIMAGE = 'SET_SELLIMAGE'

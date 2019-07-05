@@ -12,14 +12,14 @@
         <div class="order-item-inner">
           <img
             class="item-img"
-            src="item"
+            :src="item.sellerImage"
           >
           <div class="item-right">
             <div
               class="item-top"
             >
               <p class="order-name one-line">
-                {{ item.seller }}
+                {{ item.sellerName }}
               </p>
               <i class="icon-keyboard_arrow_right" />
             </div>
