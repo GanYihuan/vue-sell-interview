@@ -240,6 +240,6 @@ import nodeMailer from 'nodemailer' // Send e-mails from Node.js – easy as cak
     }
   })
 
-结算 -> 入库 (商家, 菜品, 数量, 总价) seller menu number price
-register -> users.js 入库操作
+userImage
+username star comment menu time
 评价 -> 入库

@@ -27,7 +27,10 @@
         <span class="count">{{ maxCount }}</span>
       </div>
     </div>
-    <div class="submit">
+    <div
+      class="submit"
+      @click="submit"
+    >
       提交评价
     </div>
   </div>
@@ -56,13 +59,14 @@ export default {
           num: 4
         }
       ],
-      maxCount: 50 // 最多可输入的字符数
+      maxCount: 50
     }
   },
   methods: {
     addStar(index) {
       this.startIndex = index
-    }
+    },
+    submit() {}
   }
 }
 </script>

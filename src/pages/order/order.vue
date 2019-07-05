@@ -47,7 +47,7 @@
           >
             <div
               class="evaluation-btn"
-              @click="shoEvalutate"
+              @click="showEvalutate"
             >
               评价
             </div>
@@ -75,7 +75,7 @@ export default {
     }
   },
   methods: {
-    shoEvalutate() {
+    showEvalutate() {
       this.$router.push(`/evaluate`)
     }
   }
