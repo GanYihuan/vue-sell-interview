@@ -240,12 +240,11 @@ import nodeMailer from 'nodemailer' // Send e-mails from Node.js – easy as cak
     }
   })
 
-<!-- userImage -->
+score
+rateType: good & bad comment -> 0 & 1, score >=4 good comment
 username
 rateTime
-score
-rateType: good & bad comment
-text: comment
-avatar: userImage
-recommend
+text: comment ''
+<!-- avatar: userImage '' -->
+recommend: selectFoods []
 评价 -> 入库

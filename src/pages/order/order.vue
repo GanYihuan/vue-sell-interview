@@ -47,7 +47,7 @@
           >
             <div
               class="evaluation-btn"
-              @click="showEvalutate"
+              @click="showEvalutate(index)"
             >
               评价
             </div>
@@ -60,6 +60,7 @@
 
 <script>
 import axios from 'axios'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'Order',
@@ -75,7 +76,9 @@ export default {
     }
   },
   methods: {
-    showEvalutate() {
+    ...mapMutations({ setEvaluateIndex: 'SET_EVALUATEINDEX' }),
+    showEvalutate(index) {
+      this.setEvaluateIndex(index)
       this.$router.push(`/evaluate`)
     }
   }

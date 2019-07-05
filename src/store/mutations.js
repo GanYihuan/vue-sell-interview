@@ -9,6 +9,9 @@ const mutations = {
   },
   [types.SET_SELLIMAGE](state, image) {
     state.sellerImage = image
+  },
+  [types.SET_EVALUATEINDEX](state, num) {
+    state.evaluateIndex = num
   }
 }
 
