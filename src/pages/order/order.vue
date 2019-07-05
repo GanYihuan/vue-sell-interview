@@ -1,6 +1,8 @@
 ﻿<template>
-  <div class="content">
-    order
+  <div class="order">
+    <div class="header">
+      订单
+    </div>
   </div>
 </template>
 

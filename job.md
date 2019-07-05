@@ -239,3 +239,7 @@ import nodeMailer from 'nodemailer' // Send e-mails from Node.js – easy as cak
       pass: Email.smtp.pass
     }
   })
+
+结算 -> 入库 (商家, 菜品, 数量, 总价) seller menu number price
+register -> users.js 入库操作
+评价 -> 入库

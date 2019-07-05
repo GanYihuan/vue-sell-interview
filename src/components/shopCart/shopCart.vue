@@ -116,6 +116,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+import axios from 'axios'
 import BScroll from 'better-scroll'
 import cartControl from 'components/cartControl/cartcontrol'
 
@@ -235,6 +236,13 @@ export default {
       if (this.totalPrice < this.minPrice) {
         return
       }
+      axios
+        .post('/orders/pay', {
+          // seller,
+          // menu,
+          // number,
+          // price: this.totalPrice
+        })
       window.alert('支付' + this.totalPrice + '元')
     },
     addFood(target) {
