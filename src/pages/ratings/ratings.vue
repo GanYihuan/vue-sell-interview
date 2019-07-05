@@ -140,7 +140,7 @@ export default {
   async mounted() {
     const { status, data: { ratings }} = await axios.get('/ratings/getRating')
     if (status === 200) {
-      this.ratings = ratings
+      this.ratings = ratings.reverse()
       this.$nextTick(() => {
         this._initScroll()
       })

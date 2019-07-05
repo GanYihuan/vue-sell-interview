@@ -39,6 +39,7 @@
 
 <script type="text/ecmascript-6">
 import axios from 'axios'
+import { Notyf } from 'notyf' // 纯js消息通知插件
 import moment from 'moment' // 时间格式处理
 import { mapState } from 'vuex'
 
@@ -104,7 +105,6 @@ export default {
       } else {
         rateType = 1
       }
-      const commentTime = new Date()
       const text = this.textarea
       const selectFoods = this.orders[this.evaluateIndex].menu
       const recommend = []
@@ -113,7 +113,33 @@ export default {
       }
       const username = this.user
       const avatar = 'http://static.galileo.xiaojukeji.com/static/tms/default_header.png'
-      console.log(username, score, rateType, moment(commentTime).format(this.dateType), text, recommend, avatar)
+      const commentTime = new Date()
+      const time = moment(commentTime).format(this.dateType)
+      const oldTime = (new Date(time)).getTime()
+      // console.log(username, score, rateType, oldTime, text, recommend, avatar)
+      axios
+        .post('/ratings/addRating', {
+          username: username,
+          rateTime: rateType,
+          deliveryTime: oldTime,
+          score: score,
+          rateType: rateType,
+          text: text,
+          avatar: avatar,
+          recommend: recommend
+        })
+        .then(({ status, data }) => {
+          const notyf = new Notyf()
+          if (status === 200) {
+            if (data && data.code === 0) {
+              notyf.success(`${data.msg} 评价成功!`)
+            } else {
+              notyf.error(`${data.msg} 评价失败`)
+            }
+          } else {
+            notyf.error(`服务器出错，错误码:${status}`)
+          }
+        })
     }
   }
 }
