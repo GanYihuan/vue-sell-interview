@@ -1,15 +1,15 @@
 ﻿<template>
-  <div class="header">
-    evaluate
+  <div class="content">
+    order
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Evaluate'
+  name: 'Order'
 }
 </script>
 
 <style lang="stylus" scoped>
-@import './evaluation.styl'
+@import './order.styl'
 </style>

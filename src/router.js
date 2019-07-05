@@ -35,9 +35,9 @@ export default new Router({
           component: () => import(/* webpackChunkName: "about" */ 'pages/my/my.vue')
         },
         {
-          path: '/evaluate',
-          name: 'evaluate',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/evaluate/evaluate.vue')
+          path: '/order',
+          name: 'order',
+          component: () => import(/* webpackChunkName: "about" */ 'pages/order/order.vue')
         }
       ]
     },

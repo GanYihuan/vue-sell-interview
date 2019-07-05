@@ -13,8 +13,8 @@
         </div>
       </router-link>
       <router-link
-        :class="[evaluate, btnItem]"
-        to="/evaluate"
+        :class="[order, btnItem]"
+        to="/order"
         tab="li"
       >
         <div class="icon" />
@@ -42,7 +42,7 @@ export default {
     return {
       home: 'home',
       my: 'my',
-      evaluate: 'evaluate',
+      order: 'order',
       btnItem: 'btn-item'
     }
   }
