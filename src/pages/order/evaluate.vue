@@ -21,8 +21,10 @@
       <div class="comment">
         <textarea
           class="comment-input"
+          placeholder="亲，菜品的口味如何，商家的服务是否周到?"
+          maxLength="50"
         />
-        <span class="count" />
+        <span class="count">{{ maxCount }}</span>
       </div>
     </div>
     <div class="submit">
@@ -53,7 +55,8 @@ export default {
         {
           num: 4
         }
-      ]
+      ],
+      maxCount: 50 // 最多可输入的字符数
     }
   },
   methods: {
