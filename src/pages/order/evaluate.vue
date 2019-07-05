@@ -3,9 +3,15 @@
     <!-- <NavHeader title="评价" /> -->
     <div class="eva-content">
       <div class="nav">
-        <h4 class="title">
-          评价
-        </h4>
+        <router-link
+          to="/order"
+          tab="div"
+        >
+          <i class="icon-arrow_lift" />
+          <h4 class="title">
+            评价
+          </h4>
+        </router-link>
       </div>
       <div class="star-area" />
       <div class="comment">

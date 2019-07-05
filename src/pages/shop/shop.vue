@@ -59,17 +59,16 @@ export default {
   created() {
     this.params = this.$route.params.id
     this.$router.push(`/goods/${this.params}`)
-    // this.$router.push('/seller')
-  //   this.$router.push('/goods')
-  //   axios
-  //     .get('/api/seller')
-  //     .then((res) => {
-  //       const { status, data } = res.data
-  //       if (status === 1) {
-  //         this.seller = data
-  //       }
-  //     }).catch(() => {
-  //     })
+    //   this.$router.push('/goods')
+    //   axios
+    //     .get('/api/seller')
+    //     .then((res) => {
+    //       const { status, data } = res.data
+    //       if (status === 1) {
+    //         this.seller = data
+    //       }
+    //     }).catch(() => {
+    //     })
   }
 }
 </script>

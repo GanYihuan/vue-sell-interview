@@ -41,12 +41,17 @@
           </div>
         </div>
         <div class="evaluation clearfix">
-          <div
-            class="evaluation-btn"
-            @click="shoEvalutate"
+          <router-link
+            to="/evaluate"
+            tab="div"
           >
-            评价
-          </div>
+            <div
+              class="evaluation-btn"
+              @click="shoEvalutate"
+            >
+              评价
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -70,7 +75,9 @@ export default {
     }
   },
   methods: {
-    shoEvalutate() {}
+    shoEvalutate() {
+      this.$router.push(`/evaluate`)
+    }
   }
 }
 </script>

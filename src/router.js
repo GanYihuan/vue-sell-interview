@@ -37,14 +37,13 @@ export default new Router({
         {
           path: '/order',
           name: 'order',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/order/order.vue'),
-          children: [
-            {
-              path: '/evaluate',
-              name: 'evaluate',
-              component: () => import(/* webpackChunkName: "about" */ 'pages/order/evaluate.vue')
-            }
-          ]
+          props: true,
+          component: () => import(/* webpackChunkName: "about" */ 'pages/order/order.vue')
+        },
+        {
+          path: '/evaluate',
+          name: 'evaluate',
+          component: () => import(/* webpackChunkName: "about" */ 'pages/order/evaluate.vue')
         }
       ]
     },
