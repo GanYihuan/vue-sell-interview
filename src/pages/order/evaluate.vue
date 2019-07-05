@@ -22,7 +22,7 @@
         <textarea
           v-model="textarea"
           class="comment-input"
-          placeholder="亲，菜品的口味如何，商家的服务是否周到?"
+          placeholder="菜品的口味如何? 请写下你的评价。 4星以上好评, 3星以下差评"
           maxLength="50"
         />
         <span class="count">{{ maxCount }}</span>
