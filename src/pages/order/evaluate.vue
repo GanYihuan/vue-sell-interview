@@ -120,8 +120,7 @@ export default {
       axios
         .post('/ratings/addRating', {
           username: username,
-          rateTime: rateType,
-          deliveryTime: oldTime,
+          rateTime: oldTime,
           score: score,
           rateType: rateType,
           text: text,
