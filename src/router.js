@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     { // default route jump
       path: '/',
-      redirect: '/login'
+      redirect: '/my'
     },
     {
       path: '/login',
@@ -33,6 +33,11 @@ export default new Router({
           path: '/my',
           name: 'my',
           component: () => import(/* webpackChunkName: "about" */ 'pages/my/my.vue')
+        },
+        {
+          path: '/evaluate',
+          name: 'evaluate',
+          component: () => import(/* webpackChunkName: "about" */ 'pages/evaluate/evaluate.vue')
         }
       ]
     },

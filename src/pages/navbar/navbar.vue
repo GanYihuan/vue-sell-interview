@@ -13,6 +13,16 @@
         </div>
       </router-link>
       <router-link
+        :class="[evaluate, btnItem]"
+        to="/evaluate"
+        tab="li"
+      >
+        <div class="icon" />
+        <div class="des">
+          评价
+        </div>
+      </router-link>
+      <router-link
         :class="[my, btnItem]"
         to="/my"
         tab="li"
@@ -32,6 +42,7 @@ export default {
     return {
       home: 'home',
       my: 'my',
+      evaluate: 'evaluate',
       btnItem: 'btn-item'
     }
   }
