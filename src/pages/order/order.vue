@@ -82,22 +82,27 @@ export default {
       orders: []
     }
   },
-  async mounted() {
-    const { status, data: { orders }} = await axios.get('/orders/getOrder')
-    if (status === 200) {
-      this.orders = orders
-    }
+  mounted() {
     this._initScroll()
+    this.getOrder()
   },
   methods: {
     ...mapMutations({ setEvaluateIndex: 'SET_EVALUATEINDEX' }),
     _initScroll() {
-      if (!this.scroll) {
-        this.scroll = new BScroll(this.$refs.order, {
-          click: true
-        })
-      } else {
-        this.scroll.refresh()
+      this.$nextTick(() => {
+        if (!this.scroll) {
+          this.scroll = new BScroll(this.$refs.order, {
+            click: true
+          })
+        } else {
+          this.scroll.refresh()
+        }
+      })
+    },
+    async getOrder() {
+      const { status, data: { orders }} = await axios.get('/orders/getOrder')
+      if (status === 200) {
+        this.orders = orders
       }
     },
     showEvalutate(index) {
@@ -114,6 +119,7 @@ export default {
           if (status === 200) {
             if (data && data.code === 0) {
               notyf.success(`${data.msg} 删除订单成功!`)
+              this.getOrder()
             } else {
               notyf.error(`${data.msg} 删除订单失败!`)
             }
