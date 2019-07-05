@@ -9,20 +9,18 @@
   width: 100%
   overflow: hidden
 .header
-  border-bottom: .0625rem solid #b2b2b2
   width: 100%
   height: 4rem
   line-height: 4rem
   text-align: center
-  font-size: 1.0625rem
+  font-size: 1rem
   font-weight: bold
-  color: #333
-  background-color: #fff
+  color: $color-black
+  background-color: $color-white
 .order-item
-  border-top: .8125rem solid #efefef
   .order-item-inner
     display flex
-    border-bottom .0625rem solid #e0e0e0
+    border-1px($color-gray-s)
     padding-bottom 1.125rem
   .item-img
     margin-top .5rem
@@ -36,7 +34,7 @@
   .item-top
     display flex
     align-items center
-    border-bottom .0625rem solid #e0e0e0
+    border-1px($color-gray-s)
     padding-top .125rem
     height 3.4375rem
   .close
@@ -57,22 +55,15 @@
     height 1rem
     font-size 1rem
     font-weight 600
-  .arrow
-    border-width .0625rem .0625rem 0 0
-    border .0625rem solid #999
-    width .5rem
-    height .5rem
-    transform rotate(45deg)
-    -webkit-transform 45deg
   .order-state
     margin-left 2.5rem
     font-size .875rem
-    color #999
+    color $color-gray
   .item-bottom
     .product-item
       margin-top .75rem
       font-size .875rem
-      color #666
+      color $color-gray
     .p-count
       float right
       margin-right .9375rem
@@ -83,7 +74,7 @@
     .total-price
       margin-left .125rem
       font-size .875rem
-      color #151515
+      color $color-black
       letter-spacing .0625rem
   .evaluation
     position relative
@@ -96,5 +87,5 @@
     line-height 2rem
     text-align center
     font-size .875rem
-    color #6b450a
-    background-color #ffd161
+    color $color-black
+    background-color $color-yellow

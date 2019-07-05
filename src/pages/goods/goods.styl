@@ -10,7 +10,7 @@
   .menu-wrapper
     flex: 0 0 5rem
     width: 5rem
-    background: #f3f5f7
+    background: $color-white-ss
     .menu-item
       // Multi-line text Vertical centering
       display: table
@@ -24,7 +24,7 @@
         position: relative
         margin-top: -0.0625rem
         font-weight: 700
-        background: #fff
+        background: $color-white
         .text
           border-none()
       .icon
@@ -58,12 +58,12 @@
     .food-list
       .title
         padding-left: .875rem
-        border-left: .125rem solid #d9dde1
+        border-left: .125rem solid $color-gray-s
         height: 1.625rem
         line-height: 1.625rem
         font-size: .75rem
-        color: rgb(147, 153, 159)
-        background: #f3f5f7
+        color: $color-gray
+        background: $color-white-s
       .food-item
         display: flex
         margin: 1.125rem
@@ -85,13 +85,13 @@
             height: .875rem
             line-height: .875rem
             font-size: .875rem
-            color: rgb(7, 17, 27)
+            color: $color-black
           .desc,
           .extra
             margin: .5rem 0
             line-height: .875rem
             font-size: .625rem
-            color: rgb(147, 153, 159)
+            color: $color-gray
           .extra
             .count
               margin-right: .75rem
@@ -101,11 +101,11 @@
             .now
               margin-right: .5rem
               font-size: .875rem
-              color: rgb(240, 20, 20)
+              color: $color-red
             .old
               font-size: .625rem
               text-decoration: line-through
-              color: rgb(147, 153, 159)
+              color: $color-gray
           .cartControl-wrapper
             position: absolute
             right: 0

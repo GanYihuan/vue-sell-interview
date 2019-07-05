@@ -1,4 +1,6 @@
-﻿.bottom-bar
+﻿@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
+.bottom-bar
   z-index: 999
   display: flex
   align-items: center
@@ -6,8 +8,8 @@
   bottom: 0
   width: 100%
   height: 4rem
-  border-top: .1rem solid #b6b6b6
-  background-color: rgba(246, 246, 246, 1)
+  border-top: .1rem solid $color-gray-ss
+  background-color: $color-white-ss
   overflow: hidden
   .btn-item
     flex: 1
@@ -28,7 +30,7 @@
       white-space: nowrap
       overflow: hidden
     &.active
-      color: #000
+      color: $color-black
     &.my
       .icon
         background-image: url("./img/myIcon.png")

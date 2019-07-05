@@ -240,4 +240,4 @@ import nodeMailer from 'nodemailer' // Send e-mails from Node.js – easy as cak
     }
   })
 
-order refresh ?
+delete food.vue

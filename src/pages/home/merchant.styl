@@ -1,11 +1,14 @@
-﻿.title
+﻿@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
+.title
   margin: .1rem 0 0 0
   line-height: .8rem
   text-indent: .2rem
-  background: #eee
+  background: $color-white
 .list-content
   overflow: hidden
   padding-bottom: 1rem
+  border-top: .0625rem solid $color-gray-s
 .list-title
   margin-top: 1rem
   margin-bottom: 1rem
@@ -13,7 +16,7 @@
   font-size: 1rem
   .title-line
     display: inline-block
-    border-bottom: .1rem solid #949494
+    border-bottom: .1rem solid $color-gray
     margin-left: .4rem
     margin-right: .4rem
     margin-bottom: .2rem
@@ -25,11 +28,11 @@
   padding-bottom: .4rem
   margin-left: .1rem
   margin-right: .4rem
-  color: #656565
+  color: $color-gray
   .item-img
     width: 6rem
     height: 5rem
-    border: .1rem solid #e4e4e4
+    border: .1rem solid $color-gray-s
   .item-info
     flex: 1
     margin-left: .5rem
@@ -38,7 +41,7 @@
       margin-top: .2rem
       font-size: 1rem
       font-weight: 500
-      color: #333
+      color: $color-black
     .item-desc
       margin: .4rem 0 .4rem 0
       height: 1rem
@@ -64,11 +67,11 @@
     .highlight
       float: right
       display: block
-      color: #f00
+      color: $color-red
       padding: .4rem
       border-radius: .4rem
-      color: #000
-      background-color: #ffd161
+      color: $color-black
+      background-color: $color-yellow
   @media screen and (max-width: 400px)
    .item-img
      width: 5rem
