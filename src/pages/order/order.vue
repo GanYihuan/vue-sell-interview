@@ -21,6 +21,12 @@
               <p class="order-name one-line">
                 {{ item.sellerName }}
               </p>
+              <div
+                class="close"
+                @click="deleteComment(item.sellerName)"
+              >
+                <i class="icon-close" />
+              </div>
             </div>
             <div class="item-bottom">
               <div
@@ -61,6 +67,7 @@
 <script>
 import axios from 'axios'
 import { mapMutations } from 'vuex'
+import { Notyf } from 'notyf' // 纯js消息通知插件
 
 export default {
   name: 'Order',
@@ -80,6 +87,24 @@ export default {
     showEvalutate(index) {
       this.setEvaluateIndex(index)
       this.$router.push(`/evaluate`)
+    },
+    deleteComment(sellerName) {
+      axios
+        .post('/orders/deleteOrder', {
+          sellerName: sellerName
+        })
+        .then(({ status, data }) => {
+          const notyf = new Notyf()
+          if (status === 200) {
+            if (data && data.code === 0) {
+              notyf.success(`${data.msg} 删除订单成功!`)
+            } else {
+              notyf.error(`${data.msg} 删除订单失败!`)
+            }
+          } else {
+            notyf.error(`服务器出错，错误码:${status}`)
+          }
+        })
     }
   }
 }
