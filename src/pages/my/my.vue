@@ -45,14 +45,24 @@
         <li class="email">
           <el-row>
             <el-col :span="5">
-              意见反馈
+              <router-link
+                class="login"
+                to="/login"
+              >
+                登录
+              </router-link>
             </el-col>
           </el-row>
         </li>
         <li class="question">
           <el-row>
             <el-col :span="5">
-              常见问题
+              <router-link
+                class="register"
+                to="/register"
+              >
+                注册
+              </router-link>
             </el-col>
           </el-row>
         </li>
