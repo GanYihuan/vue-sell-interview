@@ -21,7 +21,6 @@
               <p class="order-name one-line">
                 {{ item.sellerName }}
               </p>
-              <i class="icon-keyboard_arrow_right" />
             </div>
             <div class="item-bottom">
               <div
