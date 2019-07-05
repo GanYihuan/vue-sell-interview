@@ -54,19 +54,19 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ 'pages/shop/shop.vue'),
       children: [
         {
-          path: '/seller/:id',
-          props: true,
-          name: 'seller',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/seller/seller.vue')
-        },
-        {
           path: '/goods/:id',
           props: true,
           name: 'goods',
           component: () => import(/* webpackChunkName: "about" */ 'pages/goods/goods.vue')
         },
         {
-          path: '/ratings',
+          path: '/seller/:id',
+          props: true,
+          name: 'seller',
+          component: () => import(/* webpackChunkName: "about" */ 'pages/seller/seller.vue')
+        },
+        {
+          path: '/ratings/:id',
           props: true,
           name: 'ratings',
           component: () => import(/* webpackChunkName: "about" */ 'pages/ratings/ratings.vue')

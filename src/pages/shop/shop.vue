@@ -10,7 +10,9 @@
         </router-link>
       </div>
       <div class="tab-item">
-        <router-link to="/ratings">
+        <router-link
+          :to="{name: 'ratings', params: {id: params}}"
+        >
           评价
         </router-link>
       </div>
@@ -50,16 +52,10 @@ export default {
       params: ''
     }
   },
-  async mounted() {
-    const { status, data: { sellers }} = await axios.get('/sellers/getSeller')
-    if (status === 200) {
-      this.seller = sellers
-    }
-  },
   created() {
     this.params = this.$route.params.id
     this.$router.push(`/goods/${this.params}`)
-    //   this.$router.push('/goods')
+    // this.$router.push('/goods')
     //   axios
     //     .get('/api/seller')
     //     .then((res) => {
@@ -69,6 +65,12 @@ export default {
     //       }
     //     }).catch(() => {
     //     })
+  },
+  async mounted() {
+    const { status, data: { sellers }} = await axios.get('/sellers/getSeller')
+    if (status === 200) {
+      this.seller = sellers
+    }
   }
 }
 </script>
