@@ -27,7 +27,7 @@
             </el-col>
           </el-row>
         </li>
-        <li class="money">
+        <li class="email">
           <el-row>
             <el-col :span="5">
               Email
@@ -42,7 +42,7 @@
         </li>
       </ul>
       <ul class="items">
-        <li class="email">
+        <li class="money">
           <el-row>
             <el-col :span="5">
               <router-link
