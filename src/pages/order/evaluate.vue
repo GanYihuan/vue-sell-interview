@@ -106,11 +106,14 @@ export default {
       }
       const commentTime = new Date()
       const text = this.textarea
-      const recommend = this.orders[this.evaluateIndex]
+      const selectFoods = this.orders[this.evaluateIndex].menu
+      const recommend = []
+      for (const i of selectFoods) {
+        recommend.push(i.name)
+      }
       const username = this.user
-      // console.log(this.orders, 'this.orders..')
-      console.log(this.evaluateIndex, 'this.evaluateIndex..')
-      console.log(username, score, rateType, moment(commentTime).format(this.dateType), text, recommend)
+      const avatar = 'http://static.galileo.xiaojukeji.com/static/tms/default_header.png'
+      console.log(username, score, rateType, moment(commentTime).format(this.dateType), text, recommend, avatar)
     }
   }
 }
