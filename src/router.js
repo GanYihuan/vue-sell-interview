@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     { // default route jump
       path: '/',
-      redirect: '/my'
+      redirect: '/home'
     },
     {
       path: '/login',
@@ -42,24 +42,28 @@ export default new Router({
       ]
     },
     {
-      path: '/shop',
+      path: '/shop/:id',
+      props: true,
       name: 'shop',
       component: () => import(/* webpackChunkName: "about" */ 'pages/shop/shop.vue'),
       children: [
         {
-          path: '/goods',
+          path: '/seller',
+          props: true,
+          name: 'seller',
+          component: () => import(/* webpackChunkName: "about" */ 'pages/seller/seller.vue')
+        },
+        {
+          path: '/goods/:id',
+          props: true,
           name: 'goods',
           component: () => import(/* webpackChunkName: "about" */ 'pages/goods/goods.vue')
         },
         {
           path: '/ratings',
+          props: true,
           name: 'ratings',
           component: () => import(/* webpackChunkName: "about" */ 'pages/ratings/ratings.vue')
-        },
-        {
-          path: '/seller',
-          name: 'seller',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/seller/seller.vue')
         }
       ]
     }

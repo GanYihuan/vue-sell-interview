@@ -1,11 +1,11 @@
 ﻿const webpack = require('webpack')
 const path = require('path')
-const appData = require('./public/data')
-const seller = appData.seller
-const goods = appData.goods
-const ratings = appData.ratings
-const home = appData.home
-const merchant = appData.merchant
+// const appData = require('./public/data')
+// const seller = appData.seller
+// const goods = appData.goods
+// const ratings = appData.ratings
+// const home = appData.home
+// const merchant = appData.merchant
 
 module.exports = {
   // 基本路径
@@ -63,39 +63,39 @@ module.exports = {
       '/merchants': {
         target: 'http://localhost:3000' // 配置代理
       }
-    }, // 设置代理
-    before: app => {
-      app.get('/api/seller', (req, res) => {
-        const id = req.query.id
-        res.json({
-          status: 1,
-          data: Object.assign({}, seller, { id })
-        })
-      })
-      app.get('/api/goods', (req, res) => {
-        res.json({
-          status: 1,
-          data: goods
-        })
-      })
-      app.get('/api/ratings', (req, res) => {
-        res.json({
-          status: 1,
-          data: ratings
-        })
-      })
-      app.get('/api/home', (req, res) => {
-        res.json({
-          status: 1,
-          data: home
-        })
-      })
-      app.get('/api/merchant', (req, res) => {
-        res.json({
-          status: 1,
-          data: merchant
-        })
-      })
-    }
+    } // 设置代理
+    // before: app => {
+    //   app.get('/api/seller', (req, res) => {
+    //     const id = req.query.id
+    //     res.json({
+    //       status: 1,
+    //       data: Object.assign({}, seller, { id })
+    //     })
+    //   })
+    //   app.get('/api/goods', (req, res) => {
+    //     res.json({
+    //       status: 1,
+    //       data: goods
+    //     })
+    //   })
+    //   app.get('/api/ratings', (req, res) => {
+    //     res.json({
+    //       status: 1,
+    //       data: ratings
+    //     })
+    //   })
+    //   app.get('/api/home', (req, res) => {
+    //     res.json({
+    //       status: 1,
+    //       data: home
+    //     })
+    //   })
+    //   app.get('/api/merchant', (req, res) => {
+    //     res.json({
+    //       status: 1,
+    //       data: merchant
+    //     })
+    //   })
+    // }
   }
 }

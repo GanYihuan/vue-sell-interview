@@ -118,6 +118,7 @@
 <script type="text/ecmascript-6">
 import axios from 'axios'
 import BScroll from 'better-scroll'
+import { Notyf } from 'notyf' // 纯js消息通知插件
 import cartControl from 'components/cartControl/cartcontrol'
 
 export default {
@@ -217,6 +218,10 @@ export default {
       return show
     }
   },
+  mounted() {
+    // console.log(this.$route.params.id, 'prams.id ---')
+    console.log(this.selectFoods, 'selectFoods ---')
+  },
   methods: {
     toggleList() {
       if (!this.totalCount) {
@@ -236,14 +241,28 @@ export default {
       if (this.totalPrice < this.minPrice) {
         return
       }
+      // console.log(this.$route.params.id, 'this.$route.params.id')
       axios
         .post('/orders/pay', {
-          // seller,
-          // menu,
-          // number,
-          // price: this.totalPrice
+          seller: this.$route.params.id,
+          menu: this.selectFoods,
+          number: this.totalCount,
+          price: this.totalPrice
+        })
+        .then(({ status, data }) => {
+          const notyf = new Notyf()
+          if (status === 200) {
+            if (data && data.code === 0) {
+              notyf.success(`${data.msg}`)
+            } else {
+              notyf.error(`${data.msg}`)
+            }
+          } else {
+            notyf.error(`服务器出错，错误码:${status}`)
+          }
         })
       window.alert('支付' + this.totalPrice + '元')
+      console.log(this.selectFoods, 'selectFoods ---')
     },
     addFood(target) {
       this.drop(target)

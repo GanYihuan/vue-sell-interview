@@ -3,7 +3,9 @@
     <v-header :seller="seller" />
     <div class="tab border-1px">
       <div class="tab-item">
-        <router-link to="/goods">
+        <router-link
+          :to="{name: 'goods', params: {id: params}}"
+        >
           点菜
         </router-link>
       </div>
@@ -42,7 +44,8 @@ export default {
   },
   data() {
     return {
-      seller: {}
+      seller: {},
+      params: ''
     }
   },
   async mounted() {
@@ -50,6 +53,9 @@ export default {
     if (status === 200) {
       this.seller = sellers
     }
+    this.params = this.$route.params.id
+    // this.$router.push(`/goods/${this.params}`)
+    this.$router.push(`/seller`)
   }
   // created() {
   //   this.$router.push('/goods')
@@ -66,7 +72,6 @@ export default {
 }
 </script>
 
-<style lang="scss" rel="stylesheet/scss">
-@import '../../assets/scss/_mixin.scss';
-@import '../../assets/scss/app.scss';
+<style lang="stylus" rel="stylesheet/stylus">
+@import './shop.styl'
 </style>
