@@ -4,7 +4,7 @@
       <div class="bar-location">
         <div class="location-icon" />
         <div class="location-text">
-          广州市
+          {{ city }}
         </div>
       </div>
       <div
@@ -23,8 +23,15 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex'
+
 export default {
   name: 'Header',
+  computed: {
+    ...mapState({
+      city: state => state.city
+    })
+  },
   methods: {
     gotCity() {
       this.$router.push('/city')

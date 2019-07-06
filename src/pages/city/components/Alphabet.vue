@@ -65,7 +65,7 @@ export default {
           24: Height of each letter
           */
           const touchY = e.touches[0].clientY - 96
-          const index = Math.floor((touchY - this.startY) / 24) // current touch letter index
+          const index = Math.floor((touchY - this.startY) / 25) // current touch letter index
           if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index]) // whitch letter been touch
           }

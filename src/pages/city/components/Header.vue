@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     城市选择
-    <router-link to="/navbar/home">
+    <router-link to="/home">
       <div class="iconfont header-back">
         <i class="icon-arrow_lift" />
       </div>

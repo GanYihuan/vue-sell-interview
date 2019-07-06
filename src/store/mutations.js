@@ -12,6 +12,9 @@ const mutations = {
   },
   [types.SET_EVALUATEINDEX](state, num) {
     state.evaluateIndex = num
+  },
+  [types.SET_CITY](state, string) {
+    state.city = string
   }
 }
 

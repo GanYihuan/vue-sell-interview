@@ -3,7 +3,8 @@
   badComment: true,
   sellerName: '',
   sellerImage: '',
-  evaluateIndex: 0
+  evaluateIndex: 0,
+  city: '广州'
 }
 
 export default state

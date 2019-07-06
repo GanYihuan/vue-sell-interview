@@ -2,3 +2,4 @@
 export const SET_SELLNAME = 'SET_SELLNAME'
 export const SET_SELLIMAGE = 'SET_SELLIMAGE'
 export const SET_EVALUATEINDEX = 'SET_EVALUATEINDEX'
+export const SET_CITY = 'SET_CITY'
