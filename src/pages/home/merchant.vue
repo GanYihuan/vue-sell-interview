@@ -24,9 +24,6 @@
         >
           {{ item.delivery_type > 0 ? '品牌' : '新到' }}
         </div>
-        <!-- <div class="brand brand-pin">
-          品牌
-        </div> -->
         <div
           class="item-info"
           @click="passParams(item.name, item.pic_url)"

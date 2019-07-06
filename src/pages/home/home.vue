@@ -20,7 +20,7 @@
         <Merchant :merchant="merchant" />
       </div>
       <div
-        v-show="scrollY < 0"
+        v-show="showBackTop"
         class="back-to-ceiling"
         @click="backTop"
       >
@@ -64,7 +64,7 @@ export default {
   },
   computed: {
     showBackTop() {
-      return this.scrollY < -50
+      return this.scrollY < 0
     }
   },
   mounted() {

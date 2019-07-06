@@ -3,9 +3,12 @@
     <div class="header">
       评价
     </div>
-    <div
+    <Scroll
       ref="order"
       class="order"
+      :listen-scroll="listenScroll"
+      :probe-type="probeType"
+      @scroll="scroll"
     >
       <div class="order-list">
         <div
@@ -66,7 +69,14 @@
           </div>
         </div>
       </div>
-    </div>
+      <div
+        v-show="showBackTop"
+        class="back-to-ceiling"
+        @click="backTop"
+      >
+        <i class="icon-circle-up" />
+      </div>
+    </Scroll>
   </div>
 </template>
 
@@ -74,36 +84,49 @@
 import axios from 'axios'
 import { mapMutations } from 'vuex'
 import { Notyf } from 'notyf' // 纯js消息通知插件
-import BScroll from 'better-scroll'
+// import BScroll from 'better-scroll'
 import Split from 'components/split/split'
+import Scroll from 'components/scroll/scroll'
 
 export default {
   name: 'Order',
   components: {
-    Split
+    Split,
+    Scroll
   },
   data() {
     return {
-      orders: []
+      orders: [],
+      scrollY: 0 // real time roll position
     }
   },
+  computed: {
+    showBackTop() {
+      return this.scrollY < 0
+    }
+  },
+  created() {
+    this.probeType = 3
+    this.listenScroll = true
+    this.click = true
+  },
   mounted() {
-    this._initScroll()
+    // this._initScroll()
     this.getOrder()
   },
   methods: {
     ...mapMutations({ setEvaluateIndex: 'SET_EVALUATEINDEX' }),
-    _initScroll() {
-      this.$nextTick(() => {
-        if (!this.scroll) {
-          this.scroll = new BScroll(this.$refs.order, {
-            click: true
-          })
-        } else {
-          this.scroll.refresh()
-        }
-      })
-    },
+    // _initScroll() {
+    //   this.$nextTick(() => {
+    //     if (!this.scroll) {
+    //       this.scroll = new BScroll(this.$refs.order, {
+    //         click: true
+    //       })
+    //     } else {
+    //       this.scroll.refresh()
+    //     }
+    //   })
+    // },
     async getOrder() {
       const { status, data: { orders }} = await axios.get('/orders/getOrder')
       if (status === 200) {
@@ -132,6 +155,12 @@ export default {
             notyf.error(`服务器出错，错误码:${status}`)
           }
         })
+    },
+    scroll(pos) {
+      this.scrollY = pos.y
+    },
+    backTop() {
+      this.$refs.order.scrollTo(0, 0, 1000)
     }
   }
 }
