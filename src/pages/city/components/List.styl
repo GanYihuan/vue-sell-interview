@@ -1,39 +1,42 @@
 // @import 'assets/stylus/mixin.styl'
 // @import 'assets/stylus/variable.styl'
-.border-topbottom
-  &:before
-    border-color: #ccc
-  &:after
-    border-color: #ccc
-.border-bottom
-  &:before
-    border-color: #ccc
 .list
   position: absolute
   left: 0
   right: 0
-  top: 1.58rem
+  top: 6rem
   bottom: 0
   overflow: hidden
   .title
     padding-left: .2rem
-    line-height: .54rem
-    font-size: .26rem
+    height: 1.4rem
+    line-height: 1.4rem
+    font-size: .8rem
     color: #666
     background: #eee
   .button-list
-    padding: .1rem .6rem .1rem .1rem
+    // &.current
+    //   height: 2rem
+    padding: .4rem 1rem .4rem .4rem
+    // height: 4rem
     overflow: hidden // 子级浮动, 父级触发 BLC, 不与 float 重叠
+    // display flex
+    // flex-wrap: wrap
+    // flex-direction: row
+    // justify-content: flex-start
+    // align-items: center
     .button-wrapper
       float: left
       width: 33.33%
+      // width: 8rem
       .button
-        margin: .1rem
-        padding: .1rem 0
-        border: .02rem solid #ccc
-        border-radius: .06rem
+        margin: .2rem
+        padding: .2rem 0
+        border: .1rem solid #ccc
+        border-radius: .2rem
         text-align: center
   .item-list
     .item
       padding-left: .2rem
-      line-height: .76rem
+      line-height: 1.76rem
+      // border-bottom: .1rem solid #ccc

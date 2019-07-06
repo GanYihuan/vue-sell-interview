@@ -2,12 +2,12 @@
   <div>
     <city-header />
     <city-search :cities="cities" />
-    <!-- <city-list
+    <city-list
       :cities="cities"
       :hot="hotCities"
       :letter="letter"
     />
-    <city-alphabet
+    <!-- <city-alphabet
       :cities="cities"
       @change="handleLetterChange"
     /> -->
@@ -19,15 +19,15 @@ import axios from 'axios'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
-import CityAlphabet from './components/Alphabet'
+// import CityAlphabet from './components/Alphabet'
 
 export default {
   name: 'City',
   components: {
     CityHeader,
     CitySearch,
-    CityList,
-    CityAlphabet
+    CityList
+    // CityAlphabet
   },
   data() {
     return {
@@ -46,10 +46,10 @@ export default {
         .then(this.handleGetCityInfoSucc)
     },
     handleGetCityInfoSucc(res) {
-      res = res.data
-      console.log(res, 'res--')
-      if (res.ret && res.data) {
-        const data = res.data
+      res = res.data.data
+      console.log(res[0], 'res--')
+      if (res[0].ret && res[0].data) {
+        const data = res[0].data
         this.cities = data.cities
         this.hotCities = data.hotCities
       }

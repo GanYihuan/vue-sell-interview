@@ -8,11 +8,11 @@
         <div class="title border-topbottom">
           当前城市
         </div>
-        <div class="button-list">
+        <div class="button-list current">
           <div class="button-wrapper">
-            <!-- <div class="button">{{this.$store.state.city}}</div> -->
             <div class="button">
-              {{ currentCity }}
+              <!-- {{ this.$store.state.city }} -->
+              广州
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
         v-for="(item, key) of cities"
         :key="key"
         :ref="key"
-        class="area"
+        class="area cities"
       >
         <div class="title border-topbottom">
           {{ key }}
@@ -62,7 +62,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
-import { mapState, mapMutations } from 'vuex'
+// import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'CityList',
@@ -86,15 +86,14 @@ export default {
       }
     }
   },
-  computed: {
-    ...mapState({
-      currentCity: 'city'
-    })
-  },
+  // computed: {
+  //   ...mapState({
+  //     currentCity: 'city'
+  //   })
+  // },
   watch: {
     letter() {
       if (this.letter) {
-        // console.log(this.$refs[this.letter], '---')
         const element = this.$refs[this.letter][0]
         this.scroll.scrollToElement(element)
       }
@@ -104,11 +103,11 @@ export default {
     this.scroll = new Bscroll(this.$refs.wrapper)
   },
   methods: {
+    // ...mapMutations(['changeCity']),
     handleCityClick(city) {
       this.changeCity(city)
       this.$router.push('/')
-    },
-    ...mapMutations(['changeCity'])
+    }
   }
 }
 </script>
