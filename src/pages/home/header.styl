@@ -1,9 +1,78 @@
-﻿.header
+﻿@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
+
+.header
   position: relative
   .banner-img
+    z-index -100
     position: relative
     width: 100%
     height: 0
     padding-top: 11.125rem
     background-image: url("./img/banner.jpg")
     background-size: 100% 11.125rem
+.search-bar
+  position: absolute
+  padding-top: .875rem
+  width: 100%
+  height: 2.5rem
+  display: flex
+  justify-content: center
+  align-items: center
+  .bar-location
+    display flex
+    justify-content: center
+    align-items: center
+    margin-right: 1.25rem
+    height: 1.75rem
+    width: 5.75rem
+    border-radius: .8125rem
+    background-color: rgba(0, 0, 0, 0.33)
+  .location-icon
+    display: inline-block
+    margin-left: .375rem
+    width: .9375rem
+    height: 1.25rem
+    vertical-align: .5rem
+    background-image: url("./img/locationIcon.png")
+    background-size: cover
+  .location-text
+    display: inline-block
+    position: relative
+    margin-left: .5rem
+    margin-right: 1.1875rem
+    vertical-align: .75rem
+    font-size: .875rem
+    color: #fff
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      right: -0.9375rem
+      top: -0.0625rem
+      width: .875rem
+      height: .875rem
+      background-image: url("./img/arrowIcon.png")
+      background-size: cover
+  .search-btn
+    position: relative
+    width: 10.625rem
+    height: 1.875rem
+    border-radius: 1.25rem
+    background-color: #fff
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      top: .4375rem
+      left: .625rem
+      width: .875rem
+      height: .875rem
+      background-image: url("./img/searchIcon.png")
+      background-size: cover
+  .place-holder
+    margin-left: 1.75rem
+    height: 100%
+    line-height: 1.875rem
+    font-size: .875rem
+    color: #a9a9a9
