@@ -36,10 +36,16 @@ export default {
       letter: ''
     }
   },
-  mounted() {
+  async mounted() {
     this.getCityInfo()
+    // const { status, data: { city }} = await axios.get('/locations/getCity')
+    // if (status === 200) {
+    //   this.citys = city
+    //   console.log(this.cities)
+    // }
   },
   methods: {
+    // http://localhost:3000/citys/getCity
     getCityInfo() {
       axios
         .get('/api/city')
