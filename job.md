@@ -4,20 +4,21 @@
 增: 点菜界面选择菜品能增加到购物车里, 结算后购物车菜品添加到 mongodb 里. 评论界面能读取出这些选择的菜品
 删: 评论界面删除购买到的菜品, 能删除 mongodb 里面保存的数据
 改: 评论界面填写评论能修改菜品评论
-查:
+查: 查询出 mongodb 里面的城市数据
 登录: 填写用户名和密码登录, 从数据库里面读取用户名和邮箱数据显示在用户界面, koa-passport passport-local 实现
 登出: 用户界面用户名和邮箱变成空, koa-passport passport-local 实现
 
 vue 版本 "^2.6.10"
-Robo 3T, Postman 管理 MongoDB 数据库, VSCode 编辑器编辑代码
-利用 MongoDB 数据库管理数据，
-koa2 为前端提供请求接口
-stylus 编写其样式，
-webpack 配置别名和代理。
-element-ui 样式框架实现布局
+Robo 3T 管理 MongoDB 数据库
+Postman 查询数据
+koa 为前端提供请求接口
+stylus 编写样式
+webpack 配置别名和代理
+element-ui 实现布局
 git 管理项目
 
 前端部分：
+粘连布局: 菜单弹出层粘连布局
 vue-awesome-swiper 用于首页图标横幅滚动效果
 fastclick 移动端点击 300MS 延迟
 vue-lazyload 用于小图标延迟加载

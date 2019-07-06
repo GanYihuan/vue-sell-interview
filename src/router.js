@@ -5,12 +5,12 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // { // default route jump
-    //   path: '/',
-    //   name: 'root',
-    //   redirect: '/login',
-    //   component: () => import('pages/login/login.vue')
-    // },
+    { // default route jump
+      path: '/',
+      name: 'root',
+      redirect: '/login',
+      component: () => import('pages/login/login.vue')
+    },
     {
       path: '/city',
       name: 'city',
@@ -55,7 +55,7 @@ export default new Router({
       ]
     },
     {
-      path: '/shop/:id',
+      path: '/shop',
       props: true,
       name: 'shop',
       component: () => import('pages/shop/shop.vue'),
