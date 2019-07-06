@@ -5,45 +5,47 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    { // default route jump
-      path: '/',
-      redirect: '/home'
-    },
+    // { // default route jump
+    //   path: '/',
+    //   name: 'root',
+    //   redirect: '/login',
+    //   component: () => import('pages/login/login.vue')
+    // },
     {
       path: '/login',
       name: 'login',
-      component: () => import(/* webpackChunkName: "about" */ 'pages/login/login.vue')
+      component: () => import('pages/login/login.vue')
     },
     {
       path: '/register',
       name: 'register',
-      component: () => import(/* webpackChunkName: "about" */ 'pages/register/register.vue')
+      component: () => import('pages/register/register.vue')
     },
     {
       path: '/navbar',
       name: 'navbar',
-      component: () => import(/* webpackChunkName: "about" */ 'pages/navbar/navbar.vue'),
+      component: () => import('pages/navbar/navbar.vue'),
       children: [
         {
           path: '/home',
           name: 'home',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/home/home.vue')
+          component: () => import('pages/home/home.vue')
         },
         {
           path: '/my',
           name: 'my',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/my/my.vue')
+          component: () => import('pages/my/my.vue')
         },
         {
           path: '/order',
           name: 'order',
           props: true,
-          component: () => import(/* webpackChunkName: "about" */ 'pages/order/order.vue')
+          component: () => import('pages/order/order.vue')
         },
         {
           path: '/evaluate',
           name: 'evaluate',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/order/evaluate.vue')
+          component: () => import('pages/order/evaluate.vue')
         }
       ]
     },
@@ -51,25 +53,25 @@ export default new Router({
       path: '/shop/:id',
       props: true,
       name: 'shop',
-      component: () => import(/* webpackChunkName: "about" */ 'pages/shop/shop.vue'),
+      component: () => import('pages/shop/shop.vue'),
       children: [
         {
           path: '/goods/:id',
           props: true,
           name: 'goods',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/goods/goods.vue')
+          component: () => import('pages/goods/goods.vue')
         },
         {
           path: '/seller/:id',
           props: true,
           name: 'seller',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/seller/seller.vue')
+          component: () => import('pages/seller/seller.vue')
         },
         {
           path: '/ratings/:id',
           props: true,
           name: 'ratings',
-          component: () => import(/* webpackChunkName: "about" */ 'pages/ratings/ratings.vue')
+          component: () => import('pages/ratings/ratings.vue')
         }
       ]
     }

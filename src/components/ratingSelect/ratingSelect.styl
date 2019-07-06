@@ -1,12 +1,14 @@
 ﻿@import '../../assets/stylus/mixin.styl'
 @import '../../assets/stylus/variable.styl'
 .ratingselect
+  border-1px($color-gray-s, top)
   .rating-type
-    margin: 0 1.125rem
     padding: 1.125rem 0
-    // border-1px($color-gray)
+    border-1px($color-gray-s, bottom)
     font-size: 0
     .block
+      &:nth-child(1)
+        margin: 0 .5rem 0 1.125rem
       display: inline-block
       margin-right: .5rem
       padding: .5rem .75rem
@@ -23,8 +25,7 @@
         font-size: .5rem
   .switch
     padding: .75rem 1.125rem
-    border-top: .0625rem solid $color-black-ss
-    border-1px($color-gray-s)
+    border-1px($color-gray-s, bottom)
     line-height: 1.5rem
     font-size: 0
     color: $color-gray

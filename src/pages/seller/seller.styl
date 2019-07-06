@@ -10,6 +10,7 @@
   .overview
     position: relative
     padding: 1.125rem
+    border-1px($color-black-ss, bottom)
     .title
       margin-bottom: .5rem
       line-height: .875rem
@@ -17,7 +18,7 @@
       color: $color-black
     .desc
       padding-bottom: 1.125rem
-      border-1px($color-black-ss)
+      border-1px($color-black-ss, bottom)
       font-size: 0
       .star
         display: inline-block
@@ -70,6 +71,7 @@
         color: $color-gray
   .bulletin
     padding: 1.125rem 1.125rem 0 1.125rem
+    border-1px($color-black-ss, top)
     .title
       margin-bottom: .5rem
       line-height: .875rem
@@ -77,7 +79,7 @@
       color: $color-black
     .content-wrapper
       padding: 0 .75rem 1rem .75rem
-      border-1px($color-black-ss)
+      border-1px($color-black-ss, bottom)
       .content
         line-height: 1.5rem
         font-size: .75rem
@@ -85,7 +87,7 @@
     .supports
       .support-item
         padding: 1rem .75rem
-        border-1px($color-black-ss)
+        border-1px($color-black-ss, bottom)
         font-size: 0
         &:last-child
           border-none()
@@ -138,12 +140,12 @@
     padding: 1.125rem 1.125rem 0 1.125rem
     color: $color-black
     .title
-      border-1px($color-black-ss)
+      border-1px($color-black-ss, bottom)
       padding-bottom: .75rem
       line-height: .875rem
       font-size: .875rem
     .info-item
-      border-1px($color-black-ss)
+      border-1px($color-black-ss, bottom)
       padding: 1rem .75rem
       line-height: 1rem
       font-size: .75rem
