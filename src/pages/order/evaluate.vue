@@ -29,12 +29,19 @@
         <span class="count">{{ maxCount }}</span>
       </div>
     </div>
-    <div
-      class="submit"
-      @click="submit"
-    >
-      提交评价
-    </div>
+    <el-row>
+      <el-col>
+        <el-button
+          class="btn"
+          type="warning"
+          plain
+          size="large"
+          @click="submit"
+        >
+          提交评价
+        </el-button>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
