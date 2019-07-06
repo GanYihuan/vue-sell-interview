@@ -41,45 +41,46 @@
           </el-row>
         </li>
       </ul>
-      <ul class="items">
-        <li class="money">
-          <el-row>
-            <el-col :span="5">
-              <router-link
-                class="login"
-                to="/login"
-              >
-                登录
-              </router-link>
-            </el-col>
-          </el-row>
-        </li>
-        <li class="question">
-          <el-row>
-            <el-col :span="5">
-              <div
-                class="register"
-                @click="logout"
-              >
-                登出
-              </div>
-            </el-col>
-          </el-row>
-        </li>
-        <li class="question">
-          <el-row>
-            <el-col :span="5">
-              <router-link
-                class="register"
-                to="/register"
-              >
-                注册
-              </router-link>
-            </el-col>
-          </el-row>
-        </li>
-      </ul>
     </div>
+    <el-row>
+      <el-col>
+        <el-button
+          class="btn login"
+          type="warning"
+          plain
+          size="medium"
+          @click="login"
+        >
+          登录
+        </el-button>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col>
+        <el-button
+          class="btn logout"
+          type="warning"
+          plain
+          size="medium"
+          @click="logout"
+        >
+          登出
+        </el-button>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col>
+        <el-button
+          class="btn register"
+          type="warning"
+          plain
+          size="medium"
+          @click="register"
+        >
+          注册
+        </el-button>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -111,6 +112,12 @@ export default {
         this.email = ''
         notyf.error(`登出操作`)
       }
+    },
+    register() {
+      this.$router.push('/register')
+    },
+    login() {
+      this.$router.push('/login')
     }
   }
 }
