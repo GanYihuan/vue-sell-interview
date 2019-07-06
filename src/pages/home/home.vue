@@ -33,6 +33,7 @@ import Split from 'components/split/split'
 import Header from './header'
 import HomeIcon from './icons'
 import Merchant from './merchant'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -59,13 +60,16 @@ export default {
     }
   },
   computed: {
+    ...mapState({
+      city: state => state.city
+    }),
     showBackTop() {
       return this.scrollY < 0
     }
   },
   mounted() {
-    this.getUerAccount()
-    this.getUserPermissions()
+    this.getHome()
+    this.getMerchant()
   },
   created() {
     this.probeType = 3
@@ -74,13 +78,26 @@ export default {
     // this.loadData()
   },
   methods: {
-    async getUerAccount() {
+    async getHome() {
       const { status, data: { homes }} = await axios.get('/homes/getHome')
       if (status === 200) {
         this.iconList = homes
       }
     },
-    async getUserPermissions() {
+    async getMerchant() {
+      if (this.city === '广州') {
+        const { status, data: { merchants }} = await axios.get('/cmerchants/getMerchant')
+        if (status === 200) {
+          this.merchant = merchants
+        }
+        return
+      } else if (this.city === '深圳') {
+        const { status, data: { merchants }} = await axios.get('/merchants/getMerchant')
+        if (status === 200) {
+          this.merchant = merchants
+        }
+        return
+      }
       const { status, data: { merchants }} = await axios.get('/merchants/getMerchant')
       if (status === 200) {
         this.merchant = merchants

@@ -4,7 +4,7 @@
   sellerName: '',
   sellerImage: '',
   evaluateIndex: 0,
-  city: '广州'
+  city: '深圳'
 }
 
 export default state
