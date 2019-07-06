@@ -7,10 +7,10 @@
       :hot="hotCities"
       :letter="letter"
     />
-    <!-- <city-alphabet
+    <city-alphabet
       :cities="cities"
       @change="handleLetterChange"
-    /> -->
+    />
   </div>
 </template>
 
@@ -19,15 +19,15 @@ import axios from 'axios'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
-// import CityAlphabet from './components/Alphabet'
+import CityAlphabet from './components/Alphabet'
 
 export default {
   name: 'City',
   components: {
     CityHeader,
     CitySearch,
-    CityList
-    // CityAlphabet
+    CityList,
+    CityAlphabet
   },
   data() {
     return {
