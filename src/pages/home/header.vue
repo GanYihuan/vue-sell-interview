@@ -8,9 +8,12 @@
         </div>
       </div>
       <div class="search-btn">
-        <p class="place-holder">
-          搜索
-        </p>
+        <input
+          v-model="keyword"
+          class="place-holder"
+          type="text"
+          placeholder="搜索"
+        >
       </div>
     </div>
     <div class="banner-img" />
