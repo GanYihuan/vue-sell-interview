@@ -7,9 +7,11 @@
           广州市
         </div>
       </div>
-      <div class="search-btn">
+      <div
+        class="search-btn"
+        @click="gotCity"
+      >
         <input
-          v-model="keyword"
           class="place-holder"
           type="text"
           placeholder="搜索"
@@ -22,7 +24,12 @@
 
 <script type="text/ecmascript-6">
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    gotCity() {
+      this.$router.push('/city')
+    }
+  }
 }
 </script>
 
