@@ -1,16 +1,12 @@
 ﻿<template>
   <div class="my">
     <div class="header">
-      <router-link
-        class="logo"
-        to="/login"
-        tab="li"
-      >
+      <div class="logo">
         <div class="icon" />
         <div class="nickname">
           {{ user }}
         </div>
-      </router-link>
+      </div>
     </div>
     <div class="content">
       <ul class="items">
