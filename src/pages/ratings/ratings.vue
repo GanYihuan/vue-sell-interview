@@ -75,7 +75,7 @@
                 <span
                   v-show="rating.deliveryTime"
                   class="delivery"
-                >{{ rating.deliveryTime }}</span>
+                >{{ rating.deliveryTime }}分钟送到</span>
               </div>
               <p class="text">
                 {{ rating.text }}

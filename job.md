@@ -3,7 +3,7 @@
 功能:
 增: 点菜界面选择菜品能增加到购物车里, 结算后购物车菜品添加到 mongodb 里. 评论界面能读取出这些选择的菜品
 删: 评论界面删除购买到的菜品, 能删除 mongodb 里面保存的数据
-改:
+改: 评论界面填写评论能修改菜品评论
 查:
 登录: 填写用户名和密码登录, 从数据库里面读取用户名和邮箱数据显示在用户界面, koa-passport passport-local 实现
 登出: 用户界面用户名和邮箱变成空, koa-passport passport-local 实现
@@ -247,3 +247,6 @@ import nodeMailer from 'nodemailer' // Send e-mails from Node.js – easy as cak
       pass: Email.smtp.pass
     }
   })
+
+修改所在城市 (查 改)
+改完后首页数据变更(可不做)
