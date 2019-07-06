@@ -1,7 +1,7 @@
 ﻿<template>
   <div class="orderPage">
     <div class="header">
-      评价
+      订单
     </div>
     <Scroll
       ref="order"
@@ -63,7 +63,7 @@
                 class="evaluation-btn"
                 @click="showEvalutate(index)"
               >
-                评价
+                待评价
               </div>
             </router-link>
           </div>
@@ -110,22 +110,10 @@ export default {
     this.click = true
   },
   mounted() {
-    // this._initScroll()
     this.getOrder()
   },
   methods: {
     ...mapMutations({ setEvaluateIndex: 'SET_EVALUATEINDEX' }),
-    // _initScroll() {
-    //   this.$nextTick(() => {
-    //     if (!this.scroll) {
-    //       this.scroll = new BScroll(this.$refs.order, {
-    //         click: true
-    //       })
-    //     } else {
-    //       this.scroll.refresh()
-    //     }
-    //   })
-    // },
     async getOrder() {
       const { status, data: { orders }} = await axios.get('/orders/getOrder')
       if (status === 200) {

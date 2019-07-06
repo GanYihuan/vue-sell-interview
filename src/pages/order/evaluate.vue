@@ -3,10 +3,11 @@
     <div class="header">
       <router-link
         to="/order"
+        class="arrow"
       >
         <i class="icon-arrow_lift" />
-        订单
       </router-link>
+      评价
     </div>
     <div class="eva-content">
       <div class="star-area">
