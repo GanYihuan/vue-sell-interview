@@ -8,13 +8,9 @@
       @scroll="scroll"
     >
       <div class="home-content">
-        <router-link
-          class="logo"
-          to="/login"
-          tab="li"
-        >
+        <div class="logo">
           <Header />
-        </router-link>
+        </div>
         <HomeIcon :list="iconList" />
         <Split />
         <Merchant :merchant="merchant" />

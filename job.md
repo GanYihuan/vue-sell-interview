@@ -5,8 +5,8 @@
 删: 评论界面删除购买到的菜品, 能删除 mongodb 里面保存的数据
 改:
 查:
-登录: 填写用户名和密码, 从数据库里面读取对应的数据登录, 如果用户名和密码不对应则不会登录
-登出:
+登录: 填写用户名和密码登录, 从数据库里面读取用户名和邮箱数据显示在用户界面, koa-passport passport-local 实现
+登出: 用户界面用户名和邮箱变成空, koa-passport passport-local 实现
 
 vue 版本 "^2.6.10"
 Robo 3T, Postman 管理 MongoDB 数据库, VSCode 编辑器编辑代码
