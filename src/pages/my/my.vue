@@ -57,6 +57,18 @@
         <li class="question">
           <el-row>
             <el-col :span="5">
+              <div
+                class="register"
+                @click="logout"
+              >
+                登出
+              </div>
+            </el-col>
+          </el-row>
+        </li>
+        <li class="question">
+          <el-row>
+            <el-col :span="5">
               <router-link
                 class="register"
                 to="/register"
@@ -73,12 +85,13 @@
 
 <script type="text/ecmascript-6">
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
+import { Notyf } from 'notyf' // 纯js消息通知插件
 
 export default {
   name: 'My',
   data() {
     return {
-      user: '默认用户名',
+      user: '',
       email: ''
     }
   },
@@ -87,6 +100,17 @@ export default {
     if (status === 200) {
       this.user = user
       this.email = email
+    }
+  },
+  methods: {
+    async logout() {
+      const { status, data } = await axios.get('/users/exit')
+      const notyf = new Notyf()
+      if (status === 200 && data && data.code === 0) {
+        this.user = ''
+        this.email = ''
+        notyf.error(`登出操作`)
+      }
     }
   }
 }

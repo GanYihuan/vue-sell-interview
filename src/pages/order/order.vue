@@ -84,7 +84,6 @@
 import axios from 'axios'
 import { mapMutations } from 'vuex'
 import { Notyf } from 'notyf' // 纯js消息通知插件
-// import BScroll from 'better-scroll'
 import Split from 'components/split/split'
 import Scroll from 'components/scroll/scroll'
 

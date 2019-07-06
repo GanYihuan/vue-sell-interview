@@ -1,4 +1,12 @@
-﻿简介：使用 vue 框架, 实现餐馆点餐 App
+﻿简介：使用 vue 开发餐馆点餐 App
+
+功能:
+增: 点菜界面选择菜品能增加到购物车里, 结算后购物车菜品添加到 mongodb 里. 评论界面能读取出这些选择的菜品
+删: 评论界面删除购买到的菜品, 能删除 mongodb 里面保存的数据
+改:
+查:
+登录: 填写用户名和密码, 从数据库里面读取对应的数据登录, 如果用户名和密码不对应则不会登录
+登出:
 
 vue 版本 "^2.6.10"
 Robo 3T, Postman 管理 MongoDB 数据库, VSCode 编辑器编辑代码
@@ -239,5 +247,3 @@ import nodeMailer from 'nodemailer' // Send e-mails from Node.js – easy as cak
       pass: Email.smtp.pass
     }
   })
-
-delete food.vue
