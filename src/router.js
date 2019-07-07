@@ -79,6 +79,10 @@ export default new Router({
           component: () => import('pages/ratings/ratings.vue')
         }
       ]
+    },
+    {
+      path: '*',
+      component: () => import('pages/noresult/noresult.vue')
     }
   ],
   linkActiveClass: 'active', // when active, add className=active

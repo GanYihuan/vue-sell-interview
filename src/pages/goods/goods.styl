@@ -12,13 +12,11 @@
     width: 5rem
     background: $color-white-ss
     .menu-item
-      // Multi-line text Vertical centering
-      display: table
+      display: table // 多行文本居中 1
       padding: 0 .75rem
       width: 3.5rem
       height: 3.375rem
       line-height: .875rem
-      /* Let it be highlighted */
       &.current
         z-index: 10
         position: relative
@@ -46,12 +44,10 @@
         &.special
           bg-image("special_3")
       .text
-        display: table-cell
-        // father element: display: table
+        display: table-cell // 多行文本居中 2
         border-1px($color-black-ss, bottom)
         width: 3.5rem
-        vertical-align: middle
-        // Multi-line text Vertical centering
+        vertical-align: middle // 多行文本居中 3
         font-size: .75rem
   .foods-wrapper
     flex: 1
