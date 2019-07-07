@@ -12,7 +12,7 @@
 ![搜索](https://i.loli.net/2019/07/07/5d21dcfa7599180670.png)
 ![点菜](https://i.loli.net/2019/07/07/5d21dd3cac9b233136.png)
 ![弹层](https://i.loli.net/2019/07/07/5d21dd967e11592097.png)
-![购物车]https://i.loli.net/2019/07/07/5d21dd864f1d082015.png)
+![购物车](https://i.loli.net/2019/07/07/5d21dd864f1d082015.png)
 ![食物](https://i.loli.net/2019/07/07/5d21ddc04587a74086.png)
 ![商家评价](https://i.loli.net/2019/07/07/5d21dd1e48ba716486.png)
 ![商家](https://i.loli.net/2019/07/07/5d21dd0e5ad8351348.png)
