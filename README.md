@@ -19,18 +19,28 @@
 
 ## 介绍
 
-> 简介：使用 vue 框架, 实现餐馆点餐 App
+> 简介：使用 vue 开发餐馆点餐 App
 
+### 功能:
+- 增: 点菜界面选择菜品增加到购物车里, 结算后购物车菜品添加到 mongodb. 订单界面能读取出这些购物车菜品
+- 删: 订单界面删除购买到的菜品, 能删除 mongodb 里保存的数据
+- 改: 订单界面填写评论后能修改对应商家菜品的评论
+- 查: 选择城市后, 能查询出 mongodb 里的城市数据
+- 登录: 填写用户名和密码登录, 从数据库里面读取对应保存的用户名和邮箱
+- 注册: 填写用户名, 密码, 邮箱后点击验证码, 发一封邮件到填写的邮箱, 输入验证码注册, mongodb 保存对应数据
+7. 登出: 用户界面用户名和邮箱清空
+
+### 工具:
 1. vue 版本 "^2.6.10"
-2. Robo 3T, Postman 管理 MongoDB 数据库, VSCode 编辑器编辑代码
-3. 利用 MongoDB 数据库管理数据，
-4. koa2 为前端提供请求接口
-5. stylus 编写其样式，
-6. webpack 配置别名和代理。
-7. element-ui 样式框架实现布局
+2. Robo 3T 管理 MongoDB 数据库
+3. Postman 查询数据
+4. koa 为前端提供请求接口
+5. stylus 编写样式
+6. webpack 配置别名和代理
+7. element-ui 提供部分组件
 8. git 管理项目
 
-## 前端部分：
+### 插件:
 1. vue-awesome-swiper 用于首页图标横幅滚动效果
 2. fastclick 移动端点击 300MS 延迟
 3. vue-lazyload 用于小图标延迟加载
@@ -45,19 +55,23 @@
 12. vuex, state 共享时间格式数据, Mutation 修改 state 数据, 实现不同组件间"差评按钮"与"只看差评选项"的联动功能
 13. 配置 devServer proxy 代理, 指向后端启动的端口
 
-## 后端部分：
-1. koa2 编写后端代码
-2. mongoose 用于连接 MongoDB, 创建 mongodb schema & model
-3. Robo 3T 管理 mongodb 数据库内容, postman 查看请求的数据
-4. koa-redis koa-generic-session 使用 redis session 数据库储存用户信息
-5. nodeMailer 实现发送电子邮件验证码
-6. koa-json koa-onerror koa-logger 实现 json 打印, koa 错误处理, koa 日志记录
-7. koa-passport passport-local 验证用户名对应的密码验证
-8. koa-bodyparser 针对请求报文的处理
+### 样式:
+1. 粘连布局: 菜单弹出层粘连布局
+2. Flex 布局: 居中, 菜单弹出层布局设置
+3. 不同分辨率下的一像素线缩放情况
+4. 2X 3X 图实现
+5. reset.css 样式重置
+6. 清除浮动
+7. iconmoon 图标
+8. rem 设置 css 像素大小
+9. 文本超出显示 ...
 
-## 结构
-
-1. 用户界面：显示用户信息与跳转注册和登录界面，
-2. 注册登录界面: 请求后端数据库保存的用户名和密码来实现注册登录。
-3. 首页界面：显示首页标题，内容分类与商家列表。商家列表能跳转到该商家主页
-4. 商家主页: 具备点餐功能，查看评论，商家信息功能
+后端：
+koa2 编写后端代码
+mongoose 用于连接 MongoDB, 创建 mongodb schema & model
+Robo 3T 管理 mongodb 数据库内容, postman 查看请求的数据
+koa-redis koa-generic-session 使用 redis session 数据库储存用户信息
+nodeMailer 实现发送电子邮件验证码
+koa-json koa-onerror koa-logger 实现 json 打印, koa 错误处理, koa 日志记录
+koa-passport passport-local 验证用户名对应的密码验证
+koa-bodyparser 针对请求报文的处理
