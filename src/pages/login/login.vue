@@ -2,13 +2,7 @@
   <div class="login-page">
     <el-row>
       <el-col>
-        <router-link
-          class="logo"
-          to="/my"
-          tab="a"
-        >
-          <Header />
-        </router-link>
+        <Header />
       </el-col>
     </el-row>
     <el-row>

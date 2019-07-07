@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     toMy() {
-      this.$router.push('/my')
+      this.$router.push('/home')
     }
   }
 }

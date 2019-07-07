@@ -10,7 +10,7 @@
   .menu-wrapper
     flex: 0 0 5rem
     width: 5rem
-    background: $color-white-ss
+    background: $color-theme-d
     .menu-item
       display: table // 多行文本居中 1
       padding: 0 .75rem
@@ -22,7 +22,7 @@
         position: relative
         margin-top: -0.0625rem
         font-weight: 700
-        background: $color-white
+        background: $color-theme-l
         .text
           border-none()
       .icon
@@ -45,7 +45,7 @@
           bg-image("special_3")
       .text
         display: table-cell // 多行文本居中 2
-        border-1px($color-black-ss, bottom)
+        border-1px($color-theme, bottom)
         width: 3.5rem
         vertical-align: middle // 多行文本居中 3
         font-size: .75rem
@@ -54,17 +54,17 @@
     .food-list
       .title
         padding-left: .875rem
-        border-left: .125rem solid $color-gray-s
+        border-left: .125rem solid $color-theme
         height: 1.625rem
         line-height: 1.625rem
         font-size: .75rem
-        color: $color-gray
-        background: $color-white-s
+        color: $color-text-l
+        background: $color-theme-d
       .food-item
         display: flex
         margin: 1.125rem
         padding-bottom: 1.125rem
-        border-1px($color-black-ss, bottom)
+        border-1px($color-theme, bottom)
         &:last-child
           margin-bottom: 0
           border-none()
@@ -87,7 +87,7 @@
             margin: .5rem 0
             line-height: .875rem
             font-size: .625rem
-            color: $color-gray
+            color: $color-text-l
           .extra
             .count
               margin-right: .75rem
@@ -97,11 +97,11 @@
             .now
               margin-right: .5rem
               font-size: .875rem
-              color: $color-red
+              color: $color-text-important
             .old
               font-size: .625rem
               text-decoration: line-through
-              color: $color-gray
+              color: $color-text-l
           .cartControl-wrapper
             position: absolute
             right: 0
