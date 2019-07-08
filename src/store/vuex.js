@@ -8,14 +8,6 @@ Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production' // development mode is on, strict mode check vuex data
 
-// export default new Vuex.Store({
-//   state,
-//   mutations,
-//   strict: debug,
-//   plugins: debug ? [createLogger()] : [],
-//   modules: {}
-// })
-
 export default () => {
   const store = new Vuex.Store({
     state,
@@ -29,19 +21,16 @@ export default () => {
       [
         './state',
         './mutations',
-        './actions',
         './getters'
       ],
       () => {
         const newState = require('./state').default
         const newMutations = require('./mutations').default
-        const newActions = require('./actions').default
         const newGetters = require('./getters').default
         store.hotUpdate({
           state: newState,
           mutations: newMutations,
-          getters: newGetters,
-          actions: newActions
+          getters: newGetters
         })
       }
     )
