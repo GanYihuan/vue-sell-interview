@@ -35,6 +35,8 @@ export default {
   },
   methods: {
     addCart(event) {
+      /* better-scroll */
+      /* at PC will trigger twice event, stop this */
       if (!event._constructed) {
         return
       }
