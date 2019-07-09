@@ -9,7 +9,7 @@ export default new Router({
       path: '/',
       name: 'root',
       redirect: '/login',
-      component: () => import('pages/login/login.vue')
+      component: () => import('pages/login/login.vue') // async route, Automatically load the resources of the required page according to the URL, and will not cause the page to block
     },
     {
       path: '/city',
@@ -85,8 +85,8 @@ export default new Router({
       component: () => import('pages/noresult/noresult.vue')
     }
   ],
-  linkActiveClass: 'active', // when active, add className=active
-  mode: 'history', // Remove the hash of the address bar #
+  linkActiveClass: 'active', // when route active, add className=active
+  mode: 'history', // Remove address bar hash #
   scrollBehavior(to, from, savedPosition) { // Page scrolls to the specified location when the route jumps
     if (savedPosition) {
       return savedPosition
