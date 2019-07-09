@@ -15,9 +15,9 @@
   </ul>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 export default {
-  name: 'CityAlphabet',
+  name: 'Alphabet',
   props: {
     cities: {
       type: Object,
@@ -39,7 +39,7 @@ export default {
       for (const i in this.cities) {
         letters.push(i)
       }
-      return letters // [A, B, C ...]
+      return letters
     }
   },
   updated() { // virtual DMO re-render and patch
@@ -69,7 +69,7 @@ export default {
           if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index]) // whitch letter been touch
           }
-        }, 16) // 最小间隔为 16.7ms
+        }, 16) // The minimum interval is 16.7ms
       }
     },
     handleTouchEnd() {

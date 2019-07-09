@@ -40,7 +40,7 @@ import { mapMutations } from 'vuex'
 import Scroll from 'components/scroll/scroll'
 
 export default {
-  name: 'CitySearch',
+  name: 'Search',
   components: {
     Scroll
   },
