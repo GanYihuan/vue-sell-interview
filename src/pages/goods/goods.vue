@@ -64,10 +64,7 @@
                     >￥{{ food.oldPrice }}</span>
                   </div>
                   <div class="cartControl-wrapper">
-                    <cartControl
-                      :food="food"
-                      @add="addFood"
-                    />
+                    <cartControl :food="food" />
                   </div>
                 </div>
               </li>
@@ -85,17 +82,16 @@
     <food
       ref="food"
       :food="selectedFood"
-      @add="addFood"
     />
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import BScroll from 'better-scroll'
 import shopCart from 'components/shopCart/shopCart'
 import cartControl from 'components/cartControl/cartcontrol'
 import food from 'pages/food/food'
-import axios from 'axios'
 
 export default {
   name: 'Goods',
@@ -115,12 +111,13 @@ export default {
   data() {
     return {
       goods: [],
-      listHeight: [], /* An array of the heights of each element on the right side */
-      scrollY: 0, /* foodsScroll rolling position */
+      listHeight: [], /* 计算菜品集合的高度 */
+      scrollY: 0, /* foodsScroll Real-time scroll position scrollY */
       selectedFood: {}
     }
   },
   computed: {
+    // 当前菜品的下标
     currentIndex() {
       for (let i = 0; i < this.listHeight.length; i++) {
         const height1 = this.listHeight[i] /* The height of the current index value */
@@ -139,7 +136,7 @@ export default {
       this.goods.forEach(good => {
         /* food -> 项目中的单个菜品. */
         good.foods.forEach(food => {
-          /* food.count: cartcontrol.vue setting */
+          /* food.count: cartcontrol.vue Vue.set() */
           if (food.count) {
             foods.push(food)
           }
@@ -160,19 +157,6 @@ export default {
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    // axios
-    //   .get('/api/goods')
-    //   .then((res) => {
-    //     const { status, data } = res.data
-    //     if (status === 1) {
-    //       this.goods = data
-    //     }
-    //     this.$nextTick(() => {
-    //       this._initScroll()
-    //       this._calculateHeight()
-    //     })
-    //   }).catch(() => {
-    //   })
   },
   methods: {
     _initScroll() {
@@ -194,6 +178,7 @@ export default {
         this.scrollY = Math.abs(Math.round(pos.y))
       })
     },
+    // 计算菜品集合的高度
     _calculateHeight() {
       const foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
       let height = 0
@@ -223,19 +208,6 @@ export default {
       }
       this.selectedFood = food
       this.$refs.food.show()
-    },
-    addFood(target) {
-      this._drop(target)
-    },
-    _drop(target) {
-      /*
-      异步执行抛物小球动画，缓解卡顿
-      在下次 DOM 更新循环结束之后执行延迟回调。
-      在修改数据之后立即使用这个方法，获取更新后的 DOM。
-      */
-      this.$nextTick(() => {
-        this.$refs.shopCart.drop(target)
-      })
     }
   }
 }
