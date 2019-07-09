@@ -23,7 +23,7 @@
         <textarea
           v-model="textarea"
           class="comment-input"
-          placeholder="菜品的口味如何? 请写下你的评价。 4星以上好评, 3星以下差评"
+          placeholder="请写下你的评价。4星或4星以上好评, 3星或3星以下差评"
           maxLength="50"
         />
         <span class="count">{{ maxCount }}</span>
@@ -46,10 +46,10 @@
 </template>
 
 <script type="text/ecmascript-6">
-import axios from 'axios'
-import { Notyf } from 'notyf' // 纯js消息通知插件
-import moment from 'moment' // 时间格式处理
 import { mapState } from 'vuex'
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
+import { Notyf } from 'notyf' // Pure js message notification plugin
+import moment from 'moment' // Time format processing
 
 export default {
   name: 'Evaluate',
@@ -107,7 +107,7 @@ export default {
     },
     submit() {
       const score = this.startIndex + 1
-      let rateType = 0
+      let rateType = 0 // 0 -> good comment, 1 -> bad comment
       if (score >= 4) {
         rateType = 0
       } else {
