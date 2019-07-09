@@ -75,8 +75,8 @@
 </template>
 
 <script type="text/ecmascript-6">
-import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import { mapMutations } from 'vuex'
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import { Notyf } from 'notyf' // Pure js message notification plugin
 import Split from 'components/split/split'
 import Scroll from 'components/scroll/scroll'

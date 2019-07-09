@@ -82,7 +82,7 @@
 
 <script type="text/ecmascript-6">
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import { Notyf } from 'notyf' // 纯js消息通知插件
+import { Notyf } from 'notyf' // Pure js message notification plugin
 
 export default {
   name: 'My',
@@ -106,7 +106,7 @@ export default {
       if (status === 200 && data && data.code === 0) {
         this.user = ''
         this.email = ''
-        notyf.error(`登出操作`)
+        notyf.success(`登出操作`)
       }
     },
     register() {
