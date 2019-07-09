@@ -8,10 +8,12 @@
         placeholder="输入城市名或拼音"
       >
     </div>
-    <div
+    <Scroll
       v-show="keyword"
       ref="search"
       class="search-content"
+      :listen-scroll="listenScroll"
+      :probe-type="probeType"
     >
       <ul>
         <li
@@ -29,16 +31,20 @@
           没有找到匹配数据
         </li>
       </ul>
-    </div>
+    </Scroll>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import Bscroll from 'better-scroll'
+import Scroll from 'components/scroll/scroll'
+// import Bscroll from 'better-scroll'
 import { mapMutations } from 'vuex'
 
 export default {
   name: 'CitySearch',
+  components: {
+    Scroll
+  },
   props: {
     cities: {
       type: Object,
@@ -84,9 +90,14 @@ export default {
       }, 100)
     }
   },
-  mounted() {
-    this.scroll = new Bscroll(this.$refs.search)
+  created() {
+    this.probeType = 3
+    this.listenScroll = true
+    this.click = true
   },
+  // mounted() {
+  //   this.scroll = new Bscroll(this.$refs.search)
+  // },
   methods: {
     ...mapMutations(['changeCity']),
     handleCityClick(city) {
