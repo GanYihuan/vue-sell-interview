@@ -42,7 +42,6 @@
       <split />
       <ratingSelect
         :select-type="selectType"
-        :only-content="onlyContent"
         :ratings="ratings"
         @select="selectRating"
         @toggle="toggleContent"
@@ -110,6 +109,7 @@ import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
+
 const ALL = 2
 const NEGATIVE = 1
 const POSITIVE = 0
@@ -134,7 +134,7 @@ export default {
     return {
       ratings: [],
       selectType: ALL,
-      onlyContent: true
+      badContent: false
     }
   },
   async mounted() {
@@ -162,28 +162,37 @@ export default {
     //   })
   },
   methods: {
-    ...mapMutations({ setbadcomment: 'SET_BADCOMMENT' }),
+    ...mapMutations({
+      setbadcomment: 'SET_BADCOMMENT'
+    }),
     selectRating(type) {
       if (type === NEGATIVE) {
         this.setbadcomment(true) // 只看差评
-      } else if (type === POSITIVE) {
+        this.badContent = true
+      }
+      if (type === POSITIVE) {
         this.setbadcomment(false)
+        this.badContent = false
+      }
+      if (type === ALL) {
+        this.setbadcomment(false)
+        this.badContent = false
       }
       this.selectType = type
-      this.$nextTick(() => {
-        this.scroll.refresh()
-      })
     },
     toggleContent() {
-      this.onlyContent = !this.onlyContent
-      this.onlyContent === true ? this.setbadcomment(true) : this.setbadcomment(false)
-      this.onlyContent === true ? this.selectType = POSITIVE : this.selectType = NEGATIVE
-      this.$nextTick(() => {
-        this.scroll.refresh()
-      })
+      this.badContent = !this.badContent
+      if (this.badContent === true) {
+        this.setbadcomment(true)
+        this.selectType = NEGATIVE
+      }
+      if (this.badContent === false) {
+        this.setbadcomment(false)
+        this.selectType = ALL
+      }
     },
     needShow(type, text) {
-      if (this.onlyContent && !text) {
+      if (this.badContent && !text) {
         return false
       }
       if (this.selectType === ALL) {

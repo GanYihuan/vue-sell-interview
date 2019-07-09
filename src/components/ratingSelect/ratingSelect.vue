@@ -39,11 +39,10 @@
 
 <script type="text/ecmascript-6">
 import { mapState } from 'vuex'
+
+const ALL = 2
 const POSITIVE = 0
 const NEGATIVE = 1
-const ALL = 2
-const EVENT_TOGGLE = 'toggle'
-const EVENT_SELECT = 'select'
 
 export default {
   name: 'RatingSelect',
@@ -79,10 +78,10 @@ export default {
   },
   methods: {
     select(type, event) {
-      this.$emit(EVENT_SELECT, type)
+      this.$emit('select', type)
     },
-    toggleContent(event) {
-      this.$emit(EVENT_TOGGLE)
+    toggleContent() {
+      this.$emit('toggle')
     }
   }
 }
