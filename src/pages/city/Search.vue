@@ -88,11 +88,11 @@ export default {
     this.scroll = new Bscroll(this.$refs.search)
   },
   methods: {
+    ...mapMutations(['changeCity']),
     handleCityClick(city) {
       this.changeCity(city)
       this.$router.push('/')
-    },
-    ...mapMutations(['changeCity'])
+    }
   }
 }
 </script>

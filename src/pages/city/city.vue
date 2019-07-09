@@ -15,11 +15,11 @@
 </template>
 
 <script type="text/ecmascript-6">
-import axios from 'axios'
-import CityHeader from './components/Header'
-import CitySearch from './components/Search'
-import CityList from './components/List'
-import CityAlphabet from './components/Alphabet'
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
+import CityHeader from './Header'
+import CitySearch from './Search'
+import CityList from './List'
+import CityAlphabet from './Alphabet'
 
 export default {
   name: 'City',
