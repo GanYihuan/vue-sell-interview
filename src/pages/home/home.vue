@@ -27,13 +27,13 @@
 </template>
 
 <script type="text/ecmascript-6">
-import Scroll from 'components/scroll/scroll'
+import { mapState } from 'vuex'
 import axios from 'axios'
+import Scroll from 'components/scroll/scroll'
 import Split from 'components/split/split'
 import Header from './header'
 import HomeIcon from './icons'
 import Merchant from './merchant'
-import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -43,14 +43,6 @@ export default {
     HomeIcon,
     Scroll,
     Merchant
-  },
-  props: {
-    seller: {
-      type: Object,
-      default() {
-        return {}
-      }
-    }
   },
   data() {
     return {
@@ -75,7 +67,6 @@ export default {
     this.probeType = 3
     this.listenScroll = true
     this.click = true
-    // this.loadData()
   },
   methods: {
     async getHome() {
@@ -103,22 +94,6 @@ export default {
         this.merchant = merchants
       }
     },
-    // loadData() {
-    //   axios
-    //     .all([axios.get('/api/home'), axios.get('/api/merchant')])
-    //     .then(axios.spread((acc, pers) => {
-    //       const getacc = () => {
-    //         const { data } = acc.data
-    //         this.iconList = data
-    //       }
-    //       const getmerchant = () => {
-    //         const { data } = pers.data
-    //         this.merchant = data
-    //       }
-    //       getacc()
-    //       getmerchant()
-    //     }))
-    // },
     scroll(pos) {
       this.scrollY = pos.y
     },

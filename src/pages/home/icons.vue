@@ -21,11 +21,15 @@
           </div>
         </div>
       </swiper-slide>
+      <div
+        slot="pagination"
+        class="swiper-pagination"
+      />
     </swiper>
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 export default {
   name: 'Icons',
   props: {
@@ -39,7 +43,11 @@ export default {
   data() {
     return {
       swiperOption: {
-        autoplay: false
+        autoplay: false,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
       }
     }
   },

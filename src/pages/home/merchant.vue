@@ -65,7 +65,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import Star from 'components/star/star'
 import { mapMutations } from 'vuex'
 
@@ -83,7 +83,10 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({ setSellName: 'SET_SELLNAME', setSellImage: 'SET_SELLIMAGE' }),
+    ...mapMutations({
+      setSellName: 'SET_SELLNAME',
+      setSellImage: 'SET_SELLIMAGE'
+    }),
     passParams(name, img) {
       this.setSellName(name)
       this.setSellImage(img)

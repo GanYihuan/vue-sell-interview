@@ -1,8 +1,9 @@
 ﻿import Vue from 'vue'
 import Vuex from 'vuex'
-import createLogger from 'vuex/dist/logger'
+import createLogger from 'vuex/dist/logger' // output the mutation's action and the state of the store in real time
 import state from './state'
 import mutations from './mutations'
+import getters from './getters'
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export default () => {
   const store = new Vuex.Store({
     state,
     mutations,
+    getters,
     strict: debug,
     plugins: debug ? [createLogger()] : [],
     modules: {}
