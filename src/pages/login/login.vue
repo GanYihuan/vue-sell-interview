@@ -86,11 +86,11 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import Header from 'pages/home/header'
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
+import { Notyf } from 'notyf' // Pure js message notification plugin
 import CryptoJS from 'crypto-js' // encryption
-import axios from 'axios'
-import { Notyf } from 'notyf' // 纯js消息通知插件
 
 export default {
   name: 'Login',
@@ -157,6 +157,7 @@ export default {
             }
           } else {
             this.error = `服务器出错`
+            notyf.error('服务器出错')
           }
         })
     },

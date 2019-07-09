@@ -104,14 +104,14 @@
   </div>
 </template>
 
-<script>
-import axios from 'axios'
-import Header from '../home/header'
+<script type="text/ecmascript-6">
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import CryptoJS from 'crypto-js' // encryption
-import { Notyf } from 'notyf' // 纯js消息通知插件
+import { Notyf } from 'notyf' // Pure js message notification plugin
+import Header from '../home/header'
 
 export default {
-  name: 'Login',
+  name: 'Register',
   components: {
     Header
   },
