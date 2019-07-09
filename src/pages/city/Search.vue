@@ -36,9 +36,8 @@
 </template>
 
 <script type="text/ecmascript-6">
-import Scroll from 'components/scroll/scroll'
-// import Bscroll from 'better-scroll'
 import { mapMutations } from 'vuex'
+import Scroll from 'components/scroll/scroll'
 
 export default {
   name: 'CitySearch',
@@ -95,9 +94,6 @@ export default {
     this.listenScroll = true
     this.click = true
   },
-  // mounted() {
-  //   this.scroll = new Bscroll(this.$refs.search)
-  // },
   methods: {
     ...mapMutations(['changeCity']),
     handleCityClick(city) {
