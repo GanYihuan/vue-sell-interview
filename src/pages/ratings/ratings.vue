@@ -103,7 +103,7 @@
 
 <script type="text/ecmascript-6">
 import { mapMutations } from 'vuex'
-import axios from 'axios'
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import ratingMixin from 'utils/mixins/rating'
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
@@ -202,13 +202,9 @@ export default {
       }
     },
     _initScroll() {
-      if (!this.scroll) {
-        this.scroll = new BScroll(this.$refs.ratings, {
-          click: true
-        })
-      } else {
-        this.scroll.refresh()
-      }
+      this.scroll = new BScroll(this.$refs.ratings, {
+        click: true
+      })
     }
   }
 }
