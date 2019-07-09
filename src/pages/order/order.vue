@@ -8,6 +8,7 @@
       class="order"
       :listen-scroll="listenScroll"
       :probe-type="probeType"
+      :data="orders"
       @scroll="scroll"
     >
       <div class="order-list">
@@ -23,9 +24,7 @@
               :src="item.sellerImage"
             >
             <div class="item-right">
-              <div
-                class="item-top"
-              >
+              <div class="item-top">
                 <p class="order-name one-line">
                   {{ item.sellerName }}
                 </p>
@@ -55,17 +54,12 @@
             </div>
           </div>
           <div class="evaluation clearfix">
-            <router-link
-              to="/evaluate"
-              tab="div"
+            <div
+              class="evaluation-btn"
+              @click="showEvalutate(index)"
             >
-              <div
-                class="evaluation-btn"
-                @click="showEvalutate(index)"
-              >
-                待评价
-              </div>
-            </router-link>
+              待评价
+            </div>
           </div>
         </div>
       </div>
@@ -80,10 +74,10 @@
   </div>
 </template>
 
-<script>
-import axios from 'axios'
+<script type="text/ecmascript-6">
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import { mapMutations } from 'vuex'
-import { Notyf } from 'notyf' // 纯js消息通知插件
+import { Notyf } from 'notyf' // Pure js message notification plugin
 import Split from 'components/split/split'
 import Scroll from 'components/scroll/scroll'
 
@@ -113,7 +107,9 @@ export default {
     this.getOrder()
   },
   methods: {
-    ...mapMutations({ setEvaluateIndex: 'SET_EVALUATEINDEX' }),
+    ...mapMutations({
+      setEvaluateIndex: 'SET_EVALUATEINDEX'
+    }),
     async getOrder() {
       const { status, data: { orders }} = await axios.get('/orders/getOrder')
       if (status === 200) {

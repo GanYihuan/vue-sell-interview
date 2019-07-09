@@ -5,6 +5,7 @@
       class="home"
       :listen-scroll="listenScroll"
       :probe-type="probeType"
+      :data="merchant"
       @scroll="scroll"
     >
       <div class="home-content">
