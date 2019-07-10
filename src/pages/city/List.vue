@@ -94,14 +94,14 @@ export default {
       city: state => state.city
     })
   },
-  watch: {
-    letter() {
-      if (this.letter) {
-        const element = this.$refs[this.letter][0]
-        this.scroll.scrollToElement(element)
-      }
-    }
-  },
+  // watch: {
+  //   letter() {
+  //     if (this.letter) {
+  //       const element = this.$refs[this.letter][0]
+  //       this.scroll.scrollToElement(element)
+  //     }
+  //   }
+  // },
   created() {
     this.probeType = 3
     this.listenScroll = true
