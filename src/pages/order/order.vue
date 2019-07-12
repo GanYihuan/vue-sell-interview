@@ -30,7 +30,7 @@
                 </p>
                 <div
                   class="close"
-                  @click="deleteComment(item.sellerName)"
+                  @click="deleteComment(item.sellerName, item.number, item.price)"
                 >
                   <i class="icon-close" />
                 </div>
@@ -120,10 +120,12 @@ export default {
       this.setEvaluateIndex(index)
       this.$router.push(`/evaluate`)
     },
-    deleteComment(sellerName) {
+    deleteComment(sellerName, number, price) {
       axios
         .post('/orders/deleteOrder', {
-          sellerName: sellerName
+          sellerName: sellerName,
+          number: number,
+          price: price
         })
         .then(({ status, data }) => {
           const notyf = new Notyf()

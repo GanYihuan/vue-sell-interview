@@ -13,7 +13,7 @@
             :size="36"
             :score="seller.score"
           />
-          <span class="text">({{ seller.ratingCount }})</span>
+          <span class="text">{{ seller.score }}</span>
           <span class="text">月售{{ seller.sellCount }}单</span>
         </div>
         <div
