@@ -120,7 +120,7 @@ export default {
         recommend.push(i.name)
       }
       const username = this.user
-      const avatar = './img/avatar.png'
+      const avatar = 'http://static.galileo.xiaojukeji.com/static/tms/default_header.png'
       const commentTime = new Date()
       const time = moment(commentTime).format(this.dateType)
       const oldTime = (new Date(time)).getTime()
