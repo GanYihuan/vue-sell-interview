@@ -20,6 +20,15 @@ webpack 配置别名和代理
 element-ui 提供部分组件
 git 管理项目
 
+样式:
+粘连布局: 菜单弹出层使用粘连布局
+Flex 布局: 底部菜单栏图标布局设置
+不同分辨率下的一像素线缩放情况
+2X 3X 图实现
+reset.css 样式重置
+清除浮动
+rem 设置 css 像素大小
+
 插件:
 vue-awesome-swiper 用于首页图标横幅滚动效果
 fastclick 移动端点击 300MS 延迟
@@ -34,15 +43,6 @@ moment 用于评论界面的时间格式处理
 good-storage 实现 sessionStorage 和 localStorage 功能, 用于商家界面收藏页的存储功能
 vuex, state 共享时间格式数据, Mutation 修改 state 数据, 实现不同组件间"差评按钮"与"只看差评选项"的联动功能
 配置 devServer proxy 代理, 指向后端启动的端口
-
-样式:
-粘连布局: 菜单弹出层使用粘连布局
-Flex 布局: 底部菜单栏图标布局设置
-不同分辨率下的一像素线缩放情况
-2X 3X 图实现
-reset.css 样式重置
-清除浮动
-rem 设置 css 像素大小
 
 后端：
 koa2 编写后端代码
