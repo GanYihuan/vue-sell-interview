@@ -62,10 +62,10 @@ export default {
           touches: Finger information
 					e.touches[0].clientY: Click location to the top of the header
           96: City selection header height(Blue part)
-          24: Height of each letter
+          25: Height of each letter
           */
-          const touchY = e.touches[0].clientY - 96
-          const index = Math.floor((touchY - this.startY) / 25) // current touch letter index
+          const touchY = e.touches[0].clientY - 79
+          const index = Math.floor((touchY - this.startY) / 20) // current touch letter index
           if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index]) // whitch letter been touch
           }

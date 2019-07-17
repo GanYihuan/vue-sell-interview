@@ -1,10 +1,8 @@
 <template>
   <div>
-    <Scroll
+    <div
       ref="wrapper"
       class="list"
-      :listen-scroll="listenScroll"
-      :probe-type="probeType"
     >
       <div>
         <div class="area">
@@ -39,6 +37,7 @@
         <div
           v-for="(item, key) of cities"
           :key="key"
+          :ref="key"
           class="area cities"
         >
           <div class="title border-topbottom">
@@ -56,19 +55,20 @@
           </div>
         </div>
       </div>
-    </Scroll>
+    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import { mapState, mapMutations } from 'vuex'
-import Scroll from 'components/scroll/scroll'
+// import Scroll from 'components/scroll/scroll'
+import Bscroll from 'better-scroll'
 
 export default {
   name: 'List',
-  components: {
-    Scroll
-  },
+  // components: {
+  //   Scroll
+  // },
   props: {
     hot: {
       type: Array,
@@ -94,19 +94,22 @@ export default {
       city: state => state.city
     })
   },
-  // watch: {
-  //   letter() {
-  //     if (this.letter) {
-  //       const element = this.$refs[this.letter][0]
-  //       this.scroll.scrollToElement(element)
-  //     }
-  //   }
-  // },
-  created() {
-    this.probeType = 3
-    this.listenScroll = true
-    this.click = true
+  watch: {
+    letter() {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   },
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  // created() {
+  //   this.probeType = 3
+  //   this.listenScroll = true
+  //   this.click = true
+  // },
   methods: {
     ...mapMutations({ setCity: 'SET_CITY' }),
     handleCityClick(city) {

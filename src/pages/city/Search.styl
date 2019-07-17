@@ -1,5 +1,5 @@
-// @import 'assets/stylus/mixin.styl'
-// @import 'assets/stylus/variable.styl'
+@import '../../assets/stylus/mixin.styl'
+@import '../../assets/stylus/variable.styl'
 .search-wrapper
   position absolute
   left: 0
@@ -10,7 +10,7 @@
   padding: 0 .4rem
   height: 3rem
   line-height 3rem
-  background: #facb46
+  background: $color-yellow
   .search-input
     box-sizing: border-box
     padding: 0 .1rem
@@ -19,7 +19,7 @@
     height: 2rem
     line-height: 2rem
     text-align: center
-    color: #666
+    color: $color-gray
 .search-content
   z-index: 1
   position: absolute
@@ -28,11 +28,11 @@
   top: 3rem
   bottom: 0
   height: 100%
-  background: #eee
+  background: $color-white
   overflow: hidden
   .search-item
     padding-left: .2rem
     height: 2rem
     line-height: 2rem
-    color: #666
-    background: #fff
+    color: $color-gray
+    background: $color-white
