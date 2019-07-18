@@ -1,33 +1,23 @@
 ﻿# job
 
-简介：使用 vue 开发餐馆点餐 App
+本人有1年工作经验，意向前端开发，热爱技术。尝试从 Vue 与 React 两个框架各编写一个功能外表一致的项目案例。不断学习与探索不同框架的特点。
 
+管理公司内部的系统，该系统用于接收和发送单据，按照需求和提交单据的人沟通，转交相关的内容。文件的整理和修改文案工作。
+
+简介：使用 vue 开发餐馆点餐 App
 功能:
 增: 选择菜品添加到购物车, 结算后数据保存到 mongodb。订单界面读取出结算菜品
-删: 订单界面删除订单, 同时删除 mongodb 保存的订单数据
-改: 填写评论后能修改对应的商家的菜品评论
-查: 选择城市, 查询出保存在 mongodb 的城市数据
+删: 订单界面删除购买到的菜品, 能删除 mongodb 里保存的数据
+改: 订单界面填写评论后能修改对应商家菜品的评论
+查: 选择城市后, 能查询出 mongodb 里的城市数据
 登录: 填写用户名和密码登录, 从数据库里面读取对应保存的用户名和邮箱
 注册: 填写用户名, 密码, 邮箱点击验证码, 发一封邮件到填写的邮箱, 输入验证码注册
 
-工具:
-vue 版本 "^2.6.10"
-Robo 3T 管理 MongoDB 数据库
-Postman 查询数据
-koa 为前端提供请求接口
-stylus 编写样式
-webpack 配置别名和代理
-element-ui 提供部分组件
-git 管理项目
-
 样式:
 粘连布局: 菜单弹出层使用粘连布局
-Flex 布局: 底部菜单栏图标布局设置
-不同分辨率下的一像素线缩放情况
-2X 3X 图实现
-reset.css 样式重置
-清除浮动
-rem 设置 css 像素大小
+两列自适应布局: 底部菜单栏图标布局设置, flex 实现
+不同分辨率下的一像素线适配
+2X 3X 图适配
 
 插件:
 vue-awesome-swiper 用于首页图标横幅滚动效果
@@ -42,7 +32,6 @@ crypto-js 注册界面输入的密码经过 MD5 加密传输到后端数据接�
 moment 用于评论界面的时间格式处理
 good-storage 实现 sessionStorage 和 localStorage 功能, 用于商家界面收藏页的存储功能
 vuex, state 共享时间格式数据, Mutation 修改 state 数据, 实现不同组件间"差评按钮"与"只看差评选项"的联动功能
-配置 devServer proxy 代理, 指向后端启动的端口
 
 后端：
 koa2 编写后端代码
@@ -53,6 +42,14 @@ nodeMailer 实现发送电子邮件验证码
 koa-json koa-onerror koa-logger 实现 json 打印, koa 错误处理, koa 日志记录
 koa-passport passport-local 验证用户名对应的密码验证
 koa-bodyparser 针对请求报文的处理
+
+工具:
+vue 版本 "^2.6.10"
+Robo 3T 管理 MongoDB 数据库
+Postman 查询数据
+koa2 为前端提供请求接口
+stylus 编写样式
+git 管理项目
 
 ## vue-awesome-swiper
 
