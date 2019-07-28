@@ -36,47 +36,45 @@
             </el-col>
           </el-row>
         </li>
+        <li>
+          <el-row>
+            <el-col :span="8">
+              <el-button
+                class="btn login"
+                type="warning"
+                plain
+                size="medium"
+                @click="login"
+              >
+                登录
+              </el-button>
+            </el-col>
+            <el-col :span="8">
+              <el-button
+                class="btn logout"
+                type="warning"
+                plain
+                size="medium"
+                @click="logout"
+              >
+                登出
+              </el-button>
+            </el-col>
+            <el-col :span="8">
+              <el-button
+                class="btn register"
+                type="warning"
+                plain
+                size="medium"
+                @click="register"
+              >
+                注册
+              </el-button>
+            </el-col>
+          </el-row>
+        </li>
       </ul>
     </div>
-    <el-row>
-      <el-col>
-        <el-button
-          class="btn login"
-          type="warning"
-          plain
-          size="medium"
-          @click="login"
-        >
-          登录
-        </el-button>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col>
-        <el-button
-          class="btn logout"
-          type="warning"
-          plain
-          size="medium"
-          @click="logout"
-        >
-          登出
-        </el-button>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col>
-        <el-button
-          class="btn register"
-          type="warning"
-          plain
-          size="medium"
-          @click="register"
-        >
-          注册
-        </el-button>
-      </el-col>
-    </el-row>
   </div>
 </template>
 
