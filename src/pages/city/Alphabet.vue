@@ -1,18 +1,18 @@
 <template>
-  <ul class="list">
-    <li
+  <div class="alphabet">
+    <div
       v-for="item of letters"
       :key="item"
       :ref="item"
-      class="item"
+      class="alphabet-item"
       @touchstart.prevent="handleTouchStart"
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd"
       @click="handleLetterClick"
     >
       {{ item }}
-    </li>
-  </ul>
+    </div>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
@@ -48,6 +48,7 @@ export default {
   methods: {
     handleLetterClick(e) {
       this.$emit('change', e.target.innerText)
+      console.log('click')
     },
     handleTouchStart() {
       this.touchStatus = true
@@ -60,7 +61,7 @@ export default {
         this.timer = setTimeout(() => { // Throttling function
           /*
           touches: Finger information
-					e.touches[0].clientY: Click location to the top of the header
+          e.touches[0].clientY: Click location to the top of the header
           96: City selection header height(Blue part)
           25: Height of each letter
           */

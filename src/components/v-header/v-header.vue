@@ -5,7 +5,7 @@
         class="back"
         @click="backHome"
       >
-        <i class="icon-arrow_lift" />
+        <i class="icon-close" />
       </div>
       <div class="avatar">
         <img :src="seller.avatar">

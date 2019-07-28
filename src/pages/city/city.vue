@@ -46,7 +46,7 @@ export default {
   methods: {
     handleLetterChange(letter) {
       this.letter = letter
-      console.log(letter, 'xxx')
+      console.log(letter, 'letter')
     }
   }
 }
