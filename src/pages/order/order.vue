@@ -53,12 +53,12 @@
               </div>
             </div>
           </div>
-          <div class="evaluation clearfix">
+          <div class="evaluation">
             <div
               class="evaluation-btn"
               @click="showEvalutate(index)"
             >
-              待评价
+              评价
             </div>
           </div>
         </div>
