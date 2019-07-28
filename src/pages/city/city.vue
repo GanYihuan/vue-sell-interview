@@ -16,10 +16,10 @@
 
 <script type="text/ecmascript-6">
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import CityHeader from './Header'
-import CitySearch from './Search'
-import CityList from './List'
-import CityAlphabet from './Alphabet'
+import CityHeader from './header'
+import CitySearch from './search'
+import CityList from './list'
+import CityAlphabet from './alphabet'
 
 export default {
   name: 'City',

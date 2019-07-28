@@ -16,5 +16,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './Header.styl';
+@import './header.styl';
 </style>

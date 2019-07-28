@@ -105,5 +105,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './Search.styl';
+@import './search.styl';
 </style>

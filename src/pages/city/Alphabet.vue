@@ -80,5 +80,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './Alphabet.styl';
+@import './alphabet.styl';
 </style>

@@ -260,12 +260,6 @@ const router = new Router({ // Routing prefix
 const Store = new Redis().client // get redis client
 router.post('/signup', async ctx => {
 
-## koa-redis
-
-koa会话中间件/缓存的Redis存储
-import Redis from 'koa-redis' // Redis storage for koa session middleware/cache
-const Store = new Redis().client // get redis client
-
 ## nodemailer
 
 发送电子邮件从Node.js

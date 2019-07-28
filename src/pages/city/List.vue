@@ -61,14 +61,10 @@
 
 <script type="text/ecmascript-6">
 import { mapState, mapMutations } from 'vuex'
-// import Scroll from 'components/scroll/scroll'
 import Bscroll from 'better-scroll'
 
 export default {
   name: 'List',
-  // components: {
-  //   Scroll
-  // },
   props: {
     hot: {
       type: Array,
@@ -90,9 +86,9 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      city: state => state.city
-    })
+    ...mapState([
+      'city'
+    ])
   },
   watch: {
     letter() {
@@ -103,23 +99,20 @@ export default {
     }
   },
   mounted() {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true
+    })
   },
-  // created() {
-  //   this.probeType = 3
-  //   this.listenScroll = true
-  //   this.click = true
-  // },
   methods: {
     ...mapMutations({ setCity: 'SET_CITY' }),
     handleCityClick(city) {
       this.setCity(city)
-      this.$router.push('/home')
+      console.log('click...')
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-@import './List.styl';
+@import './list.styl';
 </style>
