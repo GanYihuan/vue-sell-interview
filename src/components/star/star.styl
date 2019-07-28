@@ -24,6 +24,16 @@
       height: .9375rem
       margin-right: .375rem
       background-size: .9375rem .9375rem
+      @media only screen and (max-width: 320px)
+        width: .625rem
+        height: .625rem
+        background-size: .625rem .625rem
+        &.on
+          bg-image("./img/star24_on")
+        &.half
+          bg-image("./img/star24_half")
+        &.off
+          bg-image("./img/star24_off")
       &:last-child
         margin-right: 0
       &.on
