@@ -5,12 +5,6 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    { // default route jump
-      path: '/',
-      name: 'root',
-      redirect: '/login',
-      component: () => import('pages/login/login.vue') // async route, Automatically load the resources of the required page according to the URL, and will not cause the page to block
-    },
     {
       path: '/city',
       name: 'city',

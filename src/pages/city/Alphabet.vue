@@ -23,13 +23,6 @@ export default {
       }
     }
   },
-  data() {
-    return {
-      touchStatus: false,
-      startY: 0,
-      timer: null
-    }
-  },
   computed: {
     letters() {
       const letters = []
@@ -38,9 +31,6 @@ export default {
       }
       return letters
     }
-  },
-  updated() { // virtual DMO re-render and patch
-    this.startY = this.$refs['A'][0].offsetTop // startY: 'A' Distance from the top of the parent element
   },
   methods: {
     handleLetterClick(e) {
