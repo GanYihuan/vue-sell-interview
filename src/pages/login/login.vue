@@ -87,20 +87,19 @@
 </template>
 
 <script type="text/ecmascript-6">
-import Header from 'pages/home/header'
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import { Notyf } from 'notyf' // Pure js message notification plugin
 import CryptoJS from 'crypto-js' // encryption
+import Header from 'pages/home/header'
 
 export default {
   name: 'Login',
   components: {
     Header
   },
-  data: () => {
+  data() {
     return {
       checked: '',
-      error: '',
       focus: false,
       ruleForm: {
         name: '',
@@ -136,7 +135,7 @@ export default {
       this.$refs['ruleForm'].validateField('pwd', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
         pwdPass = valid
       })
-      if (namePass || namePass) {
+      if (namePass || pwdPass) { // not passed check
         return false
       }
       axios
@@ -156,7 +155,6 @@ export default {
               }
             }
           } else {
-            this.error = `服务器出错`
             notyf.error('服务器出错')
           }
         })

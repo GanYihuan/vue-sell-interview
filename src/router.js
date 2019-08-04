@@ -7,13 +7,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'login',
-      component: () => import('pages/login/login.vue')
-    },
-    {
-      path: '/city',
-      name: 'city',
-      component: () => import('pages/city/city.vue')
+      redirect: '/login'
     },
     {
       path: '/login',
@@ -24,6 +18,11 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: () => import('pages/register/register.vue')
+    },
+    {
+      path: '/city',
+      name: 'city',
+      component: () => import('pages/city/city.vue')
     },
     {
       path: '/navbar',
@@ -84,13 +83,15 @@ export default new Router({
       component: () => import('pages/noresult/noresult.vue')
     }
   ],
-  linkActiveClass: 'active', // when route active, add className=active
+  linkActiveClass: 'active', // When there is an active route, <router-link/> add `className=active-link`
+  linkExactActiveClass: 'exact-active-link', // Activate route exact match `/login/exact` <router-link/> add `className=exact-active-link`
+  fallback: true, // When the browser does not support single page applications, Default return hash mode, Default setting true, If set to false, Single page becomes a multi-page application, time consuming
   mode: 'history', // Remove address bar hash #
   scrollBehavior(to, from, savedPosition) { // Page scrolls to the specified location when the route jumps
     if (savedPosition) {
       return savedPosition
     } else {
-      return { // Specified location
+      return {
         x: 0,
         y: 0
       }

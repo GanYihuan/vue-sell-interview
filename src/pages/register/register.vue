@@ -41,6 +41,7 @@
             <el-button
               size="mini"
               round
+              :disabled="checked"
               @click="sendMsg"
             >
               发送验证码
@@ -106,9 +107,9 @@
 
 <script type="text/ecmascript-6">
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import CryptoJS from 'crypto-js' // encryption
 import { Notyf } from 'notyf' // Pure js message notification plugin
-import Header from '../home/header'
+import CryptoJS from 'crypto-js' // encryption
+import Header from 'pages/home/header'
 
 export default {
   name: 'Register',
@@ -117,7 +118,8 @@ export default {
   },
   data() {
     return {
-      checked: '',
+      checked: false, // 验证码按钮开关
+      verifyCode: '', // 验证码
       username: '',
       password: '',
       statusMsg: '',
@@ -152,6 +154,13 @@ export default {
             trigger: 'blur'
           }
         ],
+        code: [
+          {
+            required: true,
+            message: '验证码',
+            trigger: 'blur'
+          }
+        ],
         cpwd: [
           {
             required: true,
@@ -179,34 +188,37 @@ export default {
       const that = this
       let namePass
       let emailPass
+      this.statusMsg = ''
       if (this.timerid) {
         return false
       }
       this.$refs['ruleForm'].validateField('name', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
         namePass = valid
       })
-      if (namePass) {
-        return false
-      }
       this.$refs['ruleForm'].validateField('email', valid => {
         emailPass = valid
       })
-      this.statusMsg = ''
-      if (!namePass && !emailPass) { // passed the check
+      if (namePass || emailPass) { // not passed check
+        return false
+      }
+      if (!namePass && !emailPass) { // passed check
         axios
           .post('/users/verify', {
-            username: encodeURIComponent(that.ruleForm.name), // encodeURIComponent: Encoding Chinese
+            username: window.encodeURIComponent(that.ruleForm.name), // encodeURIComponent: Encoding Chinese
             email: that.ruleForm.email
           })
           .then(({ status, data }) => {
-            if (status === 200 && data && data.code === 0) { // After successful delivery, Verification code valid countdown
+            if (status === 200 && data && data.code === 0) { // code countdown
               let count = 60
               that.statusMsg = `验证码已发送，剩余${count--}秒`
+              that.verifyCode = data.verifyCode
               that.timerid = setInterval(() => {
                 that.statusMsg = `验证码已发送，剩余${count--}秒`
+                that.checked = true
                 if (count === 0) {
                   clearInterval(that.timerid)
                   that.statusMsg = ''
+                  that.checked = false
                 }
               }, 1000)
             } else {
@@ -216,8 +228,13 @@ export default {
       }
     },
     register() {
+      const notyf = new Notyf()
+      if (this.ruleForm.code !== this.verifyCode) {
+        notyf.error(`验证码错误!`)
+        return false
+      }
       this.$refs['ruleForm'].validate(valid => { // Verification form
-        if (valid) { // Verify all passed
+        if (valid) {
           axios
             .post('/users/signup', {
               username: window.encodeURIComponent(this.ruleForm.name),
@@ -229,7 +246,6 @@ export default {
               const notyf = new Notyf()
               if (status === 200) {
                 if (data && data.code === 0) {
-                  // location.href = '/login'
                   this.$router.push('/login')
                 } else {
                   notyf.error(`${data.msg}`)

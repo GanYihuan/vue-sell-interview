@@ -20,14 +20,6 @@ Vue.use(VueLazyload, {
 Vue.use(ElementUI)
 Vue.config.productionTip = false // close Vue production tip
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.length === 0 || to.name === 'root') { // to.matched.length === 0 -> Unmatched route
-//     from.name ? next({ name: from.name }) : next({ path: '/login' }) // from.name -> Superior routing
-//   } else {
-//     next() // Jump
-//   }
-// })
-
 new Vue({
   router,
   store,
