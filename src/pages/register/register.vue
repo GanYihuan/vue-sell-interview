@@ -229,7 +229,8 @@ export default {
               const notyf = new Notyf()
               if (status === 200) {
                 if (data && data.code === 0) {
-                  location.href = '/login'
+                  // location.href = '/login'
+                  this.$router.push('/login')
                 } else {
                   notyf.error(`${data.msg}`)
                 }
