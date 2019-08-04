@@ -53,22 +53,24 @@ export default {
     }
   },
   created() {
-    //   axios
-    //     .get('/api/seller')
-    //     .then((res) => {
-    //       const { status, data } = res.data
-    //       if (status === 1) {
-    //         this.seller = data
-    //       }
-    //     }).catch(() => {
-    //     })
     this.params = this.$route.params.id
-    this.$router.push({ name: 'goods', params: { id: `${this.params}` }})
+    this.$router.push({
+      name: 'goods',
+      params: { id: `${this.params}` }
+    })
   },
   async mounted() {
-    const { status, data: { sellers }} = await axios.get('/sellers/getSeller')
-    if (status === 200) {
-      this.seller = sellers
+    if (this.params === '深圳麦当劳前海二餐厅') {
+      const { status, data: { sellers }} = await axios.get('/csellers/getSeller')
+      if (status === 200) {
+        this.seller = sellers
+      }
+    }
+    if (this.params === '尊宝比萨') {
+      const { status, data: { sellers }} = await axios.get('/sellers/getSeller')
+      if (status === 200) {
+        this.seller = sellers
+      }
     }
   }
 }

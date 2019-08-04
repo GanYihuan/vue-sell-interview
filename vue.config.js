@@ -55,6 +55,9 @@ module.exports = {
       '/seller': {
         target: 'http://localhost:3000' // 配置代理
       },
+      '/cseller': {
+        target: 'http://localhost:3000' // 配置代理
+      },
       '/ratings': {
         target: 'http://localhost:3000' // 配置代理
       },
