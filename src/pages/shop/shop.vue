@@ -31,7 +31,6 @@
     -->
     <!-- <keep-alive exclude="Detail"> Detail 组件不缓存处理 -->
     <keep-alive>
-      <!-- url match 'seller' will render here -->
       <router-view :seller="seller" />
     </keep-alive>
   </div>
