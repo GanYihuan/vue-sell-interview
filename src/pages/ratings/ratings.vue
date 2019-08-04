@@ -104,11 +104,11 @@
 <script type="text/ecmascript-6">
 import { mapMutations } from 'vuex'
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import ratingMixin from 'utils/mixins/rating'
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
 import ratingSelect from 'components/ratingSelect/ratingSelect.vue'
+import ratingMixin from 'utils/mixins/rating'
 
 const ALL = 2
 const NEGATIVE = 1
@@ -148,18 +148,6 @@ export default {
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    // axios
-    //   .get('/api/ratings')
-    //   .then((res) => {
-    //     const { status, data } = res.data
-    //     if (status === 1) {
-    //       this.ratings = data
-    //     }
-    //     this.$nextTick(() => {
-    //       this._initScroll()
-    //     })
-    //   }).catch(() => {
-    //   })
   },
   methods: {
     ...mapMutations({
