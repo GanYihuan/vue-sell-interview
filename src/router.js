@@ -12,7 +12,7 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import('pages/login/login.vue')
+      component: () => import('pages/login/login.vue') // Asynchronous routing, which automatically loads the resources of the required page based on the URL, does not cause the page to block
     },
     {
       path: '/register',

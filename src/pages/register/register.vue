@@ -118,11 +118,11 @@ export default {
   },
   data() {
     return {
-      checked: false, // 验证码按钮开关
-      verifyCode: '', // 验证码
+      checked: false, // verify code button disable or not
+      verifyCode: '', // mail accept verify code
       username: '',
       password: '',
-      statusMsg: '', // 提示消息
+      statusMsg: '', // Notyf
       ruleForm: {
         name: '',
         code: '',
@@ -237,7 +237,7 @@ export default {
         if (valid) {
           axios
             .post('/users/signup', {
-              username: window.encodeURIComponent(this.ruleForm.name),
+              username: window.encodeURIComponent(this.ruleForm.name), // encodeURIComponent: Encoding Chinese
               password: CryptoJS.MD5(this.ruleForm.pwd).toString(), // CryptoJS.MD5 encryption
               email: this.ruleForm.email,
               code: this.ruleForm.code

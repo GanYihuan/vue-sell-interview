@@ -127,7 +127,7 @@ export default {
     star
   },
   props: {
-    seller: { /* [res.data](http://localhost:8088/api/seller) */
+    seller: {
       type: Object,
       default() {
         return {}
