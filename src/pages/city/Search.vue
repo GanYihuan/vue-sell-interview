@@ -64,7 +64,7 @@ export default {
       return !this.list.length
     }
   },
-  watch: {
+  watch: { // listen change to execute, generate value, not recommend to change original value
     keyword() {
       if (!this.keyword) {
         this.list = []
@@ -77,10 +77,7 @@ export default {
         const result = []
         for (const i in this.cities) {
           this.cities[i].forEach(value => {
-            if (
-              value.spell.indexOf(this.keyword) > -1 ||
-							value.name.indexOf(this.keyword) > -1
-            ) {
+            if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
               result.push(value)
             }
           })
@@ -90,15 +87,15 @@ export default {
     }
   },
   created() {
-    this.probeType = 3
+    this.probeType = 3 // 不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件
     this.listenScroll = true
     this.click = true
   },
   methods: {
-    ...mapMutations(['changeCity']),
+    ...mapMutations({ changeCity: 'SET_CITY' }),
     handleCityClick(city) {
       this.changeCity(city)
-      this.$router.push('/')
+      this.$router.push('/home')
     }
   }
 }
