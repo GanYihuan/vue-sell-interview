@@ -70,6 +70,7 @@ export default {
     this.click = true
   },
   methods: {
+    // cmerchants ready
     async getHome() {
       const { status, data: { homes }} = await axios.get('/homes/getHome')
       if (status === 200) {
