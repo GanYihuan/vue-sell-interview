@@ -122,7 +122,7 @@ export default {
       verifyCode: '', // 验证码
       username: '',
       password: '',
-      statusMsg: '',
+      statusMsg: '', // 提示消息
       ruleForm: {
         name: '',
         code: '',
