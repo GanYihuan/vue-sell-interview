@@ -78,23 +78,16 @@ export default {
       }
     },
     async getMerchant() {
-      if (this.city === '广州') {
-        const { status, data: { merchants }} = await axios.get('/cmerchants/getMerchant')
+      const { status, data: { merchants }} = await axios.get('/cmerchants/getMerchant')
+      const itemArray = []
+      merchants.forEach((item) => {
         if (status === 200) {
-          this.merchant = merchants
+          if (item.city === this.city) {
+            itemArray.push(item)
+            this.merchant = itemArray
+          }
         }
-        return
-      } else if (this.city === '深圳') {
-        const { status, data: { merchants }} = await axios.get('/merchants/getMerchant')
-        if (status === 200) {
-          this.merchant = merchants
-        }
-        return
-      }
-      const { status, data: { merchants }} = await axios.get('/merchants/getMerchant')
-      if (status === 200) {
-        this.merchant = merchants
-      }
+      })
     },
     scroll(pos) {
       this.scrollY = pos.y
