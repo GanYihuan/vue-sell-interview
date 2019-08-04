@@ -92,7 +92,9 @@ export default {
     this.click = true
   },
   methods: {
-    ...mapMutations({ changeCity: 'SET_CITY' }),
+    ...mapMutations({
+      changeCity: 'SET_CITY'
+    }),
     handleCityClick(city) {
       this.changeCity(city)
       this.$router.push('/home')

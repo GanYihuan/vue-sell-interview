@@ -66,8 +66,8 @@
 </template>
 
 <script type="text/ecmascript-6">
-import Star from 'components/star/star'
 import { mapMutations } from 'vuex'
+import Star from 'components/star/star'
 
 export default {
   name: 'Merchant',

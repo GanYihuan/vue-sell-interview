@@ -40,9 +40,9 @@ export default {
     },
     itemClasses() {
       const result = []
-      const score = Math.floor(this.score * 2) / 2 /* Math.floor: 4.9 -> 4, Math.ceil: 4.1 -> 5 */
-      const hasDecimal = score % 1 !== 0 /* If there is a decimal, half star */
-      const integer = Math.floor(score) /* Full star */
+      const score = Math.floor(this.score * 2) / 2 // Math.floor: 4.9 -> 4, Math.ceil: 4.1 -> 5
+      const hasDecimal = score % 1 !== 0 // If there is a decimal, half star
+      const integer = Math.floor(score) // Full star
       for (let i = 0; i < integer; i++) {
         result.push(CLS_ON)
       }

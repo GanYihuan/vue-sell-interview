@@ -92,7 +92,7 @@ export default {
       this.scrollY = pos.y
     },
     backTop() {
-      this.$refs.home.scrollTo(0, 0, 1000)
+      this.$refs.home.scrollTo(0, 0, 500)
     }
   }
 }

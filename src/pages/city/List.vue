@@ -104,7 +104,9 @@ export default {
     })
   },
   methods: {
-    ...mapMutations({ setCity: 'SET_CITY' }),
+    ...mapMutations({
+      setCity: 'SET_CITY'
+    }),
     handleCityClick(city) {
       this.setCity(city)
     }

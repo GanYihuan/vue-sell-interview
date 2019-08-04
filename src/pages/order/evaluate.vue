@@ -124,7 +124,6 @@ export default {
       const commentTime = new Date()
       const time = moment(commentTime).format(this.dateType)
       const oldTime = (new Date(time)).getTime()
-      // console.log(username, score, rateType, oldTime, text, recommend, avatar)
       axios
         .post('/ratings/addRating', {
           username: username,
