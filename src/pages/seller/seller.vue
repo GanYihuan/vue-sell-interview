@@ -141,7 +141,7 @@ export default {
   },
   data() {
     return {
-      favorite: (() => { /* immediately run function */
+      favorite: (() => { // immediately run function
         return loadFromLocal(this.$route.params.id, 'favorite', false)
       })()
     }
@@ -152,7 +152,7 @@ export default {
     }
   },
   watch: {
-    seller() { /* seller async data, at first is null */
+    seller() { // seller async data, at first is null
       this.$nextTick(() => {
         this._initScroll()
         this._initPics()
@@ -170,9 +170,6 @@ export default {
   },
   methods: {
     toggleFavorite(event) {
-      if (!event._constructed) {
-        return
-      }
       this.favorite = !this.favorite
       saveToLocal(this.$route.params.id, 'favorite', this.favorite)
     },
@@ -194,8 +191,8 @@ export default {
         this.$nextTick(() => {
           if (!this.picScroll) {
             this.picScroll = new BScroll(this.$refs.picWrapper, {
-              scrollX: true, /* horizontal scroll */
-              eventPassthrough: 'vertical' /* ignore vertical scroll */
+              scrollX: true, // horizontal scroll
+              eventPassthrough: 'vertical' // ignore vertical scroll
             })
           } else {
             this.picScroll.refresh()
