@@ -59,17 +59,13 @@ export default {
     })
   },
   async mounted() {
-    if (this.params === '深圳麦当劳前海二餐厅') {
-      const { status, data: { sellers }} = await axios.get('/csellers/getSeller')
-      if (status === 200) {
-        this.seller = sellers
-      }
-    }
-    if (this.params === '尊宝比萨') {
-      const { status, data: { sellers }} = await axios.get('/sellers/getSeller')
-      if (status === 200) {
-        this.seller = sellers
-      }
+    const { status, data: { sellers }} = await axios.get('/csellers/getSeller')
+    if (status === 200) {
+      sellers.forEach((item) => {
+        if (item.name === this.params) {
+          this.seller = item
+        }
+      })
     }
   }
 }

@@ -97,3 +97,753 @@
       "营业时间:10:00-20:30"
     ]
   }
+
+  {
+    "name": "赣味轩",
+    "description": "蜂鸟专送",
+    "deliveryTime": 23,
+    "score": 4.1,
+    "serviceScore": 4.0,
+    "foodScore": 3.1,
+    "rankRate": 71.2,
+    "minPrice": 23,
+    "deliveryPrice": 2,
+    "ratingCount": 21,
+    "sellCount": 94,
+    "bulletin": "赣味轩瓦罐煨汤信息，包括赣味轩瓦罐煨汤馆在哪里，电话，地址，地图，交通等方面的信息。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/a5bf86a9ef9e3cbec7f3b5267b0b330440960.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "三昧真火烧烤",
+    "description": "蜂鸟专送",
+    "deliveryTime": 13,
+    "score": 4.1,
+    "serviceScore": 3.0,
+    "foodScore": 3.4,
+    "rankRate": 81.2,
+    "minPrice": 23,
+    "deliveryPrice": 3,
+    "ratingCount": 24,
+    "sellCount": 32,
+    "bulletin": "昧真火烧烤三昧真火烧烤2人餐，仅售88元！价值111元的烧烤2人餐，提供免费WiFi。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p1.meituan.net/waimaipoi/99e7e5c78751e9890efebab6f82c127537374.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "刘啵麻辣烫",
+    "description": "蜂鸟专送",
+    "deliveryTime": 53,
+    "score": 2.1,
+    "serviceScore": 1.0,
+    "foodScore": 2.4,
+    "rankRate": 21.2,
+    "minPrice": 34,
+    "deliveryPrice": 13,
+    "ratingCount": 23,
+    "sellCount": 35,
+    "bulletin": "裡面放著各種新鮮小蔬菜，和各種麻辣燙的的配菜，一盤2-5元不等",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/4c78f294b8e0996bc936c35bf98656eb38912.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "老五川湘菜馆",
+    "description": "蜂鸟专送",
+    "deliveryTime": 33,
+    "score": 5.1,
+    "serviceScore": 4.0,
+    "foodScore": 3.4,
+    "rankRate": 25.2,
+    "minPrice": 31,
+    "deliveryPrice": 5,
+    "ratingCount": 24,
+    "sellCount": 35,
+    "bulletin": "湖南人开的酒店饭馆。湘菜馆以湘菜系列为主要菜谱。湘菜以“辣”著称，讲究色、香、味、形，味道浓烈醇厚，是目前我国时下最流行的四大菜系",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/3a996a79435e623b70d4dbd8102af4e334816.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "御味小厨",
+    "description": "蜂鸟专送",
+    "deliveryTime": 43,
+    "score": 6.1,
+    "serviceScore": 5.0,
+    "foodScore": 3.2,
+    "rankRate": 25.1,
+    "minPrice": 33,
+    "deliveryPrice": 4,
+    "ratingCount": 34,
+    "sellCount": 32,
+    "bulletin": "飯類 韓式 日式. 不設最低消費; 免費外送. 九折優惠！",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/280d4fab631ebac64d65377b864253c861440.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "乐凯撒比萨",
+    "description": "蜂鸟专送",
+    "deliveryTime": 63,
+    "score": 5.1,
+    "serviceScore": 3.0,
+    "foodScore": 3.1,
+    "rankRate": 25.2,
+    "minPrice": 33,
+    "deliveryPrice": 7,
+    "ratingCount": 33,
+    "sellCount": 31,
+    "bulletin": "深圳市乐凯撒比萨餐饮管理有限公司成立于2009年，多年来，乐凯撒专注意式薄饼，纯手工拍制。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p1.meituan.net/waimaipoi/2f388166d640e5d44e47f5e77a28bdb94021.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "汉堡王",
+    "description": "蜂鸟专送",
+    "deliveryTime": 23,
+    "score": 2.1,
+    "serviceScore": 1.0,
+    "foodScore": 3.2,
+    "rankRate": 25.3,
+    "minPrice": 32,
+    "deliveryPrice": 3,
+    "ratingCount": 32,
+    "sellCount": 34,
+    "bulletin": "源自美國的跨國速食連鎖店。它的海外據點多為私人經營，即特許經營店。其中，大部分的加盟业者只經營單一店家。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p1.meituan.net/waimaipoi/9fd9882ec8bf2324eb557c1dae5cf98f18297.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "兰州拉面",
+    "description": "蜂鸟专送",
+    "deliveryTime": 21,
+    "score": 2.2,
+    "serviceScore": 1.1,
+    "foodScore": 3.1,
+    "rankRate": 23.3,
+    "minPrice": 31,
+    "deliveryPrice": 4,
+    "ratingCount": 31,
+    "sellCount": 32,
+    "bulletin": "兰州拉面，应该可以称得上最流行的面食之一了吧，可是出了甘肃还真是不容易吃到正宗的。所以，不嫌麻烦的自己做吧，吃完就理解兰州拉面风靡的原因啦。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p1.meituan.net/waimaipoi/d1ab78ad5a12fcd36ed1ad1176d0cfcb216054.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "壹号田园",
+    "description": "蜂鸟专送",
+    "deliveryTime": 22,
+    "score": 4.2,
+    "serviceScore": 1.2,
+    "foodScore": 3.3,
+    "rankRate": 23.2,
+    "minPrice": 32,
+    "deliveryPrice": 5,
+    "ratingCount": 32,
+    "sellCount": 31,
+    "bulletin": "身处田园、心映自己。在快节奏的当下，田园映射的是自己。泥土诠释一种朴实、自然；鸟鸣有自由、悠闲之隐喻；果蔬蕴含着勤劳、希望的气息。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/43a349cf1f18fee0db8d352a198de47430720.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "口口川香",
+    "description": "蜂鸟专送",
+    "deliveryTime": 21,
+    "score": 4.1,
+    "serviceScore": 1.4,
+    "foodScore": 3.2,
+    "rankRate": 23.1,
+    "minPrice": 31,
+    "deliveryPrice": 4,
+    "ratingCount": 31,
+    "sellCount": 32,
+    "bulletin": "佰味川樂山麻辣涮串說起佰味川麻辣涮串，有一個特別浪漫的小故事。老闆和妻子都是那種特文藝，特洒脫的人，平時喜歡遊山玩水。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/ae4863a43ddd2c9820b72ddd2314868b45056.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "盆派冒菜",
+    "description": "蜂鸟专送",
+    "deliveryTime": 21,
+    "score": 4.2,
+    "serviceScore": 1.3,
+    "foodScore": 3.1,
+    "rankRate": 23.2,
+    "minPrice": 32,
+    "deliveryPrice": 3,
+    "ratingCount": 32,
+    "sellCount": 30,
+    "bulletin": "盆派冒菜是位于太原市的一家川菜馆，特色菜是腌制肉类。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/ccd80aee8d37010a366ffb2932edf7d4148803.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "潮汕汤面",
+    "description": "蜂鸟专送",
+    "deliveryTime": 24,
+    "score": 4.1,
+    "serviceScore": 1.2,
+    "foodScore": 3.2,
+    "rankRate": 23.1,
+    "minPrice": 36,
+    "deliveryPrice": 4,
+    "ratingCount": 32,
+    "sellCount": 36,
+    "bulletin": "潮汕鱼丸是广东省潮汕地区特色传统小食，是将海鱼除头去骨，鱼肉拍打搅烂，加上佐料制成丸状 ... 不一会，一颗颗色泽洁白、柔软晶莹、清脆鲜嫩的鱼丸浮于汤面上。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/60be600e1a4db2129c999d27c89a8f53289247.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "京城御面堂",
+    "description": "蜂鸟专送",
+    "deliveryTime": 22,
+    "score": 4.0,
+    "serviceScore": 7.2,
+    "foodScore": 3.1,
+    "rankRate": 23.2,
+    "minPrice": 37,
+    "deliveryPrice": 3,
+    "ratingCount": 31,
+    "sellCount": 31,
+    "bulletin": "京城御面堂誇張點來說，可是遍布廈門各角落，以老北京形象打造的麵館，有著舊時的風采，復古的桌椅、復古的小二。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/f2a7378be06e4abc377ee41f04cc2eed84703.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "胡椒宅男",
+    "description": "蜂鸟专送",
+    "deliveryTime": 21,
+    "score": 4.4,
+    "serviceScore": 7.1,
+    "foodScore": 3.2,
+    "rankRate": 23.1,
+    "minPrice": 34,
+    "deliveryPrice": 2,
+    "ratingCount": 31,
+    "sellCount": 34,
+    "bulletin": "胡椒宅男是深圳市一家时尚简餐快餐店，深受年轻食客的欢迎，尤其是上班族的年轻人们。",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p1.meituan.net/waimaipoi/601ce474804c82175c95026dfe422b1419189.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
+
+  {
+    "name": "曹小厨",
+    "description": "蜂鸟专送",
+    "deliveryTime": 21,
+    "score": 4.4,
+    "serviceScore": 7.1,
+    "foodScore": 3.2,
+    "rankRate": 23.1,
+    "minPrice": 34,
+    "deliveryPrice": 2,
+    "ratingCount": 31,
+    "sellCount": 34,
+    "bulletin": "为您提供曹小厨的人均消费、品牌简介、店铺图片、折扣优惠、用户口碑、美食攻略、菜单、订餐、预约订座、推荐菜等信息，曹小厨好不好，南山区湘菜选择曹小厨怎么样",
+    "supports": [
+      {
+        "type": 0,
+        "description": "在线支付满20减1"
+      },
+      {
+        "type": 1,
+        "description": "VC无限橙果汁全场9折"
+      },
+      {
+        "type": 2,
+        "description": "单人精彩套餐"
+      },
+      {
+        "type": 3,
+        "description": "该商家支持发票,请下单写好发票抬头"
+      },
+      {
+        "type": 4,
+        "description": "已加入“外卖保”计划,食品安全保障"
+      }
+    ],
+    "avatar": "http://p0.meituan.net/waimaipoi/5705d0a4de98a897889e011071419edf45056.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "该商家支持发票,请下单写好发票抬头",
+      "品类:其他菜系,包子粥店",
+      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "营业时间:10:00-20:30"
+    ]
+  }
