@@ -45,26 +45,6 @@
           </div>
         </div>
       </div>
-      <div class="ball-container">
-        <div
-          v-for="(ball, index) in balls"
-          :key="index"
-        >
-          <transition
-            name="drop"
-            @before-enter="beforeDrop"
-            @enter="dropping"
-            @after-enter="afterDrop"
-          >
-            <div
-              v-show="ball.show"
-              class="ball"
-            >
-              <div class="inner inner-hook" />
-            </div>
-          </transition>
-        </div>
-      </div>
       <transition name="fold">
         <div
           v-show="listShow"
@@ -96,7 +76,6 @@
                 <div class="cartControl-wrapper">
                   <cartControl
                     :food="food"
-                    @add="addFood"
                   />
                 </div>
               </li>
@@ -119,7 +98,7 @@
 import axios from 'axios'
 import { mapState } from 'vuex'
 import BScroll from 'better-scroll'
-import { Notyf } from 'notyf' // 纯js消息通知插件
+import { Notyf } from 'notyf' // 纯 js 消息通知插件
 import cartControl from 'components/cartControl/cartcontrol'
 
 export default {
@@ -150,14 +129,6 @@ export default {
   },
   data() {
     return {
-      balls: [
-        { show: false },
-        { show: false },
-        { show: false },
-        { show: false },
-        { show: false }
-      ],
-      dropBalls: [],
       fold: true
     }
   },
@@ -205,11 +176,6 @@ export default {
       }
       const show = !this.fold
       if (show) {
-        /*
-        async 更新数据
-        在下次 DOM 更新循环结束之后执行延迟回调。
-        在修改数据之后立即使用这个方法，获取更新后的 DOM。
-        */
         this.$nextTick(() => {
           if (!this.scroll) {
             this.scroll = new BScroll(this.$refs.listContent, {
@@ -262,58 +228,6 @@ export default {
             notyf.error(`服务器出错，错误码:${status}`)
           }
         })
-    },
-    addFood(target) {
-      this.drop(target)
-    },
-    drop(el) {
-      for (let i = 0; i < this.balls.length; i++) {
-        const ball = this.balls[i]
-        if (!ball.show) {
-          ball.show = true
-          ball.el = el
-          this.dropBalls.push(ball)
-          return
-        }
-      }
-    },
-    beforeDrop(el) {
-      let count = this.balls.length
-      while (count--) {
-        const ball = this.balls[count]
-        if (ball.show) {
-          const rect = ball.el.getBoundingClientRect() /* getBoundingClientRect: Get the element relative viewport location */
-          const x = rect.left - 32 /* ball size = 32 */
-          const y = -(window.innerHeight - rect.top - 22)
-          el.style.display = '' /* 让小球显示 */
-          el.style.webkitTransform = `translate3d(0,${y}px,0)`
-          el.style.transform = `translate3d(0,${y}px,0)`
-          const inner = el.getElementsByClassName('inner-hook')[0]
-          inner.style.webkitTransform = `translate3d(${x}px,0,0)`
-          inner.style.transform = `translate3d(${x}px,0,0)`
-        }
-      }
-    },
-    dropping(el, done) {
-      /* Trigger browser refactoring. */
-      /* eslint-disable no-unused-vars */
-      const rf = el.offsetHeight
-      this.$nextTick(() => {
-        /* reset */
-        el.style.webkitTransform = 'translate3d(0,0,0)'
-        el.style.transform = 'translate3d(0,0,0)'
-        const inner = el.getElementsByClassName('inner-hook')[0]
-        inner.style.webkitTransform = 'translate3d(0,0,0)'
-        inner.style.transform = 'translate3d(0,0,0)'
-        el.addEventListener('transitionend', done)
-      })
-    },
-    afterDrop(el) {
-      const ball = this.dropBalls.shift()
-      if (ball) {
-        ball.show = false
-        el.style.display = 'none'
-      }
     }
   }
 }

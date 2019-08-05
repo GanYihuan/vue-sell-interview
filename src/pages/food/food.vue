@@ -120,6 +120,7 @@ import cartControl from 'components/cartControl/cartcontrol'
 import split from 'components/split/split'
 import ratingSelect from 'components/ratingSelect/ratingSelect'
 import ratingMixin from 'utils/mixins/rating'
+
 const ALL = 2
 const EVENT_ADD = 'add'
 
@@ -142,8 +143,8 @@ export default {
   data() {
     return {
       showFlag: false,
-      selectType: ALL, /* ratingSelect.vue: Product evaluation init */
-      onlyContent: true, /* Whether to open the '只看评论内容' */
+      selectType: ALL, // ratingSelect.vue: Product evaluation init
+      onlyContent: true, // Whether to open the '只看评论内容'
       desc: {
         all: '全部',
         positive: '推荐',
@@ -170,7 +171,6 @@ export default {
       this.showFlag = false
     },
     addFirst(event) {
-      /* better-scroll at PC will trigger twice event, stop this */
       if (!event._constructed) {
         return
       }

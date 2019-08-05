@@ -111,8 +111,8 @@ export default {
   data() {
     return {
       goods: [],
-      listHeight: [], /* 计算菜品集合的高度 */
-      scrollY: 0, /* foodsScroll Real-time scroll position scrollY */
+      listHeight: [], // 计算菜品集合的高度
+      scrollY: 0, // foodsScroll Real-time scroll position scrollY
       selectedFood: {}
     }
   },
@@ -120,24 +120,20 @@ export default {
     // 当前菜品的下标
     currentIndex() {
       for (let i = 0; i < this.listHeight.length; i++) {
-        const height1 = this.listHeight[i] /* The height of the current index value */
-        const height2 = this.listHeight[i + 1] /* Next height */
+        const height1 = this.listHeight[i] // The height of the current index value
+        const height2 = this.listHeight[i + 1] // Next height
         if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
           return i
         }
       }
       return 0
     },
-    /* 所有单独的菜肴的集合. */
+    // 所有单独的菜肴的集合
     selectFoods() {
       const foods = []
-      /* http://localhost:8088/api/goods */
-      /* good -> 左侧栏的单个项目 */
-      this.goods.forEach(good => {
-        /* food -> 项目中的单个菜品. */
-        good.foods.forEach(food => {
-          /* food.count: cartcontrol.vue Vue.set() */
-          if (food.count) {
+      this.goods.forEach(good => { // good -> 左侧栏的单个项目
+        good.foods.forEach(food => { // food -> 项目中的单个菜品
+          if (food.count) { // food.count: cartcontrol.vue Vue.set()
             foods.push(food)
           }
         })
@@ -172,8 +168,8 @@ export default {
         */
         probeType: 3
       })
-      /* 2. Real-time scroll position */
-      /* foodsScroll Real-time scroll position scrollY */
+      // 2. Real-time scroll position
+      // foodsScroll Real-time scroll position scrollY
       this.foodsScroll.on('scroll', pos => {
         this.scrollY = Math.abs(Math.round(pos.y))
       })
@@ -190,19 +186,16 @@ export default {
       }
     },
     selectMenu(index, event) {
-      /* better-scroll */
-      /* On the PC will trigger two events, stop this */
+      // better-scroll
+      // On the PC will trigger two events, stop this
       if (!event._constructed) {
         return
       }
       const foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook')
       const el = foodList[index]
-      /* better-scroll: target: element, duration: 300ms */
-      this.foodsScroll.scrollToElement(el, 300)
+      this.foodsScroll.scrollToElement(el, 300) // better-scroll: target: element, duration: 300ms
     },
     selectFood(food, event) {
-      /* better-scroll */
-      /* at PC will trigger twice event, stop this */
       if (!event._constructed) {
         return
       }
