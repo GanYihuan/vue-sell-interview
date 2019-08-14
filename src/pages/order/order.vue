@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-07-05 08:46:02
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 06:22:34
+ -->
+<template>
   <div class="orderPage">
     <div class="header">
       订单
@@ -74,10 +82,10 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapMutations } from 'vuex'
+import { Notyf } from 'notyf' // 提示插件
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import { Notyf } from 'notyf' // Pure js message notification plugin
 import Split from 'components/split/split'
 import Scroll from 'components/scroll/scroll'
 
@@ -90,7 +98,7 @@ export default {
   data() {
     return {
       orders: [],
-      scrollY: 0 // real time roll position
+      scrollY: 0 // 实时滚动位置
     }
   },
   computed: {

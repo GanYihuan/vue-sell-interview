@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-07-05 08:30:10
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 06:40:03
+ -->
+<template>
   <div class="evalutate">
     <div class="header">
       <router-link
@@ -45,11 +53,11 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapState } from 'vuex'
+import { Notyf } from 'notyf' // 提示插件
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import { Notyf } from 'notyf' // Pure js message notification plugin
-import moment from 'moment' // Time format processing
+import moment from 'moment' // 时间格式处理
 
 export default {
   name: 'Evaluate',
