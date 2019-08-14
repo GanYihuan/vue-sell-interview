@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-07 00:14:33
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 06:42:05
+ -->
+<template>
   <div class="my">
     <div class="header">
       <div class="logo">
@@ -79,8 +87,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { Notyf } from 'notyf' // 提示插件
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import { Notyf } from 'notyf' // Pure js message notification plugin
 
 export default {
   name: 'My',
