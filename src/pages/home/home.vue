@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-06 16:19:05
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 05:20:35
+ -->
+<template>
   <div class="homePage">
     <Scroll
       ref="home"
@@ -27,7 +35,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapState } from 'vuex'
 import axios from 'axios'
 import Scroll from 'components/scroll/scroll'
@@ -49,7 +57,7 @@ export default {
     return {
       iconList: [],
       merchant: [],
-      scrollY: 0 // real time roll position
+      scrollY: 0 // 实时滚动位置
     }
   },
   computed: {
@@ -61,38 +69,36 @@ export default {
     }
   },
   mounted() {
-    this.getHome()
-    this.getMerchant()
+    this._getIcon()
+    this._getMerchant()
   },
   created() {
-    this.probeType = 3
-    this.listenScroll = true
-    this.click = true
+    this.probeType = 3 // 不仅在屏幕滑动的过程中 ， 而且在 momentum 滚动动画运行过程中实时派发 scroll 事件 ( 实时滚动位置 )
+    this.listenScroll = true // 监听滚动
+    this.click = true // 能点击
   },
   methods: {
-    async getHome() {
+    async _getIcon() {
       const { status, data: { homes }} = await axios.get('/homes/getHome')
       if (status === 200) {
         this.iconList = homes
       }
     },
-    async getMerchant() {
+    async _getMerchant() {
       const { status, data: { merchants }} = await axios.get('/cmerchants/getMerchant')
-      const itemArray = []
-      merchants.forEach((item) => {
-        if (status === 200) {
+      if (status === 200) {
+        merchants.forEach((item) => {
           if (item.city === this.city) {
-            itemArray.push(item)
-            this.merchant = itemArray
+            this.merchant.push(item)
           }
-        }
-      })
+        })
+      }
     },
     scroll(pos) {
-      this.scrollY = pos.y
+      this.scrollY = pos.y // 实时滚动位置
     },
     backTop() {
-      this.$refs.home.scrollTo(0, 0, 500)
+      this.$refs.home.scrollTo(0, 0, 500) // 滚动到指定位置
     }
   }
 }

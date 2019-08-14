@@ -1,3 +1,12 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-09 02:19:56
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 04:54:58
+ -->
+
 # 餐馆点餐 App vue
 
 ## 运行界面

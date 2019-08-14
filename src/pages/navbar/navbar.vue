@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-06 15:43:50
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 04:55:45
+ -->
+<template>
   <div>
     <router-view />
     <ul class="bottom-bar">
@@ -36,7 +44,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {
   data() {
     return {
