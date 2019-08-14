@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-07 03:29:23
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 05:33:09
+ -->
+<template>
   <div class="icons">
     <swiper :options="swiperOption">
       <swiper-slide
@@ -29,7 +37,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {
   name: 'Icons',
   props: {
@@ -43,7 +51,7 @@ export default {
   data() {
     return {
       swiperOption: {
-        autoplay: false,
+        loop: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true

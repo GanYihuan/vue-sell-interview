@@ -1,8 +1,16 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-12-18 18:39:46
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 05:29:13
+ -->
 <template>
   <div class="split" />
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {}
 </script>
 

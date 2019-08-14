@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-07 03:16:24
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 05:28:27
+ -->
+<template>
   <div class="header">
     <div class="search-bar">
       <div class="bar-location">
@@ -9,7 +17,7 @@
       </div>
       <div
         class="search-btn"
-        @click="gotCity"
+        @click="changeCity"
       >
         <input
           class="place-holder"
@@ -22,7 +30,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapState } from 'vuex'
 
 export default {
@@ -33,7 +41,7 @@ export default {
     })
   },
   methods: {
-    gotCity() {
+    changeCity() {
       this.$router.push('/city')
     }
   }

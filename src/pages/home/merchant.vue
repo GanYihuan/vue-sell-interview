@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-07 07:06:18
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 05:40:30
+ -->
+<template>
   <div class="list-content">
     <h4 class="list-title">
       <span class="title-line" />
@@ -12,11 +20,11 @@
         :to="{name: 'shop', params: {id: item.name}}"
         class="item border-bottom"
         tag="li"
+        @click="saveMerchantInfo(item.name, item.pic_url)"
       >
         <img
           :src="item.pic_url"
           class="item-img"
-          @click="passParams(item.name, item.pic_url)"
         >
         <div
           class="brand"
@@ -24,10 +32,7 @@
         >
           {{ item.delivery_type > 0 ? '品牌' : '新到' }}
         </div>
-        <div
-          class="item-info"
-          @click="passParams(item.name, item.pic_url)"
-        >
+        <div class="item-info">
           <div class="item-title">
             {{ item.name }}
           </div>
@@ -65,7 +70,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapMutations } from 'vuex'
 import Star from 'components/star/star'
 
@@ -87,7 +92,7 @@ export default {
       setSellName: 'SET_SELLNAME',
       setSellImage: 'SET_SELLIMAGE'
     }),
-    passParams(name, img) {
+    saveMerchantInfo(name, img) {
       this.setSellName(name)
       this.setSellImage(img)
     }
