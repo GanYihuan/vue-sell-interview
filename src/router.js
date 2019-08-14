@@ -1,18 +1,26 @@
+/*
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-09 02:19:17
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 04:46:55
+ */
 import Vue from 'vue'
-import Router from 'vue-router'
+import Router from 'vue-router' // vue 路由
 
-Vue.use(Router)
+Vue.use(Router) // vue 路由
 
 export default new Router({
   routes: [
-    {
+    { // 默认路由
       path: '/',
       redirect: '/login'
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('pages/login/login.vue') // Asynchronous routing, which automatically loads the resources of the required page based on the URL, does not cause the page to block
+      component: () => import('pages/login/login.vue') // 异步路由根据URL自动加载所需页面的资源，不会导致页面阻塞
     },
     {
       path: '/register',
@@ -78,16 +86,16 @@ export default new Router({
         }
       ]
     },
-    {
+    { // 出现未定义路由时
       path: '*',
       component: () => import('pages/noresult/noresult.vue')
     }
   ],
-  linkActiveClass: 'active', // When there is an active route, <router-link/> add `className=active-link`
-  linkExactActiveClass: 'exact-active-link', // Activate route exact match `/login/exact` <router-link/> add `className=exact-active-link`
-  fallback: true, // When the browser does not support single page applications, Default return hash mode, Default setting true, If set to false, Single page becomes a multi-page application, time consuming
+  linkActiveClass: 'active', // 当存在活动路由时, <router-link/>添加 'className=active'
+  linkExactActiveClass: 'exact-active-link', // 激活路由精确匹配, <router-link/> 添加 'className=exact-active-link'
+  fallback: true, // 当浏览器不支持单页应用程序时，默认返回哈希模式，默认设置为true，如果设置为false，单页变成多页应用程序，费时
   mode: 'history', // Remove address bar hash #
-  scrollBehavior(to, from, savedPosition) { // Page scrolls to the specified location when the route jumps
+  scrollBehavior(to, from, savedPosition) { // 当路由跳转时，页面滚动到指定位置
     if (savedPosition) {
       return savedPosition
     } else {

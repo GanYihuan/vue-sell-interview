@@ -6,6 +6,8 @@
       </el-col>
     </el-row>
     <el-row>
+      <!-- :span -> 占据空间 -->
+      <!-- :offset -> 距离左侧距离 -->
       <el-col
         :span="16"
         :offset="4"

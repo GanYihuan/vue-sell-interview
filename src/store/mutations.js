@@ -1,4 +1,12 @@
-﻿import * as types from './mutation-types'
+﻿/*
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-17 10:25:00
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 04:51:50
+ */
+import * as types from './mutation-types'
 
 const mutations = {
   [types.SET_BADCOMMENT](state, bool) {

@@ -1,13 +1,21 @@
-﻿import Vue from 'vue'
+﻿/*
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-17 10:28:18
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 04:49:42
+ */
+import Vue from 'vue'
 import Vuex from 'vuex'
-import createLogger from 'vuex/dist/logger' // output the mutation's action and the state of the store in real time
+import createLogger from 'vuex/dist/logger' // 实时输出突变的动作和存储的状态
 import state from './state'
 import mutations from './mutations'
 import getters from './getters'
 
 Vue.use(Vuex)
 
-const debug = process.env.NODE_ENV !== 'production' // development mode is on, strict mode check vuex data
+const debug = process.env.NODE_ENV !== 'production' // 开发模式开启，严格模式检查vuex数据
 
 export default () => {
   const store = new Vuex.Store({
@@ -15,10 +23,9 @@ export default () => {
     mutations,
     getters,
     strict: debug,
-    plugins: debug ? [createLogger()] : [],
-    modules: {}
+    plugins: debug ? [createLogger()] : []
   })
-  if (module.hot) { // vuex Hot replacement function
+  if (module.hot) { // vuex 热更换功能
     module.hot.accept(
       [
         './state',
