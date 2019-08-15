@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-08-28 09:53:38
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 14:52:07
+ -->
 <template>
   <div>
     <div
@@ -59,7 +67,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapState, mapMutations } from 'vuex'
 import Bscroll from 'better-scroll'
 
@@ -86,9 +94,9 @@ export default {
     }
   },
   computed: {
-    ...mapState([
-      'city'
-    ])
+    ...mapState({
+      city: state => state.city
+    })
   },
   watch: {
     letter() {

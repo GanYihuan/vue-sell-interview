@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-08-28 09:53:38
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 14:39:35
+ -->
 <template>
   <div class="header">
     城市选择
@@ -9,7 +17,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {
   name: 'CityHeader'
 }

@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-08-28 09:53:38
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 14:41:59
+ -->
 <template>
   <div class="search-wrapper">
     <div class="search">
@@ -35,7 +43,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapMutations } from 'vuex'
 import Scroll from 'components/scroll/scroll'
 
@@ -64,7 +72,7 @@ export default {
       return !this.list.length
     }
   },
-  watch: { // listen change to execute, generate value, not recommend to change original value
+  watch: { // 监听更改执行，生成值，不建议更改原始值
     keyword() {
       if (!this.keyword) {
         this.list = []
@@ -73,7 +81,7 @@ export default {
       if (this.timer) {
         clearTimeout(this.timer)
       }
-      this.timer = setTimeout(() => { // Throttling function
+      this.timer = setTimeout(() => { // 节流功能
         const result = []
         for (const i in this.cities) {
           this.cities[i].forEach(value => {
@@ -88,8 +96,8 @@ export default {
   },
   created() {
     this.probeType = 3 // 不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件
-    this.listenScroll = true
-    this.click = true
+    this.listenScroll = true // 监听滚动
+    this.click = true // 能点击
   },
   methods: {
     ...mapMutations({

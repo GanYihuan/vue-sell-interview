@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-08-28 09:53:38
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 14:53:32
+ -->
 <template>
   <div class="alphabet">
     <div
@@ -12,7 +20,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {
   name: 'Alphabet',
   props: {
