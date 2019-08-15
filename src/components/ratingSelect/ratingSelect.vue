@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-12-18 18:39:46
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 15:34:19
+ -->
 <template>
   <div class="ratingselect">
     <div class="rating-type border-1px">
@@ -37,7 +45,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapState } from 'vuex'
 
 const ALL = 2

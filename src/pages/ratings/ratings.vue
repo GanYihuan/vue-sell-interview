@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-17 10:28:18
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 15:41:18
+ -->
 <template>
   <div
     ref="ratings"
@@ -101,7 +109,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapMutations } from 'vuex'
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import BScroll from 'better-scroll'
@@ -180,7 +188,7 @@ export default {
       }
     },
     needShow(type, text) {
-      if (this.badContent && !text) {
+      if (!text) {
         return false
       }
       if (this.selectType === ALL) {
