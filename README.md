@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 18:09:38
+ * @LastEditTime: 2019-08-15 18:19:01
  -->
 
 # 餐馆点餐 App vue
@@ -69,10 +69,13 @@ npm run start
 > cd vue-sell-interivew
 
 ```node
+npm install
 npm run server
 ```
 
 ## server
+
+**特别说明: dbs/config.js 里面的邮箱要修改成自己的 qq 邮箱, SMTP 要开启腾讯设置查询到属于自己的号码。注册功能需要用到!**
 
 > server 安装
 
