@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-09 17:52:41
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 14:26:36
+ -->
+<template>
   <div class="login-page">
     <el-row>
       <el-col>
@@ -105,10 +113,10 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
+import { Notyf } from 'notyf' // 提示插件
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import { Notyf } from 'notyf' // Pure js message notification plugin
-import CryptoJS from 'crypto-js' // encryption
+import CryptoJS from 'crypto-js' // 加密
 import Header from 'pages/home/header'
 
 export default {
@@ -118,11 +126,11 @@ export default {
   },
   data() {
     return {
-      checked: false, // verify code button disable or not
-      verifyCode: '', // mail accept verify code
+      checked: false, // 验证代码按钮是否禁用
+      verifyCode: '', // 邮件接受验证码
       username: '',
       password: '',
-      statusMsg: '', // Notyf
+      statusMsg: '', // 提示
       ruleForm: {
         name: '',
         code: '',
@@ -168,7 +176,7 @@ export default {
             trigger: 'blur'
           },
           {
-            validator: (rule, value, callback) => { // Custom rule
+            validator: (rule, value, callback) => { // 自定义规则
               if (value === '') {
                 callback(new Error('请再次输入密码'))
               } else if (value !== this.ruleForm.pwd) {
@@ -192,23 +200,23 @@ export default {
       if (this.timerid) {
         return false
       }
-      this.$refs['ruleForm'].validateField('name', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
+      this.$refs['ruleForm'].validateField('name', valid => { // 验证用户名是否通过了检查（element-ui方法），如果有值表明它没有通过检查
         namePass = valid
       })
-      this.$refs['ruleForm'].validateField('email', valid => {
+      this.$refs['ruleForm'].validateField('email', valid => { // 验证邮件是否通过了检查（element-ui方法），如果有值表明它没有通过检查
         emailPass = valid
       })
-      if (namePass || emailPass) { // not passed check
+      if (namePass || emailPass) { // 没通过检查
         return false
       }
-      if (!namePass && !emailPass) { // passed check
+      if (!namePass && !emailPass) { // 通过检查
         axios
           .post('/users/verify', {
-            username: window.encodeURIComponent(that.ruleForm.name), // encodeURIComponent: Encoding Chinese
+            username: window.encodeURIComponent(that.ruleForm.name), // encodeURIComponent: 编码中文
             email: that.ruleForm.email
           })
           .then(({ status, data }) => {
-            if (status === 200 && data && data.code === 0) { // code countdown
+            if (status === 200 && data && data.code === 0) {
               let count = 60
               that.statusMsg = `验证码已发送，剩余${count--}秒`
               that.verifyCode = data.verifyCode
@@ -233,12 +241,12 @@ export default {
         notyf.error(`验证码错误!`)
         return false
       }
-      this.$refs['ruleForm'].validate(valid => { // Verification form
+      this.$refs['ruleForm'].validate(valid => { // 验证表格
         if (valid) {
           axios
             .post('/users/signup', {
-              username: window.encodeURIComponent(this.ruleForm.name), // encodeURIComponent: Encoding Chinese
-              password: CryptoJS.MD5(this.ruleForm.pwd).toString(), // CryptoJS.MD5 encryption
+              username: window.encodeURIComponent(this.ruleForm.name), // encodeURIComponent: 编码中文
+              password: CryptoJS.MD5(this.ruleForm.pwd).toString(), // CryptoJS.MD5 加密
               email: this.ruleForm.email,
               code: this.ruleForm.code
             })

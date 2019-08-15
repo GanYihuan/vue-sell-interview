@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-06 16:19:05
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 05:20:35
+ * @LastEditTime: 2019-08-15 14:15:13
  -->
 <template>
   <div class="homePage">
@@ -37,7 +37,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import axios from 'axios'
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import Scroll from 'components/scroll/scroll'
 import Split from 'components/split/split'
 import Header from './header'

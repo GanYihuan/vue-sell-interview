@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-09 02:34:05
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 14:22:42
+ -->
+<template>
   <div class="login-page">
     <el-row>
       <el-col>
@@ -88,10 +96,10 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
+import { Notyf } from 'notyf' // 提示插件
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
-import { Notyf } from 'notyf' // Pure js message notification plugin
-import CryptoJS from 'crypto-js' // encryption
+import CryptoJS from 'crypto-js' // 加密
 import Header from 'pages/home/header'
 
 export default {
@@ -131,19 +139,19 @@ export default {
       const notyf = new Notyf()
       let namePass
       let pwdPass
-      this.$refs['ruleForm'].validateField('name', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
+      this.$refs['ruleForm'].validateField('name', valid => { // 验证用户名是否通过了检查（element-ui方法），如果有值表明它没有通过检查
         namePass = valid
       })
-      this.$refs['ruleForm'].validateField('pwd', valid => { // Verify that the username passed the check (element-ui method), If there is a value indicating that it has not passed check
+      this.$refs['ruleForm'].validateField('pwd', valid => { // 验证密码是否通过了检查（element-ui方法），如果有值表明它没有通过检查
         pwdPass = valid
       })
-      if (namePass || pwdPass) { // not passed check
+      if (namePass || pwdPass) { // 没通过检查
         return false
       }
       axios
         .post('/users/signin', {
-          username: window.encodeURIComponent(this.ruleForm.name), // encodeURIComponent: Encoding Chinese
-          password: CryptoJS.MD5(this.ruleForm.pwd).toString() // CryptoJS.MD5 encryption
+          username: window.encodeURIComponent(this.ruleForm.name), // encodeURIComponent: 编码中文
+          password: CryptoJS.MD5(this.ruleForm.pwd).toString() // CryptoJS.MD5 加密
         })
         .then(({ status, data }) => {
           if (status === 200) {
