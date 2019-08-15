@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-06 15:42:24
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 15:23:08
+ -->
+<template>
   <div id="app">
     <v-header :seller="seller" />
     <div class="tab border-1px">
@@ -37,8 +45,8 @@
 </template>
 
 <script>
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import VHeader from 'components/v-header/v-header'
-import axios from 'axios'
 
 export default {
   name: 'Shop',
@@ -71,6 +79,6 @@ export default {
 }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" scoped>
 @import './shop.styl'
 </style>

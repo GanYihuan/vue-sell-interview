@@ -1,4 +1,12 @@
-﻿<template>
+﻿<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-07-07 18:38:40
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 15:14:43
+ -->
+<template>
   <div class="no-result">
     <div
       class="no-result-icon"
@@ -10,7 +18,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {
   data() {
     return {

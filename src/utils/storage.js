@@ -1,3 +1,11 @@
+/*
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-12-01 22:15:54
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 15:25:27
+ */
 import storage from 'good-storage' // 存储库，实现 sessionStorage 和 localStorage 功能
 
 const SELLER_KEY = '__seller__'

@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-12-18 18:39:46
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 15:26:26
+ -->
 <template>
   <div
     ref="seller"
@@ -119,7 +127,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
@@ -141,7 +149,7 @@ export default {
   },
   data() {
     return {
-      favorite: (() => { // immediately run function
+      favorite: (() => { // 立即运行函数
         return loadFromLocal(this.$route.params.id, 'favorite', false)
       })()
     }
@@ -152,7 +160,7 @@ export default {
     }
   },
   watch: {
-    seller() { // seller async data, at first is null
+    seller() { // seller 异步数据，最初为空
       this.$nextTick(() => {
         this._initScroll()
         this._initPics()
@@ -191,8 +199,8 @@ export default {
         this.$nextTick(() => {
           if (!this.picScroll) {
             this.picScroll = new BScroll(this.$refs.picWrapper, {
-              scrollX: true, // horizontal scroll
-              eventPassthrough: 'vertical' // ignore vertical scroll
+              scrollX: true, // 水平滚动
+              eventPassthrough: 'vertical' // 忽略垂直滚动
             })
           } else {
             this.picScroll.refresh()
