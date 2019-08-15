@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-12-18 18:39:46
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 16:30:30
+ * @LastEditTime: 2019-08-15 16:31:57
  -->
 <template>
   <div>
@@ -38,7 +38,7 @@
             ￥{{ totalPrice }}
           </div>
           <div class="desc">
-            另需配送费￥{{ deliveryPrice }}元
+            配送费￥{{ deliveryPrice }}
           </div>
         </div>
         <div
