@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-12-18 18:39:46
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 16:22:11
+ -->
 <template>
   <transition name="move">
     <div
@@ -62,10 +70,10 @@
           </p>
         </div>
         <split />
-        <div class="rating">
-          <h1 class="title">
+        <div class="comment">
+          <div class="ratingcomment">
             商品评价
-          </h1>
+          </div>
           <ratingSelect
             :select-type="selectType"
             :only-content="onlyContent"
@@ -90,7 +98,6 @@
                     alt="avatar"
                   >
                 </div>
-                <!-- <div class="time">{{rating.rateTime | formatDate}}</div> -->
                 <div class="time">
                   {{ formatDate(rating.rateTime) }}
                 </div>
@@ -113,7 +120,7 @@
   </transition>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import Vue from 'vue'
 import BScroll from 'better-scroll'
 import cartControl from 'components/cartControl/cartcontrol'
@@ -143,8 +150,8 @@ export default {
   data() {
     return {
       showFlag: false,
-      selectType: ALL, // ratingSelect.vue: Product evaluation init
-      onlyContent: true, // Whether to open the '只看评论内容'
+      selectType: ALL,
+      onlyContent: true, // '只看评论内容' 控制
       desc: {
         all: '全部',
         positive: '推荐',
