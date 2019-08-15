@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-12-18 18:39:46
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 16:30:30
+ -->
 <template>
   <div>
     <div class="shopCart">
@@ -94,11 +102,11 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
-import axios from 'axios'
+<script>
 import { mapState } from 'vuex'
-import BScroll from 'better-scroll'
 import { Notyf } from 'notyf' // 纯 js 消息通知插件
+import axios from 'axios' // Promise based HTTP client for the browser and node.js
+import BScroll from 'better-scroll'
 import cartControl from 'components/cartControl/cartcontrol'
 
 export default {
@@ -129,7 +137,7 @@ export default {
   },
   data() {
     return {
-      fold: true
+      fold: true // 控制购物车显示与否
     }
   },
   computed: {

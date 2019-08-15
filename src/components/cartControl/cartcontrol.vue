@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-12-18 18:39:46
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-15 16:28:54
+ -->
 <template>
   <div class="cartControl">
     <transition name="move">
@@ -20,7 +28,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import Vue from 'vue'
 
 export default {
@@ -35,17 +43,14 @@ export default {
   },
   methods: {
     addCart(event) {
-      /* better-scroll */
-      /* at PC will trigger twice event, stop this */
-      if (!event._constructed) {
+      if (!event._constructed) { // better-scroll 在 PC 上将触发两个事件，停止此操作
         return
       }
       if (!this.food.count) {
-        Vue.set(this.food, 'count', 1) /* add food attribute count=1 */
+        Vue.set(this.food, 'count', 1) // 增加 food 属性 count=1
       } else {
         this.food.count++
       }
-      // this.$emit('add', event.target)
     },
     decreaseCart(event) {
       if (!event._constructed) {
