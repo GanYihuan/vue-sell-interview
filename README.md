@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 17:48:24
+ * @LastEditTime: 2019-08-15 18:09:38
  -->
 
 # 餐馆点餐 App vue
@@ -29,6 +29,8 @@ mongoimport -d sell -c ratings ratings.dat
 ```
 
 ## 运行
+
+安装 mongo & redis
 
 ```node
 brew install redis
@@ -55,14 +57,12 @@ redis-server
 
 - 再打开一个终端
 
-> cd server 目录
+> cd server 目录或者 [下载 server 项目](https://github.com/GanYihuan/vue-sell-interview-koa)
 
 ```node
 npm install
 npm run start
 ```
-
-[下载 server 项目](https://github.com/GanYihuan/vue-sell-interview-koa)
 
 - 再打开一个终端
 
@@ -70,6 +70,121 @@ npm run start
 
 ```node
 npm run server
+```
+
+## server
+
+> server 安装
+
+```node
+npm i koa-generator -g
+koa2 -e vue-sell-interview-koa
+npm install
+npm run start
+```
+
+> 下载工具
+
+- 下载 Robo 3T 用来管理 mongodb 数据库
+- 下载 postman 用来查看请求的数据
+
+> postman 请求接口
+
+```node
+http://localhost:3000/cmerchants/getMerchant
+http://localhost:3000/csellers/getSeller
+http://localhost:3000/goods/getGood
+http://localhost:3000/homes/getHome
+http://localhost:3000/locations/getCity
+http://localhost:3000/orders/getOrder
+http://localhost:3000/ratings/getRating
+http://localhost:3000/users/getUser
+```
+
+> koa 插件
+
+- koa
+
+```node
+const Koa = require('koa') // koa
+```
+
+- koa-views
+
+```node
+const views = require('koa-views') // 用于 koa@2 的模板呈现中间件
+```
+
+- koa-json
+
+```node
+const json = require('koa-json') // JSON 漂亮打印响应中间件
+```
+
+- koa-onerror
+
+```node
+const onerror = require('koa-onerror') // 一个用于 koa 的错误处理程序
+```
+
+- koa-bodyparser
+
+```node
+const bodyparser = require('koa-bodyparser') // 针对请求报文的处理 一个基于co-body的koa体解析器。支持json，表单和文本类型的主体。
+```
+
+- koa-logger
+
+```node
+const logger = require('koa-logger') // 用于koa的开发风格日志记录器中间件。
+```
+
+- koa-generic-session
+
+```node
+const session = require('koa-generic-session') // Koa通用的session中间件
+```
+
+- mongoose
+
+```node
+const mongoose = require('mongoose')
+```
+
+- koa-redis
+
+```node
+const Redis = require('koa-redis') // Redis存储用于Koa会话中间件/缓存，支持前哨和集群
+```
+
+- axios
+
+```node
+const axios = require('axios') // Promise based HTTP client for the browser and node.js
+```
+
+- koa-passport
+
+```node
+const passport = require('koa-passport') // 用于Koa的Passport中间件
+```
+
+- passport-local
+
+```node
+const LocalStrategy = require('passport-local') // 使用用户名和密码进行身份验证的Passport策略。
+```
+
+- koa-router
+
+```node
+const Router = require('koa-router') // koa 路由
+```
+
+- nodemail
+
+```node
+const nodeMailer = require('nodemailer') // 从Node.js发送电子邮件
 ```
 
 ## 功能
@@ -81,12 +196,6 @@ npm run server
 - 登录: 填写用户名和密码登录, 从数据库里面读取对应保存的用户名和邮箱
 - 注册: 填写用户名, 密码, 邮箱后点击验证码, 发一封邮件到填写的邮箱, 输入验证码注册, mongodb 保存对应数据
 - 登出: 用户界面用户名和邮箱清空
-
-## 工具
-
-- vue 版本 "^2.6.10"
-- koa 为前端提供请求接口
-- stylus 编写样式
 
 ## 运行界面
 
