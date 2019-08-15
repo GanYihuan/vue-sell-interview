@@ -11,12 +11,15 @@
     display: flex
     padding: 1.125rem 0 1.125rem 1.125rem
     .overview-left
-      flex: 0 0 6.875rem
+      flex: 0 0 9rem
       padding: .375rem 0
       border-right: .0625rem solid $color-gray-s
-      width: 6.875rem
+      width: 9rem
       text-align: center
-      @media only screen and (max-width: 20rem)
+      @media screen and (max-width: 375px)
+        flex: 0 0 8rem
+        width: 8rem
+      @media screen and (max-width: 320px)
         flex: 0 0 7.5rem
         width: 7.5rem
       .score
