@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 17:41:47
+ * @LastEditTime: 2019-08-15 17:43:33
  -->
 
 # 餐馆点餐 App vue
@@ -35,25 +35,36 @@ brew install redis
 brew install mongodb
 ```
 
-1. 打开一个终端
+- 打开一个终端
+
+```node
 sudo mongod
+```
 
-2. 再打开一个终端
+- 再打开一个终端
+
+```node
 mongo
+```
 
-3. 再打开一个终端
+- 再打开一个终端
+
+```node
 redis-server
+```
 
-4. 再打开一个终端
-cd server 目录
+- 再打开一个终端
+
+> cd server 目录
 
 ```node
 npm install
 npm run start
 ```
 
-5. 再打开一个终端
-cd vue-sell-interivew
+- 再打开一个终端
+
+> cd vue-sell-interivew
 
 ```node
 npm run server
