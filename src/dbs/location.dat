@@ -1,6 +1,4 @@
-﻿/* 1 */
-{
-    "_id" : ObjectId("5d20dda30dd4aa42a7529a65"),
+﻿{
     "hotCities" : [ 
         {
             "id" : 1,
@@ -14,23 +12,23 @@
         }, 
         {
             "id" : 47,
-            "spell" : "xian",
-            "name" : "西安"
+            "spell" : "guangzhou",
+            "name" : "广州"
         }, 
         {
             "id" : 239,
-            "spell" : "sanya",
-            "name" : "三亚"
+            "spell" : "shenzhen",
+            "name" : "深圳"
         }, 
         {
             "id" : 188,
-            "spell" : "lijiang",
-            "name" : "丽江"
+            "spell" : "xianggang",
+            "name" : "香港"
         }, 
         {
             "id" : 125,
-            "spell" : "guilin",
-            "name" : "桂林"
+            "spell" : "aomen",
+            "name" : "澳门"
         }
     ],
     "cities" : {
