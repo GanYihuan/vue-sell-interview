@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 17:40:42
+ * @LastEditTime: 2019-08-15 17:41:47
  -->
 
 # 餐馆点餐 App vue
@@ -12,7 +12,7 @@
 ## 构建 mongodb 数据
 
 - 创建 `sell` 数据库
-![Robo 3T](https://i.loli.net/2019/08/15/DExguNCPqYtaZzw.png)
+![Robo 3T](https://i.loli.net/2019/08/15/6xL9MRak8FOo7Tz.png)
 
 - 进入 dbs 目录
 (`cseller` dbname, Robo 3T `csellers` collection name)
