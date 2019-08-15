@@ -4,31 +4,36 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 17:32:56
+ * @LastEditTime: 2019-08-15 17:40:42
  -->
 
 # 餐馆点餐 App vue
 
 ## 构建 mongodb 数据
 
-创建 `sell` 数据库
+- 创建 `sell` 数据库
 ![Robo 3T](https://i.loli.net/2019/08/15/DExguNCPqYtaZzw.png)
 
-进入 dbs 目录
+- 进入 dbs 目录
 (`cseller` dbname, Robo 3T `csellers` collection name)
 
-1. 打开一个终端
+- 打开一个终端
+
+```node
 mongoimport -d sell -c cmerchants cmerchant.dat
 mongoimport -d sell -c csellers cseller.dat
 mongoimport -d sell -c goods good.dat
 mongoimport -d sell -c homes homes.dat
 mongoimport -d sell -c locations location.dat
 mongoimport -d sell -c ratings ratings.dat
+```
 
 ## 运行
 
+```node
 brew install redis
 brew install mongodb
+```
 
 1. 打开一个终端
 sudo mongod
