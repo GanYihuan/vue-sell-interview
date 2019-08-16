@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-17 10:28:18
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 15:41:18
+ * @LastEditTime: 2019-08-16 14:05:25
  -->
 <template>
   <div
@@ -110,7 +110,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
@@ -145,10 +145,18 @@ export default {
       badContent: false
     }
   },
+  computed: {
+    ...mapState({
+      sellerName: state => state.sellerName
+    })
+  },
   async mounted() {
     const { status, data: { ratings }} = await axios.get('/ratings/getRating')
     if (status === 200) {
-      this.ratings = ratings.reverse()
+      const resultArray = ratings.filter((item) => {
+        return item.sellername === this.sellerName
+      })
+      this.ratings = resultArray.reverse()
       this.$nextTick(() => {
         this._initScroll()
       })

@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-07 07:06:18
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 05:40:30
+ * @LastEditTime: 2019-08-16 13:48:25
  -->
 <template>
   <div class="list-content">
@@ -18,50 +18,53 @@
         v-for="item of merchant"
         :key="item.id"
         :to="{name: 'shop', params: {id: item.name}}"
-        class="item border-bottom"
         tag="li"
-        @click="saveMerchantInfo(item.name, item.pic_url)"
       >
-        <img
-          :src="item.pic_url"
-          class="item-img"
-        >
         <div
-          class="brand"
-          :class="item.delivery_type > 0 ? 'brand-pin' : 'brand-xin'"
+          class="item border-bottom"
+          @click="saveMerchantInfo(item.name, item.pic_url)"
         >
-          {{ item.delivery_type > 0 ? '品牌' : '新到' }}
-        </div>
-        <div class="item-info">
-          <div class="item-title">
-            {{ item.name }}
+          <img
+            :src="item.pic_url"
+            class="item-img"
+          >
+          <div
+            class="brand"
+            :class="item.delivery_type > 0 ? 'brand-pin' : 'brand-xin'"
+          >
+            {{ item.delivery_type > 0 ? '品牌' : '新到' }}
           </div>
-          <div class="item-desc">
-            <div class="item-score">
-              <Star
-                :size="24"
-                :score="item.wm_poi_score"
-              />
+          <div class="item-info">
+            <div class="item-title">
+              {{ item.name }}
             </div>
-            <div class="item-count">
-              月售{{ item.month_sale_num > 999 ? '999+' : item.month_sale_num }}
+            <div class="item-desc">
+              <div class="item-score">
+                <Star
+                  :size="24"
+                  :score="item.wm_poi_score"
+                />
+              </div>
+              <div class="item-count">
+                月售{{ item.month_sale_num > 999 ? '999+' : item.month_sale_num }}
+              </div>
+              <div class="item-distance">
+                {{ item.distance }}
+              </div>
+              <div class="item-time">
+                {{ item.mt_delivery_time }}&nbsp;|
+              </div>
             </div>
-            <div class="item-distance">
-              {{ item.distance }}
-            </div>
-            <div class="item-time">
-              {{ item.mt_delivery_time }}&nbsp;|
-            </div>
-          </div>
-          <div class="item-price">
-            <div class="item-pre-price">
-              {{ item.min_price_tip }}
-            </div>
-            <div
-              class="item-delivery-type"
-              :class="{'highlight': item.delivery_type>0}"
-            >
-              美团专送
+            <div class="item-price">
+              <div class="item-pre-price">
+                {{ item.min_price_tip }}
+              </div>
+              <div
+                class="item-delivery-type"
+                :class="{'highlight': item.delivery_type>0}"
+              >
+                美团专送
+              </div>
             </div>
           </div>
         </div>
@@ -93,6 +96,7 @@ export default {
       setSellImage: 'SET_SELLIMAGE'
     }),
     saveMerchantInfo(name, img) {
+      console.log(name, 'name---')
       this.setSellName(name)
       this.setSellImage(img)
     }

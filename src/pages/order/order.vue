@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-07-05 08:46:02
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 06:22:34
+ * @LastEditTime: 2019-08-16 13:02:53
  -->
 <template>
   <div class="orderPage">
@@ -64,7 +64,7 @@
           <div class="evaluation">
             <div
               class="evaluation-btn"
-              @click="showEvalutate(index)"
+              @click="showEvalutate(index, item.sellerName)"
             >
               评价
             </div>
@@ -116,7 +116,8 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setEvaluateIndex: 'SET_EVALUATEINDEX'
+      setEvaluateIndex: 'SET_EVALUATEINDEX',
+      setEvaluateSellerName: 'SET_EVALUATESELLNAME'
     }),
     async getOrder() {
       const { status, data: { orders }} = await axios.get('/orders/getOrder')
@@ -124,8 +125,9 @@ export default {
         this.orders = orders
       }
     },
-    showEvalutate(index) {
+    showEvalutate(index, sellerName) {
       this.setEvaluateIndex(index)
+      this.setEvaluateSellerName(sellerName)
       this.$router.push(`/evaluate`)
     },
     deleteComment(sellerName, number, price) {

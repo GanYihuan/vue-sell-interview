@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-07-05 08:30:10
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 06:40:03
+ * @LastEditTime: 2019-08-16 13:23:52
  -->
 <template>
   <div class="evalutate">
@@ -90,7 +90,8 @@ export default {
   computed: {
     ...mapState({
       dateType: state => state.dateType,
-      evaluateIndex: state => state.evaluateIndex
+      evaluateIndex: state => state.evaluateIndex,
+      evaluateSellerName: state => state.evaluateSellerName
     })
   },
   mounted() {
@@ -127,6 +128,7 @@ export default {
       for (const i of selectFoods) {
         recommend.push(i.name)
       }
+      const evaluateSellerName = this.evaluateSellerName
       const username = this.user
       const avatar = 'http://static.galileo.xiaojukeji.com/static/tms/default_header.png'
       const commentTime = new Date()
@@ -134,6 +136,7 @@ export default {
       const oldTime = (new Date(time)).getTime()
       axios
         .post('/ratings/addRating', {
+          sellername: evaluateSellerName,
           username: username,
           rateTime: oldTime,
           score: score,
