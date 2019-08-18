@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 18:28:57
+ * @LastEditTime: 2019-08-18 22:58:31
  -->
 
 # 餐馆点餐 App vue
@@ -87,8 +87,7 @@ npm run server
 
 > 样式
 
-**使用 stylus 预编译**
-
+- 使用 stylus 预编译
 - 粘连布局: 菜单弹出层使用粘连布局
 - 两列自适应布局: Flex 布局实现, 底部菜单栏图标布局设置
 - 不同分辨率下的一像素线适配
