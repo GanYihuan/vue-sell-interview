@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-12-18 18:39:46
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 16:22:11
+ * @LastEditTime: 2019-08-19 01:49:54
  -->
 <template>
   <transition name="move">
@@ -178,7 +178,7 @@ export default {
       this.showFlag = false
     },
     addFirst(event) {
-      if (!event._constructed) {
+      if (!event._constructed) { // better-scroll 在 PC 上将触发两个事件，停止此操作
         return
       }
       Vue.set(this.food, 'count', 1)

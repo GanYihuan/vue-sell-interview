@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-12-18 18:39:46
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 15:26:26
+ * @LastEditTime: 2019-08-19 01:38:02
  -->
 <template>
   <div
@@ -128,10 +128,10 @@
 </template>
 
 <script>
+import { saveToLocal, loadFromLocal } from 'utils/storage'
 import BScroll from 'better-scroll'
 import star from 'components/star/star'
 import split from 'components/split/split'
-import { saveToLocal, loadFromLocal } from 'utils/storage'
 
 export default {
   name: 'Seller',
