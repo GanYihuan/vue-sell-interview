@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-07 00:14:33
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 06:42:05
+ * @LastEditTime: 2019-08-18 23:53:54
  -->
 <template>
   <div class="my">
@@ -86,7 +86,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { Notyf } from 'notyf' // 提示插件
 import axios from 'axios' // Promise based HTTP client for the browser and node.js
 
@@ -94,8 +94,8 @@ export default {
   name: 'My',
   data() {
     return {
-      user: '',
-      email: ''
+      user: '', // 用户名
+      email: '' // 用户邮箱
     }
   },
   async mounted() {

@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 17:52:41
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:26:36
+ * @LastEditTime: 2019-08-19 00:02:12
  -->
 <template>
   <div class="login-page">
@@ -220,7 +220,7 @@ export default {
               let count = 60
               that.statusMsg = `验证码已发送，剩余${count--}秒`
               that.verifyCode = data.verifyCode
-              that.timerid = setInterval(() => {
+              that.timerid = setInterval(() => { // setInterval方法返回一个唯一的id。 此id可用于使用clearInterval()函数清除该定时器。 timerid
                 that.statusMsg = `验证码已发送，剩余${count--}秒`
                 that.checked = true
                 if (count === 0) {

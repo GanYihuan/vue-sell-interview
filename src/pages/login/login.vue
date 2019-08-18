@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:34:05
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:22:42
+ * @LastEditTime: 2019-08-18 23:56:52
  -->
 <template>
   <div class="login-page">
@@ -150,7 +150,7 @@ export default {
       }
       axios
         .post('/users/signin', {
-          username: window.encodeURIComponent(this.ruleForm.name), // encodeURIComponent: 编码中文
+          username: window.encodeURIComponent(this.ruleForm.name), // encodeURIComponent 编码中文
           password: CryptoJS.MD5(this.ruleForm.pwd).toString() // CryptoJS.MD5 加密
         })
         .then(({ status, data }) => {
