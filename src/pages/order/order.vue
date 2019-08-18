@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-07-05 08:46:02
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-16 13:02:53
+ * @LastEditTime: 2019-08-19 00:10:50
  -->
 <template>
   <div class="orderPage">
@@ -107,9 +107,9 @@ export default {
     }
   },
   created() {
-    this.probeType = 3
-    this.listenScroll = true
-    this.click = true
+    this.probeType = 3 // 不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件
+    this.listenScroll = true // 监听scroll事件，拿到pos位置对象：有x和y属性
+    this.click = true // 览器的本机单击事件
   },
   mounted() {
     this.getOrder()

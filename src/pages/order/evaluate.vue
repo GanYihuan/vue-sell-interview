@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-07-05 08:30:10
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-16 13:23:52
+ * @LastEditTime: 2019-08-19 01:02:42
  -->
 <template>
   <div class="evalutate">
@@ -81,10 +81,10 @@ export default {
           num: 4
         }
       ],
-      maxCount: 50,
+      maxCount: 50, // 最大字数
       user: '默认用户名',
       email: '',
-      textarea: ''
+      textarea: '' // 评论文字
     }
   },
   computed: {

@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-28 14:27:51
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 05:25:46
+ * @LastEditTime: 2019-08-19 00:10:37
  -->
 <template>
   <div ref="wrapper">
@@ -28,7 +28,7 @@ export default {
       type: Number,
       default: 1
     },
-    click: { // better-scroll: 默认情况下，阻止浏览器的本机单击事件。当设置为true时，更好的滚动将分布点击甚至
+    click: { // better-scroll: 默认情况下，阻止浏览器的本机单击事件。当设置为true时，更好的滚动将分布点击
       type: Boolean,
       default: true
     },

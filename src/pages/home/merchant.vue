@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-07 07:06:18
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-16 13:48:25
+ * @LastEditTime: 2019-08-19 01:09:25
  -->
 <template>
   <div class="list-content">
@@ -96,7 +96,6 @@ export default {
       setSellImage: 'SET_SELLIMAGE'
     }),
     saveMerchantInfo(name, img) {
-      console.log(name, 'name---')
       this.setSellName(name)
       this.setSellImage(img)
     }
