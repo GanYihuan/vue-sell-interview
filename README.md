@@ -4,12 +4,12 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-18 23:08:04
+ * @LastEditTime: 2019-08-18 23:19:24
  -->
 
 # vue 实现餐馆点餐
 
-## 构建 mongodb 数据, 仅仅是看效果请移步 local-project 分支, 此分支不需要构建 mongodb 数据
+## 构建 mongodb 数据, 仅仅是看效果请移步 local-project 分支, 此分支不需要构建 mongodb 数据, 也不需要启动 server
 
 - 创建 `sell` 数据库
 ![Robo 3T](https://i.loli.net/2019/08/15/6xL9MRak8FOo7Tz.png)
@@ -30,15 +30,13 @@ mongoimport -d sell -c ratings ratings.dat
 
 ## 运行
 
-> local-project 分支运行
+> local-project 分支运行, 此分支没有登录注册功能, 订单接口 & 订单评论功能也取消, 不需要启动 server
 
 ```node
 npm run serve
 ```
 
-- 此分支没有登录注册功能, 订单接口 & 订单评论功能也取消
-
-> master 分支
+> master 分支 或者 mongo-project 分支
 
 安装 mongo & redis
 
