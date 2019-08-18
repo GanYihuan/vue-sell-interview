@@ -4,20 +4,24 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-18 23:19:24
+ * @LastEditTime: 2019-08-18 23:24:20
  -->
 
 # vue 实现餐馆点餐
 
 ## 构建 mongodb 数据, 仅仅是看效果请移步 local-project 分支, 此分支不需要构建 mongodb 数据, 也不需要启动 server
 
-- 创建 `sell` 数据库
+- 创建 `sell` 数据库, 该图是使用 Robo 3T 创建的 mongodb 数据库
 ![Robo 3T](https://i.loli.net/2019/08/15/6xL9MRak8FOo7Tz.png)
 
 - 进入 dbs 目录
 (`cseller` dbname, Robo 3T `csellers` collection name)
 
-- 打开一个终端
+- 打开一个终端, 添加数据到 mongodb 数据库里面
+
+```node
+格式: mongoimport -d `数据库名` -c `collection` `dat 文件`
+```
 
 ```node
 mongoimport -d sell -c cmerchants cmerchant.dat
