@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-07 00:14:33
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 06:42:05
+ * @LastEditTime: 2019-08-18 22:57:02
  -->
 <template>
   <div class="my">
@@ -99,11 +99,21 @@ export default {
     }
   },
   async mounted() {
-    const { status, data: { user, email }} = await axios.get('/users/getUser')
-    if (status === 200) {
-      this.user = user
-      this.email = email
-    }
+    // const { status, data: { user, email }} = await axios.get('/users/getUser')
+    // if (status === 200) {
+    //   this.user = user
+    //   this.email = email
+    // }
+    axios
+      .get('/api/user')
+      .then((res) => {
+        res = res.data
+        if (res.data) {
+          const data = res.data
+          console.log(data, 'data-')
+          this.user = data[0].username
+        }
+      })
   },
   methods: {
     async logout() {

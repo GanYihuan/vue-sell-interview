@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-08-28 09:53:38
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:35:12
+ * @LastEditTime: 2019-08-18 22:32:53
  -->
 <template>
   <div>
@@ -45,11 +45,22 @@ export default {
     }
   },
   async mounted() {
-    const { status, data: { citys }} = await axios.get('/locations/getCity')
-    if (status === 200) {
-      this.hotCities = citys.hotCities
-      this.cities = citys.cities
-    }
+    // const { status, data: { citys }} = await axios.get('/locations/getCity')
+    // if (status === 200) {
+    //   this.hotCities = citys.hotCities
+    //   this.cities = citys.cities
+    // }
+    axios
+      .get('/api/city')
+      .then((res) => {
+        res = res.data
+        if (res.data) {
+          const data = res.data
+          console.log(data, 'data--')
+          this.hotCities = data[0].data.hotCities
+          this.cities = data[0].data.cities
+        }
+      })
   },
   methods: {
     handleLetterChange(letter) {

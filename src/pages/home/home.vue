@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-06 16:19:05
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:15:13
+ * @LastEditTime: 2019-08-18 22:30:45
  -->
 <template>
   <div class="homePage">
@@ -79,20 +79,38 @@ export default {
   },
   methods: {
     async _getIcon() {
-      const { status, data: { homes }} = await axios.get('/homes/getHome')
-      if (status === 200) {
-        this.iconList = homes
-      }
-    },
-    async _getMerchant() {
-      const { status, data: { merchants }} = await axios.get('/cmerchants/getMerchant')
-      if (status === 200) {
-        merchants.forEach((item) => {
-          if (item.city === this.city) {
-            this.merchant.push(item)
+      // const { status, data: { homes }} = await axios.get('/homes/getHome')
+      // if (status === 200) {
+      //   this.iconList = homes
+      // }
+      axios
+        .get('/api/home')
+        .then((res) => {
+          res = res.data
+          if (res.data) {
+            const data = res.data
+            this.iconList = data
           }
         })
-      }
+    },
+    async _getMerchant() {
+      // const { status, data: { merchants }} = await axios.get('/cmerchants/getMerchant')
+      // if (status === 200) {
+      //   merchants.forEach((item) => {
+      //     if (item.city === this.city) {
+      //       this.merchant.push(item)
+      //     }
+      //   })
+      // }
+      axios
+        .get('/api/merchant')
+        .then((res) => {
+          res = res.data
+          if (res.data) {
+            const data = res.data
+            this.merchant = data
+          }
+        })
     },
     scroll(pos) {
       this.scrollY = pos.y // 实时滚动位置

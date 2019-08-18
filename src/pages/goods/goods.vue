@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-12-18 18:39:46
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 15:56:05
+ * @LastEditTime: 2019-08-18 22:34:29
  -->
 <template id="ratings">
   <div>
@@ -148,14 +148,23 @@ export default {
     }
   },
   async mounted() {
-    const { status, data: { goods }} = await axios.get('/goods/getGood')
-    if (status === 200) {
-      this.goods = goods
-      this.$nextTick(() => {
-        this._initScroll()
-        this._calculateHeight()
+    // const { status, data: { goods }} = await axios.get('/goods/getGood')
+    // if (status === 200) {
+    //   this.goods = goods
+    //   this.$nextTick(() => {
+    //     this._initScroll()
+    //     this._calculateHeight()
+    //   })
+    // }
+    axios
+      .get('/api/goods')
+      .then((res) => {
+        res = res.data
+        if (res.data) {
+          const data = res.data
+          this.goods = data
+        }
       })
-    }
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']

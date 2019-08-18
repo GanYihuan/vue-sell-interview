@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-07-05 08:30:10
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 06:40:03
+ * @LastEditTime: 2019-08-18 22:54:01
  -->
 <template>
   <div class="evalutate">
@@ -99,16 +99,34 @@ export default {
   },
   methods: {
     async getUser() {
-      const { status, data: { user }} = await axios.get('/users/getUser')
-      if (status === 200) {
-        this.user = user
-      }
+      // const { status, data: { user }} = await axios.get('/users/getUser')
+      // if (status === 200) {
+      //   this.user = user
+      // }
+      axios
+        .get('/api/user')
+        .then((res) => {
+          res = res.data
+          if (res.data) {
+            const data = res.data
+            this.user = data
+          }
+        })
     },
     async getOrder() {
-      const { status, data: { orders }} = await axios.get('/orders/getOrder')
-      if (status === 200) {
-        this.orders = orders
-      }
+      // const { status, data: { orders }} = await axios.get('/orders/getOrder')
+      // if (status === 200) {
+      //   this.orders = orders
+      // }
+      axios
+        .get('/api/order')
+        .then((res) => {
+          res = res.data
+          if (res.data) {
+            const data = res.data
+            this.orders = data
+          }
+        })
     },
     addStar(index) {
       this.startIndex = index

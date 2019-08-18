@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-06 15:42:24
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 15:23:08
+ * @LastEditTime: 2019-08-18 22:35:50
  -->
 <template>
   <div id="app">
@@ -67,14 +67,23 @@ export default {
     })
   },
   async mounted() {
-    const { status, data: { sellers }} = await axios.get('/csellers/getSeller')
-    if (status === 200) {
-      sellers.forEach((item) => {
-        if (item.name === this.params) {
-          this.seller = item
+    // const { status, data: { sellers }} = await axios.get('/csellers/getSeller')
+    // if (status === 200) {
+    //   sellers.forEach((item) => {
+    //     if (item.name === this.params) {
+    //       this.seller = item
+    //     }
+    //   })
+    // }
+    axios
+      .get('/api/seller')
+      .then((res) => {
+        res = res.data
+        if (res.data) {
+          const data = res.data
+          this.seller = data
         }
       })
-    }
   }
 }
 </script>

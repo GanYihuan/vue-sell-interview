@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-07-05 08:46:02
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 06:22:34
+ * @LastEditTime: 2019-08-18 22:48:55
  -->
 <template>
   <div class="orderPage">
@@ -119,10 +119,19 @@ export default {
       setEvaluateIndex: 'SET_EVALUATEINDEX'
     }),
     async getOrder() {
-      const { status, data: { orders }} = await axios.get('/orders/getOrder')
-      if (status === 200) {
-        this.orders = orders
-      }
+      // const { status, data: { orders }} = await axios.get('/orders/getOrder')
+      // if (status === 200) {
+      //   this.orders = orders
+      // }
+      axios
+        .get('/api/order')
+        .then((res) => {
+          res = res.data
+          if (res.data) {
+            const data = res.data
+            this.orders = data
+          }
+        })
     },
     showEvalutate(index) {
       this.setEvaluateIndex(index)

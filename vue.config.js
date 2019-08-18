@@ -1,12 +1,22 @@
-﻿const webpack = require('webpack')
+﻿/*
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2019-06-09 01:41:36
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-18 22:53:07
+ */
+const webpack = require('webpack')
 const path = require('path')
-// const appData = require('./public/data')
-// const seller = appData.seller
-// const goods = appData.goods
-// const ratings = appData.ratings
-// const home = appData.home
-// const merchant = appData.merchant
-// const city = appData.city
+const appData = require('./public/data')
+const seller = appData.seller
+const goods = appData.goods
+const ratings = appData.ratings
+const home = appData.home
+const merchant = appData.merchant
+const city = appData.city
+const order = appData.order
+const user = appData.user
 
 module.exports = {
   // 基本路径
@@ -45,76 +55,87 @@ module.exports = {
     port: 8081,
     https: false,
     hotOnly: false,
-    proxy: {
-      '/users': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/goods': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/seller': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/cseller': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/ratings': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/homes': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/merchants': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/cmerchants': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/orders': {
-        target: 'http://localhost:3000' // 配置代理
-      },
-      '/locations': {
-        target: 'http://localhost:3000' // 配置代理
-      }
-    } // 设置代理
-    // before: app => {
-    //   app.get('/api/seller', (req, res) => {
-    //     const id = req.query.id
-    //     res.json({
-    //       status: 1,
-    //       data: Object.assign({}, seller, { id })
-    //     })
-    //   })
-    //   app.get('/api/goods', (req, res) => {
-    //     res.json({
-    //       status: 1,
-    //       data: goods
-    //     })
-    //   })
-    //   app.get('/api/ratings', (req, res) => {
-    //     res.json({
-    //       status: 1,
-    //       data: ratings
-    //     })
-    //   })
-    //   app.get('/api/home', (req, res) => {
-    //     res.json({
-    //       status: 1,
-    //       data: home
-    //     })
-    //   })
-    //   app.get('/api/merchant', (req, res) => {
-    //     res.json({
-    //       status: 1,
-    //       data: merchant
-    //     })
-    //   })
-    //   app.get('/api/city', (req, res) => {
-    //     res.json({
-    //       status: 1,
-    //       data: city
-    //     })
-    //   })
-    // }
+    // proxy: {
+    //   '/users': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/goods': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/seller': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/cseller': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/ratings': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/homes': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/merchants': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/cmerchants': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/orders': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   },
+    //   '/locations': {
+    //     target: 'http://localhost:3000' // 配置代理
+    //   }
+    // }, // 设置代理
+    before: app => {
+      app.get('/api/seller', (req, res) => { // http://localhost:8081/api/seller
+        res.json({
+          status: 1,
+          data: seller
+        })
+      })
+      app.get('/api/goods', (req, res) => {
+        res.json({
+          status: 1,
+          data: goods
+        })
+      })
+      app.get('/api/ratings', (req, res) => {
+        res.json({
+          status: 1,
+          data: ratings
+        })
+      })
+      app.get('/api/home', (req, res) => {
+        res.json({
+          status: 1,
+          data: home
+        })
+      })
+      app.get('/api/merchant', (req, res) => {
+        res.json({
+          status: 1,
+          data: merchant
+        })
+      })
+      app.get('/api/city', (req, res) => {
+        res.json({
+          status: 1,
+          data: city
+        })
+      })
+      app.get('/api/order', (req, res) => {
+        res.json({
+          status: 1,
+          data: order
+        })
+      })
+      app.get('/api/user', (req, res) => {
+        res.json({
+          status: 1,
+          data: user
+        })
+      })
+    }
   }
 }

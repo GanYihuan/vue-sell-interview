@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-17 10:28:18
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 15:41:18
+ * @LastEditTime: 2019-08-18 22:36:46
  -->
 <template>
   <div
@@ -146,13 +146,22 @@ export default {
     }
   },
   async mounted() {
-    const { status, data: { ratings }} = await axios.get('/ratings/getRating')
-    if (status === 200) {
-      this.ratings = ratings.reverse()
-      this.$nextTick(() => {
-        this._initScroll()
+    // const { status, data: { ratings }} = await axios.get('/ratings/getRating')
+    // if (status === 200) {
+    //   this.ratings = ratings.reverse()
+    //   this.$nextTick(() => {
+    //     this._initScroll()
+    //   })
+    // }
+    axios
+      .get('/api/ratings')
+      .then((res) => {
+        res = res.data
+        if (res.data) {
+          const data = res.data
+          this.ratings = data
+        }
       })
-    }
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']

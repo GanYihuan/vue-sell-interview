@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 04:54:58
+ * @LastEditTime: 2019-08-18 22:28:45
  -->
 
 # 餐馆点餐 App vue
@@ -41,3 +41,13 @@
 - vue 版本 "^2.6.10"
 - koa 为前端提供请求接口
 - stylus 编写样式
+
+      axios
+        .get('/api/merchant')
+        .then((res) => {
+          res = res.data
+          if (res.data) {
+            const data = res.data
+            this.merchant = data
+          }
+        })
