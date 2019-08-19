@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-12-18 18:39:46
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-19 01:49:54
+ * @LastEditTime: 2019-08-19 09:00:49
  -->
 <template>
   <transition name="move">
@@ -44,7 +44,6 @@
           <div class="cartControl-wrapper">
             <cartControl
               :food="food"
-              @add="addFood"
             />
           </div>
           <transition name="fade">
@@ -193,9 +192,6 @@ export default {
       } else {
         return type === this.selectType
       }
-    },
-    addFood(target) {
-      this.$emit(EVENT_ADD, target)
     }
   }
 }
