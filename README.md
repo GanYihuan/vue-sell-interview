@@ -9,7 +9,19 @@
 
 # vue 实现餐馆点餐
 
-## 构建 mongodb 数据, 仅仅是看效果请移步 local-project 分支, 此分支不需要构建 mongodb 数据, 也不需要启动 server
+## 功能
+
+- 增: 点菜界面选择菜品增加到购物车里, 结算后购物车菜品添加到 mongodb. 订单界面能读取出这些购物车菜品
+- 删: 订单界面删除购买到的菜品, 能删除 mongodb 里保存的数据
+- 改: 修改城市能显示不同城市的商家
+- 查: 选择不同城市, 能查询出 mongodb 里的城市数据
+- 登录: 填写用户名和密码, 从数据库里面读取对应保存的用户名和邮箱进行登录
+- 注册: 填写用户名, 密码, 邮箱后点击验证码, 发一封邮件到填写的邮箱, 输入正确的验证码后注册, mongodb 保存用户数据
+- 登出: 用户界面用户名和邮箱清空
+
+## 运行
+
+> 构建 mongodb 数据, 仅仅是看效果请移步 local-project 分支, 此分支不需要构建 mongodb 数据, 也不需要启动 server
 
 - 创建 `sell` 数据库, 该图是使用 Robo 3T 创建的 mongodb 数据库
 ![Robo 3T](https://i.loli.net/2019/08/15/6xL9MRak8FOo7Tz.png)
@@ -31,8 +43,6 @@ mongoimport -d sell -c homes homes.dat
 mongoimport -d sell -c locations location.dat
 mongoimport -d sell -c ratings ratings.dat
 ```
-
-## 运行
 
 > local-project 分支运行, 此分支没有登录注册功能, 订单接口 & 订单评论功能也取消, 不需要启动 server
 
@@ -85,17 +95,7 @@ npm install
 npm run server
 ```
 
-## 功能
-
-- 增: 点菜界面选择菜品增加到购物车里, 结算后购物车菜品添加到 mongodb. 订单界面能读取出这些购物车菜品
-- 删: 订单界面删除购买到的菜品, 能删除 mongodb 里保存的数据
-- 改: 修改城市能显示不同城市的商家
-- 查: 选择不同城市, 能查询出 mongodb 里的城市数据
-- 登录: 填写用户名和密码, 从数据库里面读取对应保存的用户名和邮箱进行登录
-- 注册: 填写用户名, 密码, 邮箱后点击验证码, 发一封邮件到填写的邮箱, 输入正确的验证码后注册, mongodb 保存用户数据
-- 登出: 用户界面用户名和邮箱清空
-
-## 前端
+## 项目介绍-前端部分
 
 > 样式
 
@@ -120,7 +120,7 @@ npm run server
 - good-storage 实现 sessionStorage 和 localStorage 功能, 用于商家界面收藏页的存储功能
 - vuex, state 共享时间格式数据, Mutation 修改 state 数据, 实现不同组件间"差评按钮"与"只看差评选项"的联动功能
 
-## 后端
+## 项目介绍-后端部分
 
 **特别说明: dbs/config.js 里面的邮箱要修改成自己的 qq 邮箱, SMTP 要开启腾讯设置查询到属于自己的号码。注册功能需要用到!**
 
@@ -198,7 +198,7 @@ const session = require('koa-generic-session') // Koa通用的session中间件
 - mongoose
 
 ```node
-const mongoose = require('mongoose')
+const mongoose = require('mongoose') // Mongoose是一个MongoDB对象建模工具，设计用于在异步环境中工作
 ```
 
 - koa-redis
