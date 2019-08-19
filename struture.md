@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-08-18 23:51:50
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-19 01:32:59
+ * @LastEditTime: 2019-08-19 08:53:21
  -->
 
 # struture
@@ -13,4 +13,4 @@
 - my -> login / register
 - order -> evaluate
 - home -> header / icons / merchange
-- shop
+- shop -> seller / ratings / goods -> food
