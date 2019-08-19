@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-17 10:28:18
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-16 14:05:25
+ * @LastEditTime: 2019-08-19 12:25:08
  -->
 <template>
   <div
@@ -174,11 +174,7 @@ export default {
         this.setbadcomment(true) // 只看差评
         this.badContent = true
       }
-      if (type === POSITIVE) {
-        this.setbadcomment(false)
-        this.badContent = false
-      }
-      if (type === ALL) {
+      if (type === POSITIVE || type === ALL) {
         this.setbadcomment(false)
         this.badContent = false
       }

@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-12-18 18:39:46
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 15:34:19
+ * @LastEditTime: 2019-08-19 12:23:38
  -->
 <template>
   <div class="ratingselect">
@@ -85,6 +85,11 @@ export default {
     }
   },
   methods: {
+    /**
+     * @description: 传出 type, 然后传 type 进来
+     * @param {type}
+     * @return:
+     */
     select(type, event) {
       this.$emit('select', type)
     },
