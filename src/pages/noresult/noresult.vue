@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-07-07 18:38:40
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 15:14:43
+ * @LastEditTime: 2019-08-19 15:10:23
  -->
 <template>
   <div class="no-result">
@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './noresult.styl';
+@import './noresult.styl'
 </style>
