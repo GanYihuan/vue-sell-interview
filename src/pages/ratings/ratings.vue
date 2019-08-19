@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-17 10:28:18
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-19 12:25:08
+ * @LastEditTime: 2019-08-19 12:49:10
  -->
 <template>
   <div
@@ -158,7 +158,13 @@ export default {
       })
       this.ratings = resultArray.reverse()
       this.$nextTick(() => {
-        this._initScroll()
+        if (!this.scroll) {
+          this.scroll = new BScroll(this.$refs.ratings, {
+            click: true
+          })
+        } else {
+          this.scroll.refresh()
+        }
       })
     }
   },
@@ -200,11 +206,6 @@ export default {
       } else {
         return type === this.selectType
       }
-    },
-    _initScroll() {
-      this.scroll = new BScroll(this.$refs.ratings, {
-        click: true
-      })
     }
   }
 }
