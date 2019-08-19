@@ -1,3 +1,11 @@
+<!--
+ * @Description:
+ * @version:
+ * @Author: GanEhank
+ * @Date: 2018-12-01 22:15:54
+ * @LastEditors: GanEhank
+ * @LastEditTime: 2019-08-19 12:52:35
+ -->
 <template>
   <div class="header">
     <div class="content-wrapper">
@@ -118,7 +126,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import star from 'components/star/star'
 
 export default {

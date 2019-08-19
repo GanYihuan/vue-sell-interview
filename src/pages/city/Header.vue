@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-08-28 09:53:38
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:39:35
+ * @LastEditTime: 2019-08-19 12:53:02
  -->
 <template>
   <div class="header">
@@ -24,5 +24,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './header.styl';
+@import './header.styl'
 </style>

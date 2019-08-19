@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-08-28 09:53:38
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:41:59
+ * @LastEditTime: 2019-08-19 15:05:45
  -->
 <template>
   <div class="search-wrapper">
@@ -112,5 +112,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './search.styl';
+@import './search.styl'
 </style>

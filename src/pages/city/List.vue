@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-08-28 09:53:38
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:52:07
+ * @LastEditTime: 2019-08-19 15:05:23
  -->
 <template>
   <div>
@@ -123,5 +123,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './list.styl';
+@import './list.styl'
 </style>

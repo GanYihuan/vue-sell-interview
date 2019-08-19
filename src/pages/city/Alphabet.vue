@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-08-28 09:53:38
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:53:32
+ * @LastEditTime: 2019-08-19 15:05:06
  -->
 <template>
   <div class="alphabet">
@@ -49,5 +49,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './alphabet.styl';
+@import './alphabet.styl'
 </style>
