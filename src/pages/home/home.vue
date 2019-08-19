@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-06 16:19:05
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 14:15:13
+ * @LastEditTime: 2019-08-19 15:09:20
  -->
 <template>
   <div class="homePage">
@@ -105,5 +105,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './home.styl';
+@import './home.styl'
 </style>

@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-12-18 18:39:46
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-19 09:00:49
+ * @LastEditTime: 2019-08-19 15:08:06
  -->
 <template>
   <transition name="move">
@@ -198,5 +198,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './food.styl';
+@import './food.styl'
 </style>

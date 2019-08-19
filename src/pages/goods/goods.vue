@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2018-12-18 18:39:46
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 15:56:05
+ * @LastEditTime: 2019-08-19 15:08:28
  -->
 <template id="ratings">
   <div>
@@ -208,5 +208,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './goods.styl';
+@import './goods.styl'
 </style>

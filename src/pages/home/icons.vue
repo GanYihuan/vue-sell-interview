@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-07 03:29:23
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 05:33:09
+ * @LastEditTime: 2019-08-19 15:09:30
  -->
 <template>
   <div class="icons">
@@ -76,5 +76,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './icons.styl';
+@import './icons.styl'
 </style>
