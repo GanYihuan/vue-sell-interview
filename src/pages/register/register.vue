@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 17:52:41
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-19 00:02:12
+ * @LastEditTime: 2019-08-19 15:15:46
  -->
 <template>
   <div class="login-page">
@@ -273,5 +273,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import './register.styl';
+@import './register.styl'
 </style>
