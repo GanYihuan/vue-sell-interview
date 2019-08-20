@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-07 00:14:33
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-18 23:53:54
+ * @LastEditTime: 2019-08-21 02:24:14
  -->
 <template>
   <div class="my">
@@ -23,6 +23,8 @@
             <el-col :span="5">
               用户名
             </el-col>
+            <!-- :span 占据位置 -->
+            <!-- :offset -> 间隔 -->
             <el-col
               :span="5"
               :offset="1"
