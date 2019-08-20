@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:34:05
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-19 15:09:52
+ * @LastEditTime: 2019-08-21 02:31:07
  -->
 <template>
   <div class="login-page">
@@ -109,8 +109,6 @@ export default {
   },
   data() {
     return {
-      checked: '',
-      focus: false,
       ruleForm: {
         name: '',
         pwd: ''
