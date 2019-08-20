@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:17
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 04:46:55
+ * @LastEditTime: 2019-08-21 01:46:54
  */
 import Vue from 'vue'
 import Router from 'vue-router' // vue 路由
@@ -20,7 +20,7 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import('pages/login/login.vue') // 异步路由根据URL自动加载所需页面的资源，不会导致页面阻塞
+      component: () => import('pages/login/login.vue') // 异步路由根据 URL 自动加载所需页面的资源，不会导致页面阻塞
     },
     {
       path: '/register',
@@ -91,7 +91,7 @@ export default new Router({
       component: () => import('pages/noresult/noresult.vue')
     }
   ],
-  linkActiveClass: 'active', // 当存在活动路由时, <router-link/>添加 'className=active'
+  linkActiveClass: 'active', // 当存在活动路由时, <router-link/> 添加 'className=active'
   linkExactActiveClass: 'exact-active-link', // 激活路由精确匹配, <router-link/> 添加 'className=exact-active-link'
   fallback: true, // 当浏览器不支持单页应用程序时，默认返回哈希模式，默认设置为true，如果设置为false，单页变成多页应用程序，费时
   mode: 'history', // Remove address bar hash #
