@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-17 10:28:18
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-15 04:49:42
+ * @LastEditTime: 2019-08-21 01:51:22
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -15,7 +15,7 @@ import getters from './getters'
 
 Vue.use(Vuex)
 
-const debug = process.env.NODE_ENV !== 'production' // 开发模式开启，严格模式检查vuex数据
+const debug = process.env.NODE_ENV !== 'production' // 开发模式开启，严格模式检查 vuex 数据
 
 export default () => {
   const store = new Vuex.Store({

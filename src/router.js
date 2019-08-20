@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:17
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-21 01:46:54
+ * @LastEditTime: 2019-08-21 01:55:06
  */
 import Vue from 'vue'
 import Router from 'vue-router' // vue 路由
@@ -67,7 +67,7 @@ export default new Router({
       component: () => import('pages/shop/shop.vue'),
       children: [
         {
-          path: '/goods/:id',
+          path: '/goods/:id', // 路由参数
           props: true,
           name: 'goods',
           component: () => import('pages/goods/goods.vue')
@@ -93,8 +93,8 @@ export default new Router({
   ],
   linkActiveClass: 'active', // 当存在活动路由时, <router-link/> 添加 'className=active'
   linkExactActiveClass: 'exact-active-link', // 激活路由精确匹配, <router-link/> 添加 'className=exact-active-link'
-  fallback: true, // 当浏览器不支持单页应用程序时，默认返回哈希模式，默认设置为true，如果设置为false，单页变成多页应用程序，费时
-  mode: 'history', // Remove address bar hash #
+  fallback: true, // 当浏览器不支持单页应用程序时，默认返回哈希模式，默认设置为 true，如果设置为 false，单页变成多页应用程序，费时
+  mode: 'history', // 删除地址栏哈希 #
   scrollBehavior(to, from, savedPosition) { // 当路由跳转时，页面滚动到指定位置
     if (savedPosition) {
       return savedPosition
