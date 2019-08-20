@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:17
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-21 01:55:06
+ * @LastEditTime: 2019-08-21 02:19:46
  */
 import Vue from 'vue'
 import Router from 'vue-router' // vue 路由
@@ -67,8 +67,8 @@ export default new Router({
       component: () => import('pages/shop/shop.vue'),
       children: [
         {
-          path: '/goods/:id', // 路由参数
-          props: true,
+          path: '/goods/:id', // `:id` 路由参数
+          props: true, // 传输路由器参数 `:id` 到 <router-link/>, <router-link/> 可以使用 props 获得 `:id`
           name: 'goods',
           component: () => import('pages/goods/goods.vue')
         },
