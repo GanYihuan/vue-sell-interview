@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:17
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-21 01:57:40
+ * @LastEditTime: 2019-08-25 19:01:50
  */
 import Vue from 'vue'
 import App from './App.vue' // 渲染组件
@@ -26,7 +26,7 @@ Vue.use(VueLazyload, { // vue-lazyload 图片懒加载
   loading: require('../public/favicon.png')
 })
 Vue.use(ElementUI) // element-ui 组件
-Vue.config.productionTip = false // 关闭 vue 开发提示
+Vue.config.productionTip = false // 阻止 vue 在启动时生成生产提示
 
 new Vue({
   router,

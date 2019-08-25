@@ -4,7 +4,7 @@
  * @Author: GanEhank
  * @Date: 2019-06-09 02:19:56
  * @LastEditors: GanEhank
- * @LastEditTime: 2019-08-18 23:24:20
+ * @LastEditTime: 2019-08-22 01:36:06
  -->
 
 # vue 实现餐馆点餐
@@ -253,3 +253,7 @@ const nodeMailer = require('nodemailer') // 从Node.js发送电子邮件
 ![食物](https://i.loli.net/2019/07/07/5d21ddc04587a74086.png)
 ![商家评价](https://i.loli.net/2019/07/07/5d21dd1e48ba716486.png)
 ![商家](https://i.loli.net/2019/07/07/5d21dd0e5ad8351348.png)
+
+## ui
+
+vant
