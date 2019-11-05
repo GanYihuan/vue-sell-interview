@@ -24,7 +24,7 @@
     "koa-router": "^7.4.0",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "mongoose": "^5.5.14",
+    "mongoose": "^5.7.5",
     "nodemailer": "^6.2.1",
     "notyf": "^3.0.4",
     "passport-local": "^1.0.0",
