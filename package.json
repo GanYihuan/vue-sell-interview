@@ -29,7 +29,7 @@
     "notyf": "^3.0.4",
     "passport-local": "^1.0.0",
     "query-string": "^6.5.0",
-    "vant": "^2.1.4",
+    "vant": "^2.1.8",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.10",
     "vue-awesome-swiper": "^3.1.3",
